@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 620px;
+  margin: 0 auto;
+
+  &__settings-btn {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    &:hover path {
+      fill: #6a88a5;
+    }
+  }
+  &__link {
+    color: white;
+    margin-left: 20px;
+    align-self: center;
+    text-decoration: none;
+    &:hover {
+      color: #6a88a5;
+    }
+  }
+  
+}
