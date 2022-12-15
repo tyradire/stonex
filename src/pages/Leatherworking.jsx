@@ -60,7 +60,7 @@ const Leatherworking = () => {
     setTanninPrice(Number(tanninPrice));
   },[])
 
-  let rawhideToCoarseLeather = oreToIngot(4,coarsePrice,itemsEquipped);
+  let rawhideToCoarseLeather = oreToIngot(4,rawhidePrice,itemsEquipped);
 
   let coarseLeatherToRuggedLeather = ingotToNextLvl(4,coarsePrice, 0, tanninPrice, itemsEquipped);
   let rawhideToRuggedLeather = ingotToNextLvl(4,rawhideToCoarseLeather, 0, tanninPrice, itemsEquipped);

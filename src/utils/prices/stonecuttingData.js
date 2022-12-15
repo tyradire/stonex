@@ -1,7 +1,7 @@
 export const stonecuttingData = [
   {
     title: 'stone',
-    cost: 0.50,
+    cost: 0.15,
     id: 'stn1',
     raw: false
   },
