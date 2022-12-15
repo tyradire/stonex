@@ -19,7 +19,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 10px 0 40px;
+    margin: 10px 0 20px;
   }
   &__unit {
     margin: 0;
@@ -34,6 +34,17 @@
     }
     &_tp-price {
       color: rgb(211, 209, 95);
+    }
+  }
+  &__prices-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #607d8b;
+    color: #607d8b;
+    padding: 10px;
+    margin-bottom: 10px;
+    &:hover {
+      color: #ffffff;
     }
   }
 }

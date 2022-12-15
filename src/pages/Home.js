@@ -14,26 +14,38 @@ import './Page.scss';
 
 import axios from 'axios';
 import { ids } from '../utils/resourcesIds';
+import { API_URL, TOKEN } from '../utils/consts';
 
 const Home = () => {
 
   const [resourcesType, setResourcesType] = useState('Smelting');
   const [priceNumber, setPriceNumber] = useState(0);
+  const [leatherPrices, setLeatherPrices] = useState([]);
 
   const unit = ids.leatherworking.infused;
-  const BASE_URL = 'https://nwdb.info/db/item/price';
-  const TOKEN = 'f7792482-25c9-48b1-91fa-1b90539188a8';
-  const proxy = 'https://cors-anywhere.herokuapp.com/'
 
-  useEffect(() => {
-    axios.get(`${proxy}${BASE_URL}.${unit}.${TOKEN}.json`, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => setPriceNumber(Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2))))
-    .catch(err => console.log(err))
-  },[])
+  // useEffect(() => {
+  //   axios.get(`${API_URL}.${unit}.${TOKEN}.json`)
+  //   .then(res => setPriceNumber(Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2))))
+  //   .catch(err => console.log(err))
+  // },[])
+  
+  const downloadPrices = () => {
+    for (let key in ids.leatherworking) {
+      // console.log(ids.leatherworking[key]);
+      axios.get(`${API_URL}.${ids.leatherworking[key]}.${TOKEN}.json`)
+      .then(res => {
+        console.log(Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2)), key)
+        leatherPrices.push({
+          title: key,
+          cost: Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2))
+        })
+        // leatherPrices.push(Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2)))
+      })
+      .catch(err => console.log(err))
+    }
+    console.log(leatherPrices)
+  }
 
   return (
     <div className='page'>
@@ -43,7 +55,7 @@ const Home = () => {
         <SettingsPanelButton icon={leatherworking} toggleType={setResourcesType} title={'Leatherworking'} />
         <SettingsPanelButton icon={stonecutting} toggleType={setResourcesType} title={'Stonecutting'} />
       </div>
-      <p>{priceNumber}</p>
+      {/* <button className='page__prices-btn' onClick={downloadPrices}>Download Barri (EU) prices</button> */}
       {resourcesType === 'Smelting' && <Prices data={smeltingData} />}
       {resourcesType === 'Leatherworking' && <Prices data={leatherworkingData} />}
       {resourcesType === 'Stonecutting' && <Prices data={stonecuttingData} />}
