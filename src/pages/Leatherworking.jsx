@@ -6,8 +6,8 @@ import layered from '../assets/icons/layeredleather.png';
 import infused from '../assets/icons/infusedleather.png';
 import './Page.scss';
 import { leatherworkingData } from '../utils/prices/leatherworkingData';
-import Tier1 from '../components/Tiers/Tier1';
 import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot } from '../utils/prices/formulas';
+import Tier1 from '../components/Tiers/Tier1';
 import Tier2 from '../components/Tiers/Tier2';
 import Tier3 from '../components/Tiers/Tier3';
 import Tier4 from '../components/Tiers/Tier4';
@@ -69,10 +69,10 @@ const Leatherworking = () => {
   let coarseLeatherToLayeredLeather = ingotToHightTier(coarseLeatherToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
   let rawhideToLayeredLeather = ingotToHightTier(rawhideToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
 
-  let layeredLeatherToInfusedLeather = ingotToTopTier(layeredPrice, ironPrice, 0, tanninPrice, itemsEquipped);
-  let ruggedLeatherToInfusedLeather = ingotToTopTier(ruggedLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped);
-  let coarseLeatherToInfusedLeather = ingotToTopTier(coarseLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped);
-  let rawhideToInfusedLeather = ingotToTopTier(rawhideToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped);
+  let layeredLeatherToInfusedLeather = ingotToTopTier(layeredPrice, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let ruggedLeatherToInfusedLeather = ingotToTopTier(ruggedLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let coarseLeatherToInfusedLeather = ingotToTopTier(coarseLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let rawhideToInfusedLeather = ingotToTopTier(rawhideToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
 
   const titles = [
     'Coarse', 

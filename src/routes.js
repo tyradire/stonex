@@ -8,8 +8,7 @@ import {
 } from "./utils/consts";
 import Home from "./pages/Home";
 import Smelting from "./pages/Smelting";
-import Stones from "./pages/Stonecutting";
-import Weave from "./pages/Weave";
+import Weaving from "./pages/Weaving";
 import Wood from "./pages/Wood";
 import Leatherworking from "./pages/Leatherworking";
 import Stonecutting from "./pages/Stonecutting";
@@ -35,11 +34,11 @@ export const publicRoutes = [
     Component: Stonecutting,
     title: 'Stonecutting'
   },
-  // {
-  //   path: WEAVE_ROUTE,
-  //   Component: Weave,
-  //   title: 'Weaving'
-  // },
+  {
+    path: WEAVE_ROUTE,
+    Component: Weaving,
+    title: 'Weaving'
+  },
   // {
   //   path: WOOD_ROUTE,
   //   Component: Wood,
