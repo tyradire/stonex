@@ -9,7 +9,7 @@ import {
 import Home from "./pages/Home";
 import Smelting from "./pages/Smelting";
 import Weaving from "./pages/Weaving";
-import Wood from "./pages/Wood";
+import Woodworking from "./pages/Woodworking";
 import Leatherworking from "./pages/Leatherworking";
 import Stonecutting from "./pages/Stonecutting";
 
@@ -39,9 +39,9 @@ export const publicRoutes = [
     Component: Weaving,
     title: 'Weaving'
   },
-  // {
-  //   path: WOOD_ROUTE,
-  //   Component: Wood,
-  //   title: 'Woodworking'
-  // },
+  {
+    path: WOOD_ROUTE,
+    Component: Woodworking,
+    title: 'Woodworking'
+  },
 ]

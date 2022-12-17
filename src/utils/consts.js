@@ -3,7 +3,7 @@ export const SMELTING_ROUTE = '/smelting';
 export const LEATHER_ROUTE = '/leatherworking';
 export const STONE_ROUTE = '/stonecutting';
 export const WEAVE_ROUTE = '/weaving';
-export const WOOD_ROUTE = '/wood';
+export const WOOD_ROUTE = '/woodworking';
 
 export const BASE_URL = 'http://localhost:3000';
 export const API_URL = 'https://nwdb.info/db/item/price';

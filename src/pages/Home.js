@@ -5,10 +5,12 @@ import smelting from '../assets/smelting.png';
 import leatherworking from '../assets/leatherworking.png';
 import stonecutting from '../assets/stonecutting.png';
 import weaving from '../assets/weaving.png';
+import woodworking from '../assets/woodworking.png';
 
 import { leatherworkingData } from '../utils/prices/leatherworkingData';
 import { stonecuttingData } from '../utils/prices/stonecuttingData';
 import { smeltingData } from '../utils/prices/smeltingData';
+import { woodworkingData } from '../utils/prices/woodworkingData';
 
 import Prices from '../components/Prices/Prices';
 import './Page.scss';
@@ -57,12 +59,14 @@ const Home = () => {
         <SettingsPanelButton icon={leatherworking} toggleType={setResourcesType} title={'Leatherworking'} />
         <SettingsPanelButton icon={stonecutting} toggleType={setResourcesType} title={'Stonecutting'} />
         <SettingsPanelButton icon={weaving} toggleType={setResourcesType} title={'Weaving'} />
+        <SettingsPanelButton icon={woodworking} toggleType={setResourcesType} title={'Woodworking'} />
       </div>
       {/* <button className='page__prices-btn' onClick={downloadPrices}>Download Barri (EU) prices</button> */}
       {resourcesType === 'Smelting' && <Prices data={smeltingData} />}
       {resourcesType === 'Leatherworking' && <Prices data={leatherworkingData} />}
       {resourcesType === 'Stonecutting' && <Prices data={stonecuttingData} />}
       {resourcesType === 'Weaving' && <Prices data={weavingData} />}
+      {resourcesType === 'Woodworking' && <Prices data={woodworkingData} />}
     </div>
   )
 }
