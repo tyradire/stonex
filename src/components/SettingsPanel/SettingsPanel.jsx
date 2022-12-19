@@ -11,6 +11,7 @@ const SettingsPanel = ({ toggleType, icons, titles, type }) => {
       <SettingsPanelButton icon={icons[1]} toggleType={toggleType} title={titles[1]} type={type} />
       <SettingsPanelButton icon={icons[2]} toggleType={toggleType} title={titles[2]} type={type} />
       <SettingsPanelButton icon={icons[3]} toggleType={toggleType} title={titles[3]} type={type} />
+      <SettingsPanelButton icon={icons[4]} toggleType={toggleType} title={titles[4]} type={type} />
     </div>
   )
 }

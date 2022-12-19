@@ -3,7 +3,7 @@ export const smeltingData = [
     title: 'charcoal',
     cost: 0.50,
     id: 1,
-    raw: false
+    raw: true
   },
   {
     title: 'iron ore',
@@ -87,6 +87,24 @@ export const smeltingData = [
     title: 'orichalcum ingot',
     cost: 2.50,
     id: 15,
+    raw: true
+  },
+  {
+    title: 'tolvium',
+    cost: 18.50,
+    id: 16,
+    raw: false
+  },
+  {
+    title: 'cinnabar',
+    cost: 18.50,
+    id: 17,
+    raw: false
+  },
+  {
+    title: 'asmodeum',
+    cost: 250.50,
+    id: 18,
     raw: true
   },
 ]

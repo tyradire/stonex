@@ -17,3 +17,7 @@ export const ingotToTopTier = (ingotCost, oreCost, charcoalCost, fluxCost, bonus
   // console.log(ingotAmount,ingotCost)
   return Number(((2*ingotCost + 8*oreCost + charcoalCost*2 + fluxCost + 0.02 )/(ratio + 0.02*bonus)).toFixed(2));
 }
+
+export const upToLegendaty = (ingotCost, charcoalCost, fluxCost, firstEpic, secondEpic, bonus) => {
+  return Number(((5*ingotCost + charcoalCost*2 + firstEpic + secondEpic + fluxCost + 0.02 )/(1 + 0.02*bonus)).toFixed(2));
+}

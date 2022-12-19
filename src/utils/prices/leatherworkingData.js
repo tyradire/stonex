@@ -47,4 +47,22 @@ export const leatherworkingData = [
     id: 'ltr7',
     raw: true
   },
+  {
+    title: 'smolderhide',
+    cost: 15.00,
+    id: 'ltr8',
+    raw: false
+  },
+  {
+    title: 'scarhide',
+    cost: 14.50,
+    id: 'ltr9',
+    raw: false
+  },
+  {
+    title: 'runic leather',
+    cost: 145.50,
+    id: 'ltr10',
+    raw: true
+  },
 ]

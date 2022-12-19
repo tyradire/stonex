@@ -4,13 +4,15 @@ import coarse from '../assets/icons/coarseleather.png';
 import rugged from '../assets/icons/ruggedleather.png';
 import layered from '../assets/icons/layeredleather.png';
 import infused from '../assets/icons/infusedleather.png';
+import runic from '../assets/icons/runicleather.png';
 import './Page.scss';
 import { leatherworkingData } from '../utils/prices/leatherworkingData';
-import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot } from '../utils/prices/formulas';
+import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
 import Tier1 from '../components/Tiers/Tier1';
 import Tier2 from '../components/Tiers/Tier2';
 import Tier3 from '../components/Tiers/Tier3';
 import Tier4 from '../components/Tiers/Tier4';
+import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Leatherworking = () => {
 
@@ -26,6 +28,10 @@ const Leatherworking = () => {
   const [ruggedPrice, setRuggedPrice] = useState(Number(leatherworkingData[5].cost));
   const [layeredPrice, setLayeredPrice] = useState(Number(leatherworkingData[6].cost));
   const [infusedPrice, setInfusedPrice] = useState(Number(leatherworkingData[7].cost));
+  const [runicPrice, setRunicPrice] = useState(Number(leatherworkingData[10].cost));
+
+  const [smolderhidePrice, setSmolderhidePrice] = useState(Number(leatherworkingData[8].cost));
+  const [scarhidePrice, setScarhidePrice] = useState(Number(leatherworkingData[9].cost));
 
   const [itemsEquipped, setItemsEquipped] = useState((JSON.parse(localStorage.getItem('bonusItems')) || []).length);
 
@@ -33,7 +39,8 @@ const Leatherworking = () => {
     coarse,
     rugged,
     layered,
-    infused
+    infused,
+    runic
   ]
 
   useEffect(() => {
@@ -45,8 +52,11 @@ const Leatherworking = () => {
     let ruggedPrice = localStorage.getItem('ltr5');
     let layeredPrice = localStorage.getItem('ltr6');
     let infusedPrice = localStorage.getItem('ltr7');
+    let runicPrice = localStorage.getItem('ltr10');
 
     let tanninPrice = localStorage.getItem('ltr0');
+    let smolderhidePrice = localStorage.getItem('ltr8');
+    let scarhidePrice = localStorage.getItem('ltr9');
 
     setRawhidePrice(Number(rawhidePrice));
     setThickPrice(Number(thickhidePrice));
@@ -56,8 +66,11 @@ const Leatherworking = () => {
     setRuggedPrice(Number(ruggedPrice));
     setLayeredPrice(Number(layeredPrice));
     setInfusedPrice(Number(infusedPrice));
+    setRunicPrice(Number(runicPrice));
 
     setTanninPrice(Number(tanninPrice));
+    setSmolderhidePrice(Number(smolderhidePrice));
+    setScarhidePrice(Number(scarhidePrice))
   },[])
 
   let rawhideToCoarseLeather = oreToIngot(4,rawhidePrice,itemsEquipped);
@@ -74,11 +87,18 @@ const Leatherworking = () => {
   let coarseLeatherToInfusedLeather = ingotToTopTier(coarseLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
   let rawhideToInfusedLeather = ingotToTopTier(rawhideToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
 
+  let infusedToRunic = upToLegendaty(infusedPrice, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
+  let layeredToRunic = upToLegendaty(layeredLeatherToInfusedLeather, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
+  let ruggedToRunic = upToLegendaty(ruggedLeatherToInfusedLeather, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
+  let coarseToRunic = upToLegendaty(coarseLeatherToInfusedLeather, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
+  let rawhideToRunic = upToLegendaty(rawhideToInfusedLeather, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
+
   const titles = [
     'Coarse', 
     'Rugged', 
     'Layered', 
-    'Infused'
+    'Infused',
+    'Runic'
   ]
 
   return (
@@ -128,6 +148,22 @@ const Leatherworking = () => {
           price3text={'- Infused leather from Coarse leather'}
           price4={rawhideToInfusedLeather}
           price4text={'- Infused leather from Rawhide'}
+        />
+      }
+      {
+        type === 'Runic' && 
+        <TierLegendary 
+          tpPrice={runicPrice} 
+          price1={infusedToRunic}
+          price1text={'- Runic leather from Infused leather'}
+          price2={layeredToRunic}
+          price2text={'- Runic leather from Layered leather'}
+          price3={ruggedToRunic}
+          price3text={'- Runic leather from Rugged leather'}
+          price4={coarseToRunic}
+          price4text={'- Runic leather from Coarse leather'}
+          price5={rawhideToRunic}
+          price5text={'- Runic leather from Rawhide'}
         />
       }
     </div>
