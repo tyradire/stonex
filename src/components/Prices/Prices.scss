@@ -54,12 +54,13 @@
 }
 
 .price {
+  position: relative;
   margin: 4px 20px;
   display: flex;
 
   &__subtitle {
-    margin: 0;
-    width: 170px;
+    margin: 0 0 0 30px;
+    width: 168px;
     font-size: 20px;
   }
 
@@ -79,7 +80,17 @@
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
     }
-    
+  }
+
+  &__icon {
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -141,3 +152,5 @@
     margin-left: 0;
   }
 }
+
+

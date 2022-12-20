@@ -32,15 +32,15 @@ const Prices = ({ data }) => {
         <div className='prices'>
           <form className='prices__column'>
             {
-              rawResources.map(({title, cost, id}) => 
-                <Price title={title} cost={cost} id={id} key={id} />
+              rawResources.map(({title, cost, id, img}) => 
+                <Price title={title} cost={cost} id={id} key={id} img={img} />
               )
             }
           </form>
           <form className='prices__column'>
             {
-              finishedResources.map(({title, cost, id}) => 
-                <Price title={title} cost={cost} id={id} key={id} />
+              finishedResources.map(({title, cost, id, img}) => 
+                <Price title={title} cost={cost} id={id} key={id} img={img} />
               )
             }
           </form>
