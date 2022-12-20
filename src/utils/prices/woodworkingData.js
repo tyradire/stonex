@@ -52,5 +52,23 @@ export const woodworkingData = [
     cost: 6.00,
     id: 'woo9',
     raw: true
+  },
+  {
+    title: 'wildwood',
+    cost: 8.50,
+    id: 'woo10',
+    raw: false
+  },
+  {
+    title: 'barbvine',
+    cost: 9.00,
+    id: 'woo11',
+    raw: false
+  },
+  {
+    title: 'glittering ebony',
+    cost: 156.00,
+    id: 'woo12',
+    raw: true
   }
 ]

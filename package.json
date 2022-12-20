@@ -19,7 +19,7 @@
     "web-vitals": "^2.1.4"
   },
   "main": "public/main.js",
-  "homepage": "./",
+  "homepage": "https://tyradire.github.io/stonex",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -27,7 +27,9 @@
     "eject": "react-scripts eject",
     "electron:serve": "concurrently -k \"cross-env BROWSER=none npm run start\" \"npm run electron:start\"",
     "electron:build": "npm run build && electron-builder -c.extraMetadata.main=build/main.js",
-    "electron:start": "wait-on tcp:3000 && electron ."
+    "electron:start": "wait-on tcp:3000 && electron .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
     ]
   },
   "devDependencies": {
-    "electron": "^21.2.3"
+    "electron": "^21.2.3",
+    "gh-pages": "^4.0.0"
   }
 }

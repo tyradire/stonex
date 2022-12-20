@@ -4,13 +4,17 @@ import { weavingData } from '../utils/prices/weavingData';
 import linen from '../assets/icons/linen.png';
 import sateen from '../assets/icons/sateen.png';
 import silk from '../assets/icons/silk.png';
+import phoenixweave from '../assets/icons/phoenixweave.png';
 import infusedSilk from '../assets/icons/infused-silk.png';
-import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot } from '../utils/prices/formulas';
+import scalecloth from '../assets/icons/scalecloth.png';
+import blisterweave from '../assets/icons/blisterweave.png';
+import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
 import Tier1 from '../components/Tiers/Tier1';
 import Tier2 from '../components/Tiers/Tier2';
 import Tier3 from '../components/Tiers/Tier3';
 import Tier4 from '../components/Tiers/Tier4';
 import './Page.scss';
+import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Weaving = () => {
 
@@ -26,6 +30,10 @@ const Weaving = () => {
   const [sateenPrice, setSateenPrice] = useState(Number(weavingData[5].cost));
   const [silkPrice, setSilkPrice] = useState(Number(weavingData[6].cost));
   const [infusedSilkPrice, setInfusedSilkPrice] = useState(Number(weavingData[7].cost));
+  const [phoenixweavePrice, setPhoenixweavePrice] = useState(Number(weavingData[10].cost));
+
+  const [scaleclothPrice, setScaleclothPrice] = useState(Number(weavingData[8].cost));
+  const [blisterweavePrice, setBlisterweavePrice] = useState(Number(weavingData[9].cost));
 
   const [itemsEquipped, setItemsEquipped] = useState((JSON.parse(localStorage.getItem('bonusItems')) || []).length);
 
@@ -33,7 +41,8 @@ const Weaving = () => {
     linen,
     sateen,
     silk,
-    infusedSilk
+    infusedSilk,
+    phoenixweave
   ]
 
   useEffect(() => {
@@ -45,8 +54,11 @@ const Weaving = () => {
     let sateenPrice = localStorage.getItem('fib6');
     let silkPrice = localStorage.getItem('fib7');
     let infusedSilkPrice = localStorage.getItem('fib8');
+    let phoenixweavePrice = localStorage.getItem('fib11');
 
     let wireweavePrice = localStorage.getItem('fib4');
+    let scaleclothPrice = localStorage.getItem('fib9');
+    let blisterweavePrice = localStorage.getItem('fib10');
 
     setFibersPrice(Number(fibersPrice));
     setSilkThreadsPrice(Number(silkThreadsPrice));
@@ -56,8 +68,11 @@ const Weaving = () => {
     setSateenPrice(Number(sateenPrice));
     setSilkPrice(Number(silkPrice));
     setInfusedSilkPrice(Number(infusedSilkPrice));
+    setPhoenixweavePrice(Number(phoenixweavePrice));
 
     setWireweavePrice(Number(wireweavePrice));
+    setScaleclothPrice(Number(scaleclothPrice));
+    setBlisterweavePrice(Number(blisterweavePrice));
   },[])
 
   let fibersToLinen = oreToIngot(4,fibersPrice,itemsEquipped);
@@ -74,11 +89,18 @@ const Weaving = () => {
   let linenToInfusedSilk = ingotToTopTier(linenLeatherToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
   let fibersToInfusedSilk = ingotToTopTier(fibersToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
 
+  let infusedToPhoenixweave = upToLegendaty(infusedSilkPrice, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
+  let silkToPhoenixweave = upToLegendaty(silkToInfusedSilk, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
+  let sateenToPhoenixweave = upToLegendaty(sateenToInfusedSilk, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
+  let linenToPhoenixweave = upToLegendaty(linenToInfusedSilk, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
+  let fibersToPhoenixweave = upToLegendaty(fibersToInfusedSilk, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
+
   const titles = [
     'Linen', 
     'Sateen', 
     'Silk', 
-    'Infused Silk'
+    'Infused Silk',
+    'Phoenixweave'
   ]
 
   return (
@@ -128,6 +150,22 @@ const Weaving = () => {
           price3text={'- Infused Silk from Linen'}
           price4={fibersToInfusedSilk}
           price4text={'- Infused Silk from Fibers'}
+        />
+      }
+      {
+        type === 'Phoenixweave' && 
+        <TierLegendary 
+          tpPrice={phoenixweavePrice} 
+          price1={infusedToPhoenixweave}
+          price1text={'- Phoenixweave from Infused silk'}
+          price2={silkToPhoenixweave}
+          price2text={'- Phoenixweave from Silk'}
+          price3={sateenToPhoenixweave}
+          price3text={'- Phoenixweave from Sateen'}
+          price4={linenToPhoenixweave}
+          price4text={'- Phoenixweave from Linen'}
+          price5={fibersToPhoenixweave}
+          price5text={'- Phoenixweave from Fibers'}
         />
       }
     </div>

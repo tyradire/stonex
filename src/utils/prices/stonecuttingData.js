@@ -46,5 +46,11 @@ export const stonecuttingData = [
     cost: 6.00,
     id: 'stn5',
     raw: true
-  }
+  },
+  {
+    title: 'runestone',
+    cost: 145.00,
+    id: 'stn9',
+    raw: true
+  },
 ]

@@ -46,5 +46,23 @@ export const weavingData = [
     cost: 6.00,
     id: 'fib8',
     raw: true
+  },
+  {
+    title: 'scalecloth',
+    cost: 19.00,
+    id: 'fib9',
+    raw: false
+  },
+  {
+    title: 'blisterweave',
+    cost: 19.15,
+    id: 'fib10',
+    raw: false
+  },
+  {
+    title: 'phoenixweave',
+    cost: 150.25,
+    id: 'fib11',
+    raw: true
   }
 ]
