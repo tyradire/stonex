@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/stonex/static/css/main.323d0d6d.css",
-    "main.js": "/stonex/static/js/main.327844c4.js",
+    "main.css": "/stonex/static/css/main.8f9a3f22.css",
+    "main.js": "/stonex/static/js/main.842baf2d.js",
     "static/media/weaving.png": "/stonex/static/media/weaving.636d8b1b60d4aafcfbf6.png",
     "static/media/woodworking.png": "/stonex/static/media/woodworking.fb59e719fff61899b987.png",
     "static/media/leatherworking.png": "/stonex/static/media/leatherworking.a6033110c99402977514.png",
+    "static/media/wirefiber.png": "/stonex/static/media/wirefiber.18d81d668890ac32de94.png",
     "static/media/infusedleather.png": "/stonex/static/media/infusedleather.cce76d5674417d1169ca.png",
     "static/media/linen.png": "/stonex/static/media/linen.5d90f76d3ed791f7dc56.png",
     "static/media/smelting.png": "/stonex/static/media/smelting.9eec682bb86af2f821c7.png",
@@ -14,27 +15,39 @@
     "static/media/obsidianlodestone.png": "/stonex/static/media/obsidianlodestone.4226a7a2a4caac59bea0.png",
     "static/media/wyrdwoodplanks.png": "/stonex/static/media/wyrdwoodplanks.6fcea2f4fcbea5a28c1a.png",
     "static/media/ironore.png": "/stonex/static/media/ironore.ff200b41001a9b56bd67.png",
+    "static/media/ironhide.png": "/stonex/static/media/ironhide.72538fb8d9043e361faa.png",
+    "static/media/wyrdwood.png": "/stonex/static/media/wyrdwood.abe6e1066d797385eaf6.png",
+    "static/media/silkthreads.png": "/stonex/static/media/silkthreads.2d99493ae110e8029f33.png",
     "static/media/ironingot.png": "/stonex/static/media/ironingot.4f8640120c6dfcb5c05e.png",
+    "static/media/wireweave.png": "/stonex/static/media/wireweave.45c3c7b69604da916a9d.png",
+    "static/media/extralodestone.png": "/stonex/static/media/extralodestone.6cbe8dbb4f9f6fe9aeca.png",
     "static/media/goldore.png": "/stonex/static/media/goldore.beaf41613c9e209b16bc.png",
     "static/media/cinnabar.png": "/stonex/static/media/cinnabar.6424b08ed0213cc0bfc1.png",
     "static/media/silverore.png": "/stonex/static/media/silverore.3ef770c6df75a5669cb9.png",
+    "static/media/barbvine.png": "/stonex/static/media/barbvine.3a72beb03baa39083410.png",
     "static/media/orichalcumore.png": "/stonex/static/media/orichalcumore.5f301dc9e7f2960fcdc7.png",
+    "static/media/rawhide.png": "/stonex/static/media/rawhide.e98edf29b2e9304e11f8.png",
+    "static/media/scarhide.png": "/stonex/static/media/scarhide.32c777ba58cf2ab364ab.png",
     "static/media/starmetalore.png": "/stonex/static/media/starmetalore.bca76892fda608668803.png",
     "static/media/tolvium.png": "/stonex/static/media/tolvium.bca76892fda608668803.png",
+    "static/media/fibers.png": "/stonex/static/media/fibers.6ac2e7bc8d41ee5822f8.png",
     "static/media/phoenixweave.png": "/stonex/static/media/phoenixweave.acd3f35b452d52cd3601.png",
-    "static/media/infused-silk.png": "/stonex/static/media/infused-silk.d8fcb300adfbc48ae4ae.png",
+    "static/media/smolderhide.png": "/stonex/static/media/smolderhide.5d2bbe5164560f910063.png",
+    "static/media/infusedsilk.png": "/stonex/static/media/infusedsilk.d8fcb300adfbc48ae4ae.png",
     "static/media/runestone.png": "/stonex/static/media/runestone.593a59d99486a661bedd.png",
+    "static/media/lodestone.png": "/stonex/static/media/lodestone.9735a14bb027661ab43e.png",
+    "static/media/wildwood.png": "/stonex/static/media/wildwood.34ac8cef22c099658f41.png",
     "static/media/asmodeumingot.png": "/stonex/static/media/asmodeumingot.0c3ef49b31bb2457050c.png",
     "static/media/silk.png": "/stonex/static/media/silk.898d6e98e10dec3bacdb.png",
     "static/media/glitteringebony.png": "/stonex/static/media/glitteringebony.ee44897363249a9857cc.png",
     "static/media/blisterweave.png": "/stonex/static/media/blisterweave.c632ffbdcec06c0f32c2.png",
     "static/media/settings.svg": "/stonex/static/media/settings.d5ad7bd12504500dfd44f6e14e6c54e3.svg",
     "index.html": "/stonex/index.html",
-    "main.323d0d6d.css.map": "/stonex/static/css/main.323d0d6d.css.map",
-    "main.327844c4.js.map": "/stonex/static/js/main.327844c4.js.map"
+    "main.8f9a3f22.css.map": "/stonex/static/css/main.8f9a3f22.css.map",
+    "main.842baf2d.js.map": "/stonex/static/js/main.842baf2d.js.map"
   },
   "entrypoints": [
-    "static/css/main.323d0d6d.css",
-    "static/js/main.327844c4.js"
+    "static/css/main.8f9a3f22.css",
+    "static/js/main.842baf2d.js"
   ]
 }
