@@ -1,9 +1,10 @@
 import React from 'react';
 
-const SettingsPanelButton = ({ icon, toggleType, title, type }) => {
+const SettingsMainButton = ({ icon, toggleType, title, type }) => {
 
   const swapType = () => {
     toggleType(title);
+    localStorage.setItem('savedRes', title);
   }
 
   return (
@@ -16,4 +17,4 @@ const SettingsPanelButton = ({ icon, toggleType, title, type }) => {
   )
 }
 
-export default SettingsPanelButton
+export default SettingsMainButton

@@ -1,6 +1,6 @@
 import React from 'react';
+import SettingsMainButton from './SettingsMainButton';
 import './SettingsPanel.scss';
-import SettingsPanelButton from './SettingsPanelButton';
 
 const SettingsMain = ({ toggleType, icons, titles, type }) => {
 
@@ -8,7 +8,7 @@ const SettingsMain = ({ toggleType, icons, titles, type }) => {
     <div className='settings-panel'>
       {
         titles.map((elem, i) => {
-          return <SettingsPanelButton 
+          return <SettingsMainButton 
             icon={icons[i]} 
             toggleType={toggleType} 
             title={titles[i]} 
