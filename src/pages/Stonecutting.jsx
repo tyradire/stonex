@@ -95,7 +95,7 @@ const Stonecutting = () => {
     <div className='page'>
       <h2 className='page__title'>Stonecutting</h2>
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
-      <p>{type}</p>
+      <p className='page__subtitle'>{type}</p>
       {
         type === 'Stone block' &&
         <Tier1 

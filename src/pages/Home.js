@@ -15,10 +15,8 @@ import { woodworkingData } from '../utils/prices/woodworkingData';
 import Prices from '../components/Prices/Prices';
 import './Page.scss';
 
-import axios from 'axios';
-import { ids } from '../utils/resourcesIds';
-import { API_URL, TOKEN } from '../utils/consts';
 import { weavingData } from '../utils/prices/weavingData';
+import SettingsMain from '../components/SettingsPanel/SettingsMain';
 
 const Home = () => {
 
@@ -26,42 +24,33 @@ const Home = () => {
   const [priceNumber, setPriceNumber] = useState(0);
   const [leatherPrices, setLeatherPrices] = useState([]);
 
-  // const unit = ids.leatherworking.infused;
+  const icons = [
+    smelting,
+    leatherworking,
+    stonecutting,
+    weaving,
+    woodworking
+  ]
 
-  // useEffect(() => {
-  //   axios.get(`${API_URL}.${unit}.${TOKEN}.json`)
-  //   .then(res => setPriceNumber(Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2))))
-  //   .catch(err => console.log(err))
-  // },[])
-  
-  const downloadPrices = () => {
-    for (let key in ids.leatherworking) {
-      // console.log(ids.leatherworking[key]);
-      axios.get(`${API_URL}.${ids.leatherworking[key]}.${TOKEN}.json`)
-      .then(res => {
-        console.log(Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2)), key)
-        leatherPrices.push({
-          title: key,
-          cost: Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2))
-        })
-        // leatherPrices.push(Number((res.data.data.sell_price_min.slice(-1) / 100).toFixed(2)))
-      })
-      .catch(err => console.log(err))
-    }
-    console.log(leatherPrices)
-  }
+  const titles = [
+    'Smelting',
+    'Leatherworking',
+    'Stonecutting',
+    'Weaving',
+    'Woodworking'
+  ]
 
   return (
     <div className='page'>
       <h2 className='page__title'>Settings</h2>
       <div className='page__prices-selector'>
-        <SettingsPanelButton icon={smelting} toggleType={setResourcesType} title={'Smelting'} />
-        <SettingsPanelButton icon={leatherworking} toggleType={setResourcesType} title={'Leatherworking'} />
-        <SettingsPanelButton icon={stonecutting} toggleType={setResourcesType} title={'Stonecutting'} />
-        <SettingsPanelButton icon={weaving} toggleType={setResourcesType} title={'Weaving'} />
-        <SettingsPanelButton icon={woodworking} toggleType={setResourcesType} title={'Woodworking'} />
+        <SettingsMain toggleType={setResourcesType} icons={icons} titles={titles} type={resourcesType} />
+        {/* <SettingsPanelButton icon={smelting} toggleType={setResourcesType} title={'Smelting'} type={resourcesType} />
+        <SettingsPanelButton icon={leatherworking} toggleType={setResourcesType} title={'Leatherworking'} type={resourcesType} />
+        <SettingsPanelButton icon={stonecutting} toggleType={setResourcesType} title={'Stonecutting'} type={resourcesType} />
+        <SettingsPanelButton icon={weaving} toggleType={setResourcesType} title={'Weaving'} type={resourcesType} />
+        <SettingsPanelButton icon={woodworking} toggleType={setResourcesType} title={'Woodworking'} type={resourcesType} /> */}
       </div>
-      {/* <button className='page__prices-btn' onClick={downloadPrices}>Download Barri (EU) prices</button> */}
       {resourcesType === 'Smelting' && <Prices data={smeltingData} />}
       {resourcesType === 'Leatherworking' && <Prices data={leatherworkingData} />}
       {resourcesType === 'Stonecutting' && <Prices data={stonecuttingData} />}

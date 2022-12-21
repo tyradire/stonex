@@ -4,8 +4,6 @@ import './Prices.scss';
 const Price = ({ title, cost, id, img }) => {
 
   const [currentCost, setCurrentCost] = useState(localStorage.getItem(id) || cost);
-
-  console.log(img)
   
   useEffect(() => {
     let val = localStorage.getItem(id);

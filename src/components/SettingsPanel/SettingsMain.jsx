@@ -2,12 +2,7 @@ import React from 'react';
 import './SettingsPanel.scss';
 import SettingsPanelButton from './SettingsPanelButton';
 
-const SettingsPanel = ({ toggleType, icons, titles, type }) => {
-
-  const rarity = [
-    '_common',
-    '_legendary',
-  ]
+const SettingsMain = ({ toggleType, icons, titles, type }) => {
 
   return (
     <div className='settings-panel'>
@@ -20,4 +15,4 @@ const SettingsPanel = ({ toggleType, icons, titles, type }) => {
   )
 }
 
-export default SettingsPanel
+export default SettingsMain

@@ -105,7 +105,7 @@ const Leatherworking = () => {
     <div className='page'>
       <h2 className='page__title'>Leatherworking</h2>
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
-      <p>{type} Leather</p>
+      <p className='page__subtitle'>{type} Leather</p>
       {
         type === 'Coarse' &&
         <Tier1 

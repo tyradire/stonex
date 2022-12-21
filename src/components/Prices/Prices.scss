@@ -55,7 +55,7 @@
 
 .price {
   position: relative;
-  margin: 4px 20px;
+  margin: 4px 20px 4px 0;
   display: flex;
 
   &__subtitle {
@@ -76,6 +76,12 @@
     font-size: 500;
     -moz-appearance: textfield;
     -webkit-appearance: none;
+    background-color: #ffffff;
+    border: 1px solid #7a7a7a;
+    color: #607d8b;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 600;
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;

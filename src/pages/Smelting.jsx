@@ -17,7 +17,7 @@ import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Smelting = () => {
 
-  const [ingotType, setIngotType] = useState('Iron');
+  const [type, setType] = useState('Iron');
 
   const [ironOrePrice, setIronOrePrice] = useState(Number(smeltingData[2].cost));
   const [starmetalOrePrice, setStarmetalOrePrice] = useState(Number(smeltingData[5].cost));
@@ -107,10 +107,10 @@ const Smelting = () => {
   return (
     <div className='page'>
       <h2 className='page__title'>Smelting</h2>
-      <SettingsPanel toggleType={setIngotType} icons={icons} titles={titles} type={ingotType} />
-      <p>{ingotType} Ingot</p>
+      <SettingsPanel toggleType={setType} icons={icons} titles={titles} type={type} />
+      <p className='page__subtitle'>{type} Ingot</p>
       {
-        ingotType === 'Iron' &&
+        type === 'Iron' &&
         <Tier1 
           tpPrice={ironIngotPrice}
           price1={ironOreToIronIngot}
@@ -118,7 +118,7 @@ const Smelting = () => {
         />
       }
       {
-        ingotType === 'Steel' && 
+        type === 'Steel' && 
         <Tier2 
           tpPrice={steelIngotPrice}
           price1={ironIngotToSteelIngot}
@@ -128,7 +128,7 @@ const Smelting = () => {
         />
       }
       {
-        ingotType === 'Starmetal' && 
+        type === 'Starmetal' && 
         <Tier3
           tpPrice={starmetalIngotPrice}
           price1={steelIngotToStarmetalIngot}
@@ -140,7 +140,7 @@ const Smelting = () => {
         />
       }
       {
-        ingotType === 'Orichalcum' && 
+        type === 'Orichalcum' && 
         <Tier4 
           tpPrice={orichalcumIngotPrice} 
           price1={starmetalIngotToOrichalcumIngot}
@@ -154,7 +154,7 @@ const Smelting = () => {
         />
       }
       {
-        ingotType === 'Asmodeum' && 
+        type === 'Asmodeum' && 
         <TierLegendary 
           tpPrice={asmodeumIngotPrice} 
           price1={orichalcumIngotToAsmodeumIngot}
