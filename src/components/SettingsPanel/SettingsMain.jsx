@@ -8,7 +8,13 @@ const SettingsMain = ({ toggleType, icons, titles, type }) => {
     <div className='settings-panel'>
       {
         titles.map((elem, i) => {
-          return <SettingsPanelButton icon={icons[i]} toggleType={toggleType} title={titles[i]} type={type} key={i} />
+          return <SettingsPanelButton 
+            icon={icons[i]} 
+            toggleType={toggleType} 
+            title={titles[i]} 
+            type={type} 
+            key={i}
+          />
         })
       }
     </div>

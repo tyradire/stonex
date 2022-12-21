@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import SettingsPanelButton from '../components/SettingsPanel/SettingsPanelButton';
+import React, { useEffect, useState } from 'react';
 
 import smelting from '../assets/smelting.png';
 import leatherworking from '../assets/leatherworking.png';
@@ -40,16 +39,15 @@ const Home = () => {
     'Woodworking'
   ]
 
+  useEffect(() => {
+    setResourcesType(localStorage.getItem('savedRes') || 'Smelting')
+  },[])
+
   return (
     <div className='page'>
       <h2 className='page__title'>Settings</h2>
       <div className='page__prices-selector'>
         <SettingsMain toggleType={setResourcesType} icons={icons} titles={titles} type={resourcesType} />
-        {/* <SettingsPanelButton icon={smelting} toggleType={setResourcesType} title={'Smelting'} type={resourcesType} />
-        <SettingsPanelButton icon={leatherworking} toggleType={setResourcesType} title={'Leatherworking'} type={resourcesType} />
-        <SettingsPanelButton icon={stonecutting} toggleType={setResourcesType} title={'Stonecutting'} type={resourcesType} />
-        <SettingsPanelButton icon={weaving} toggleType={setResourcesType} title={'Weaving'} type={resourcesType} />
-        <SettingsPanelButton icon={woodworking} toggleType={setResourcesType} title={'Woodworking'} type={resourcesType} /> */}
       </div>
       {resourcesType === 'Smelting' && <Prices data={smeltingData} />}
       {resourcesType === 'Leatherworking' && <Prices data={leatherworkingData} />}

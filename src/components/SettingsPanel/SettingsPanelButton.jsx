@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 const SettingsPanelButton = ({ icon, toggleType, title, type }) => {
 
   const swapType = () => {
     toggleType(title);
+    localStorage.setItem('savedRes', title);
   }
 
   return (
