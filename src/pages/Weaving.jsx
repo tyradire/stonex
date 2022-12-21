@@ -5,7 +5,7 @@ import linen from '../assets/icons/linen.png';
 import sateen from '../assets/icons/sateen.png';
 import silk from '../assets/icons/silk.png';
 import phoenixweave from '../assets/icons/phoenixweave.png';
-import infusedSilk from '../assets/icons/infused-silk.png';
+import infusedSilk from '../assets/icons/infusedsilk.png';
 import scalecloth from '../assets/icons/scalecloth.png';
 import blisterweave from '../assets/icons/blisterweave.png';
 import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
