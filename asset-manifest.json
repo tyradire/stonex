@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/stonex/static/css/main.81c217ae.css",
-    "main.js": "/stonex/static/js/main.554add42.js",
+    "main.css": "/stonex/static/css/main.24a01059.css",
+    "main.js": "/stonex/static/js/main.13e8b390.js",
     "static/media/weaving.png": "/stonex/static/media/weaving.636d8b1b60d4aafcfbf6.png",
     "static/media/woodworking.png": "/stonex/static/media/woodworking.fb59e719fff61899b987.png",
     "static/media/leatherworking.png": "/stonex/static/media/leatherworking.a6033110c99402977514.png",
@@ -43,11 +43,11 @@
     "static/media/blisterweave.png": "/stonex/static/media/blisterweave.c632ffbdcec06c0f32c2.png",
     "static/media/settings.svg": "/stonex/static/media/settings.d5ad7bd12504500dfd44f6e14e6c54e3.svg",
     "index.html": "/stonex/index.html",
-    "main.81c217ae.css.map": "/stonex/static/css/main.81c217ae.css.map",
-    "main.554add42.js.map": "/stonex/static/js/main.554add42.js.map"
+    "main.24a01059.css.map": "/stonex/static/css/main.24a01059.css.map",
+    "main.13e8b390.js.map": "/stonex/static/js/main.13e8b390.js.map"
   },
   "entrypoints": [
-    "static/css/main.81c217ae.css",
-    "static/js/main.554add42.js"
+    "static/css/main.24a01059.css",
+    "static/js/main.13e8b390.js"
   ]
 }
