@@ -21,126 +21,126 @@ export const smeltingData = [
   {
     title: 'charcoal',
     cost: 0.50,
-    id: 1,
+    id: 'sml1',
     raw: true,
     img: charcoal
   },
   {
     title: 'iron ore',
     cost: 1.50,
-    id: 2,
+    id: 'sml2',
     raw: false,
     img: ironOre
   },
   {
     title: 'silver ore',
     cost: 1.00,
-    id: 3,
+    id: 'sml3',
     raw: false,
     img: silverOre
   },
   {
     title: 'gold ore',
     cost: 1.00,
-    id: 4,
+    id: 'sml4',
     raw: false,
     img: goldOre
   },
   {
     title: 'platinum ore',
     cost: 1.00,
-    id: 5,
+    id: 'sml5',
     raw: false,
     img: platinumOre
   },
   {
     title: 'starmetal ore',
     cost: 1.00,
-    id: 6,
+    id: 'sml6',
     raw: false,
     img: starmetalOre
   },
   {
     title: 'orichalcum ore',
     cost: 2.00,
-    id: 7,
+    id: 'sml7',
     raw: false,
     img: orichalcumOre
   },
   {
     title: 'flux',
     cost: 0.50,
-    id: 8,
+    id: 'sml8',
     raw: false,
     img: flux
   },
   {
     title: 'iron ingot',
     cost: 2.50,
-    id: 9,
+    id: 'sml9',
     raw: true,
     img: ironIngot
   },
   {
     title: 'silver ingot',
     cost: 2.50,
-    id: 10,
+    id: 'sml10',
     raw: true,
     img: silverIngot
   },
   {
     title: 'steel ingot',
     cost: 2.50,
-    id: 11,
+    id: 'sml11',
     raw: true,
     img: steelIngot
   },
   {
     title: 'gold ingot',
     cost: 2.50,
-    id: 12,
+    id: 'sml12',
     raw: true,
     img: goldIngot
   },
   {
     title: 'platinum ingot',
     cost: 2.50,
-    id: 13,
+    id: 'sml13',
     raw: true,
     img: platinumIngot
   },
   {
     title: 'starmetal ingot',
     cost: 2.50,
-    id: 14,
+    id: 'sml14',
     raw: true,
     img: starmetalIngot
   },
   {
     title: 'orichalcum ingot',
     cost: 2.50,
-    id: 15,
+    id: 'sml15',
     raw: true,
     img: orichalcumIngot
   },
   {
     title: 'tolvium',
     cost: 18.50,
-    id: 16,
+    id: 'sml16',
     raw: false,
     img: tolvium
   },
   {
     title: 'cinnabar',
     cost: 18.50,
-    id: 17,
+    id: 'sml17',
     raw: false,
     img: cinnabar
   },
   {
     title: 'asmodeum',
     cost: 250.50,
-    id: 18,
+    id: 'sml18',
     raw: true,
     img: asmodeum
   },

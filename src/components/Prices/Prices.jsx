@@ -15,12 +15,10 @@ const Prices = ({ data }) => {
     setFinishedResources(data.filter(elem => !elem.raw));
   },[])
 
-  const clearStorage = () => {
-    localStorage.clear();
-  }
-
-  const saveToStorage = () => {
-    
+  const downloadDefaultPrices = () => {
+    data.map((el,i) => {
+      localStorage.setItem(data[i].id, Number(data[i].cost));
+    });
   }
 
   return (
@@ -46,8 +44,7 @@ const Prices = ({ data }) => {
           </form>
         </div>
         <PricesBottomPanel />
-        {/* <button className='prices__save-btn' onClick={saveToStorage}>save</button>
-        <button className='prices__del-btn' onClick={clearStorage}>full clear</button> */}
+        <button className='page__button' onClick={downloadDefaultPrices}>Use default prices</button>
       </>
     }
     </>

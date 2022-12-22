@@ -42,14 +42,14 @@ const Stonecutting = () => {
 
   useEffect(() => {
     let stone = localStorage.getItem('stn1');
-    let sandpaper = localStorage.getItem('stn6');
-    let lodestone = localStorage.getItem('stn7');
-    let extra = localStorage.getItem('stn8');
+    let sandpaper = localStorage.getItem('stn4');
+    let lodestone = localStorage.getItem('stn2');
+    let extra = localStorage.getItem('stn3');
 
-    let stBlock = localStorage.getItem('stn2');
-    let stBrick = localStorage.getItem('stn3');
-    let lodestoneBlock = localStorage.getItem('stn4');
-    let obsidianVoidStone = localStorage.getItem('stn5');
+    let stBlock = localStorage.getItem('stn5');
+    let stBrick = localStorage.getItem('stn6');
+    let lodestoneBlock = localStorage.getItem('stn7');
+    let obsidianVoidStone = localStorage.getItem('stn8');
     let runestone = localStorage.getItem('stn9');
 
     setStonePrice(Number(stone));

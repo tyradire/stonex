@@ -18,11 +18,11 @@ const Leatherworking = () => {
 
   const [type, setType] = useState('Coarse');
 
-  const [tanninPrice, setTanninPrice] = useState(Number(leatherworkingData[0].cost));
+  const [tanninPrice, setTanninPrice] = useState(Number(leatherworkingData[3].cost));
 
-  const [rawhidePrice, setRawhidePrice] = useState(Number(leatherworkingData[1].cost));
-  const [thickhidePrice, setThickPrice] = useState(Number(leatherworkingData[2].cost));
-  const [ironPrice, setIronPrice] = useState(Number(leatherworkingData[3].cost));
+  const [rawhidePrice, setRawhidePrice] = useState(Number(leatherworkingData[0].cost));
+  const [thickhidePrice, setThickPrice] = useState(Number(leatherworkingData[1].cost));
+  const [ironPrice, setIronPrice] = useState(Number(leatherworkingData[2].cost));
 
   const [coarsePrice, setCoarsePrice] = useState(Number(leatherworkingData[4].cost));
   const [ruggedPrice, setRuggedPrice] = useState(Number(leatherworkingData[5].cost));
@@ -48,15 +48,15 @@ const Leatherworking = () => {
     let thickhidePrice = localStorage.getItem('ltr2');
     let ironPrice = localStorage.getItem('ltr3');
 
-    let coarsePrice = localStorage.getItem('ltr4');
-    let ruggedPrice = localStorage.getItem('ltr5');
-    let layeredPrice = localStorage.getItem('ltr6');
-    let infusedPrice = localStorage.getItem('ltr7');
-    let runicPrice = localStorage.getItem('ltr10');
+    let coarsePrice = localStorage.getItem('ltr5');
+    let ruggedPrice = localStorage.getItem('ltr6');
+    let layeredPrice = localStorage.getItem('ltr7');
+    let infusedPrice = localStorage.getItem('ltr8');
+    let runicPrice = localStorage.getItem('ltr11');
 
-    let tanninPrice = localStorage.getItem('ltr0');
-    let smolderhidePrice = localStorage.getItem('ltr8');
-    let scarhidePrice = localStorage.getItem('ltr9');
+    let tanninPrice = localStorage.getItem('ltr4');
+    let smolderhidePrice = localStorage.getItem('ltr9');
+    let scarhidePrice = localStorage.getItem('ltr10');
 
     setRawhidePrice(Number(rawhidePrice));
     setThickPrice(Number(thickhidePrice));

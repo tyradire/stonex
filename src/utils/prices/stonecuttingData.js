@@ -19,49 +19,49 @@ export const stonecuttingData = [
   {
     title: 'lodestone',
     cost: 1.25,
-    id: 'stn7',
+    id: 'stn2',
     raw: false,
     img: lodestone
   },
   {
     title: 'extra lodestone',
     cost: 0.85,
-    id: 'stn8',
+    id: 'stn3',
     raw: false,
     img: extra
   },
   {
     title: 'sandpaper',
     cost: 0.05,
-    id: 'stn6',
+    id: 'stn4',
     raw: false,
     img: sandpaper
   },
   {
     title: 'stone block',
     cost: 0.25,
-    id: 'stn2',
+    id: 'stn5',
     raw: true,
     img: stoneblock
   },
   {
     title: 'stone brick',
     cost: 1.00,
-    id: 'stn3',
+    id: 'stn6',
     raw: true,
     img: stonebrick
   },
   {
     title: 'lodestone brick',
     cost: 3.25,
-    id: 'stn4',
+    id: 'stn7',
     raw: true,
     img: lodestonebrick
   },
   {
     title: 'obsidian voidstone',
     cost: 6.00,
-    id: 'stn5',
+    id: 'stn8',
     raw: true,
     img: obsidian
   },

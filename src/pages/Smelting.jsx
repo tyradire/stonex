@@ -45,20 +45,20 @@ const Smelting = () => {
   ]
 
   useEffect(() => {
-    let valIronOre = localStorage.getItem(2);
-    let valStarmetalOre = localStorage.getItem(6);
-    let valOruchalcumOre = localStorage.getItem(7);
+    let valIronOre = localStorage.getItem('sml2');
+    let valStarmetalOre = localStorage.getItem('sml6');
+    let valOruchalcumOre = localStorage.getItem('sml7');
 
-    let valIronIngot = localStorage.getItem(9);
-    let valSteelIngot = localStorage.getItem(11);
-    let valStarmetalIngot = localStorage.getItem(14);
-    let valOrichalcumIngot = localStorage.getItem(15);
-    let valAsmodeumIngot = localStorage.getItem(18);
+    let valIronIngot = localStorage.getItem('sml9');
+    let valSteelIngot = localStorage.getItem('sml11');
+    let valStarmetalIngot = localStorage.getItem('sml14');
+    let valOrichalcumIngot = localStorage.getItem('sml15');
+    let valAsmodeumIngot = localStorage.getItem('sml18');
 
-    let valCharcoal = localStorage.getItem(1);
-    let fluxCost = localStorage.getItem(8);
-    let tolviumCost = localStorage.getItem(16);
-    let cinnabarCost = localStorage.getItem(17);
+    let valCharcoal = localStorage.getItem('sml1');
+    let fluxCost = localStorage.getItem('sml8');
+    let tolviumCost = localStorage.getItem('sml16');
+    let cinnabarCost = localStorage.getItem('sml17');
 
     setIronOrePrice(Number(valIronOre));
     setStarmetalOrePrice(Number(valStarmetalOre));

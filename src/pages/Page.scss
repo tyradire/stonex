@@ -46,4 +46,16 @@
       color: #ffffff;
     }
   }
+  &__button {
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #607d8b;
+    color: #607d8b;
+    &:hover {
+      border: 1px solid #6b6b6b;
+      color: #6b6b6b;
+    }
+  }
 }
