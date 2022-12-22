@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { tax, smeltingItems } from '../../utils/prices/other';
 import './Prices.scss';
 
 const PricesBottomPanel = () => {
 
-  const [taxValue, setTaxValue] = useState(tax);
   const [equippedItems, setEquippedItems] = useState(JSON.parse(localStorage.getItem('bonusItems')) || []);
 
   useEffect(() => {
@@ -30,8 +28,7 @@ const PricesBottomPanel = () => {
     <div className='bottom-panel'>
       <form className='bottom-panel__form'>
         <label className='bottom-panel__label'>
-          <p>Tax%</p>
-          <input type="number" defaultValue={taxValue} className='bottom-panel__input' />
+          <p className=''>Armor with bonus +2% yield</p>
         </label>
         <label className='bottom-panel__label' htmlFor='equip-head'>
           <p>Head</p>

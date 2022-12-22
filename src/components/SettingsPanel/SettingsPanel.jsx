@@ -4,11 +4,6 @@ import SettingsPanelButton from './SettingsPanelButton';
 
 const SettingsPanel = ({ toggleType, icons, titles, type }) => {
 
-  const rarity = [
-    '_common',
-    '_legendary',
-  ]
-
   return (
     <div className='settings-panel'>
       {
