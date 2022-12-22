@@ -106,7 +106,6 @@ const Smelting = () => {
 
   return (
     <div className='page'>
-      <h2 className='page__title'>Smelting</h2>
       <SettingsPanel toggleType={setType} icons={icons} titles={titles} type={type} />
       <p className='page__subtitle'>{type} Ingot</p>
       {

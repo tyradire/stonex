@@ -8,8 +8,6 @@ const Navbar = () => {
 
   let location = useLocation();
 
-  console.log(location.pathname, publicRoutes[3])
-
   return (
     <nav className='navbar'>
       <Link to="/">
@@ -18,7 +16,7 @@ const Navbar = () => {
       {
         publicRoutes.slice(1).map(({path, title}, i) => 
           <Link className={path !== location.pathname ? 'navbar__link' : 'navbar__link navbar__link_active'} to={path} key={i}>
-            <p>{title}</p>
+            <p className='navbar__title'>{title}</p>
           </Link>
         )
       }
