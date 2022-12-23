@@ -47,10 +47,10 @@ const Woodworking = () => {
     let wyrdPrice = localStorage.getItem('woo3');
     let ironPrice =localStorage.getItem('woo4');
 
-    let timberPrice = localStorage.getItem('woo5');
-    let lumberPrice = localStorage.getItem('woo6');
-    let wyrdPlanksPrice = localStorage.getItem('woo7');
-    let ironPlanksPrice =localStorage.getItem('woo8');
+    let timberPrice = localStorage.getItem('woo6');
+    let lumberPrice = localStorage.getItem('woo7');
+    let wyrdPlanksPrice = localStorage.getItem('woo8');
+    let ironPlanksPrice =localStorage.getItem('woo9');
     let ebonyPrice = localStorage.getItem('woo12');
 
     setGreenwoodPrice(Number(greenPrice));
@@ -75,9 +75,9 @@ const Woodworking = () => {
   let timberToLumber = ingotToNextLvl(2,timberPrice, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
   let greenToLumber = ingotToNextLvl(2,greenToTimber, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
 
-  let lumberToWyrdwoodPlanks = ingotToHightTier(lumberPrice, wyrdplanksPrice, 0, sandpaperPrice, itemsEquipped);
-  let timberToWyrdwoodPlanks = ingotToHightTier(timberToLumber, wyrdplanksPrice, 0, sandpaperPrice, itemsEquipped);
-  let greenToWyrdwoodPlanks = ingotToHightTier(greenToLumber, wyrdplanksPrice, 0, sandpaperPrice, itemsEquipped);
+  let lumberToWyrdwoodPlanks = ingotToHightTier(lumberPrice, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let timberToWyrdwoodPlanks = ingotToHightTier(timberToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let greenToWyrdwoodPlanks = ingotToHightTier(greenToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
 
   let wyrdwoodToIron = ingotToTopTier(wyrdplanksPrice, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
   let lumberToIron = ingotToTopTier(lumberToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
@@ -131,7 +131,7 @@ const Woodworking = () => {
       {
         type === 'Wyrdwood planks' && 
         <Tier3
-          tpPrice={wyrdwoodPrice}
+          tpPrice={wyrdplanksPrice}
           price1={lumberToWyrdwoodPlanks}
           price1text={'- Wyrdwood planks from Lumber'}
           price2={timberToWyrdwoodPlanks}
