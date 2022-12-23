@@ -6,6 +6,7 @@ import {
   WEAVE_ROUTE, 
   WOOD_ROUTE 
 } from "./utils/consts";
+
 import Home from "./pages/Home";
 import Smelting from "./pages/Smelting";
 import Weaving from "./pages/Weaving";
