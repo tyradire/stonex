@@ -13,7 +13,7 @@ The application helps in calculating the cost of crafting basic resources.
 ### Download
 Web version is located at https://tyradire.github.io/stonex
 
-Also, you can download desktop version (based on Electron) [here](https://tyradire.github.io/stonex)
+Also, you can download desktop version (based on Electron) [here](https://github.com/tyradire/stonex/blob/main/desktop.zip)
 ### Screenshots
 ![Stonex App](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex-app.jpg "Stonex App")
 
