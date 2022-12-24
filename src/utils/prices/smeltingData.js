@@ -20,14 +20,14 @@ import asmodeum from '../../assets/icons/asmodeumingot.png';
 export const smeltingData = [
   {
     title: 'charcoal',
-    cost: 0.50,
+    cost: 0.38,
     id: 'sml1',
     raw: true,
     img: charcoal
   },
   {
     title: 'iron ore',
-    cost: 1.50,
+    cost: 0.50,
     id: 'sml2',
     raw: false,
     img: ironOre
@@ -55,70 +55,70 @@ export const smeltingData = [
   },
   {
     title: 'starmetal ore',
-    cost: 1.00,
+    cost: 0.95,
     id: 'sml6',
     raw: false,
     img: starmetalOre
   },
   {
     title: 'orichalcum ore',
-    cost: 2.00,
+    cost: 1.39,
     id: 'sml7',
     raw: false,
     img: orichalcumOre
   },
   {
     title: 'flux',
-    cost: 0.50,
+    cost: 0.28,
     id: 'sml8',
     raw: false,
     img: flux
   },
   {
     title: 'iron ingot',
-    cost: 2.50,
+    cost: 2.00,
     id: 'sml9',
     raw: true,
     img: ironIngot
   },
   {
     title: 'silver ingot',
-    cost: 2.50,
+    cost: 1.00,
     id: 'sml10',
     raw: true,
     img: silverIngot
   },
   {
     title: 'steel ingot',
-    cost: 2.50,
+    cost: 3.80,
     id: 'sml11',
     raw: true,
     img: steelIngot
   },
   {
     title: 'gold ingot',
-    cost: 2.50,
+    cost: 2.40,
     id: 'sml12',
     raw: true,
     img: goldIngot
   },
   {
     title: 'platinum ingot',
-    cost: 2.50,
+    cost: 6.88,
     id: 'sml13',
     raw: true,
     img: platinumIngot
   },
   {
     title: 'starmetal ingot',
-    cost: 2.50,
+    cost: 12.20,
     id: 'sml14',
     raw: true,
     img: starmetalIngot
   },
   {
     title: 'orichalcum ingot',
-    cost: 2.50,
+    cost: 22.50,
     id: 'sml15',
     raw: true,
     img: orichalcumIngot

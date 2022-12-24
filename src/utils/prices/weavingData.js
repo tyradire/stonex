@@ -13,7 +13,7 @@ import phoenixweave from '../../assets/icons/phoenixweave.png';
 export const weavingData = [
   {
     title: 'fibers',
-    cost: 0.15,
+    cost: 0.38,
     id: 'fib1',
     raw: false,
     img: fibers
@@ -41,28 +41,28 @@ export const weavingData = [
   },
   {
     title: 'linen',
-    cost: 0.25,
+    cost: 1.65,
     id: 'fib5',
     raw: true,
     img: linen
   },
   {
     title: 'sateen',
-    cost: 1.00,
+    cost: 2.15,
     id: 'fib6',
     raw: true,
     img: sateen
   },
   {
     title: 'silk',
-    cost: 3.25,
+    cost: 7.15,
     id: 'fib7',
     raw: true,
     img: silk
   },
   {
     title: 'infused silk',
-    cost: 6.00,
+    cost: 17.75,
     id: 'fib8',
     raw: true,
     img: infused
@@ -83,7 +83,7 @@ export const weavingData = [
   },
   {
     title: 'phoenixweave',
-    cost: 150.25,
+    cost: 155.25,
     id: 'fib11',
     raw: true,
     img: phoenixweave

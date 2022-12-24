@@ -78,10 +78,10 @@ const Stonecutting = () => {
   let stonesToObsidian = ingotToTopTier(lodestonePrice, stonesToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
 
   let obsidianToRunestone = upToLegendaty(obsidianPrice, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
-  let lodestoneToRunestone = upToLegendaty(obsidianPrice, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
-  let stoneBrickToRunestone = upToLegendaty(obsidianPrice, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
-  let stoneBlockToRunestone = upToLegendaty(obsidianPrice, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
-  let stonesToRunestone = upToLegendaty(obsidianPrice, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
+  let lodestoneToRunestone = upToLegendaty(lodestoneToObsidian, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
+  let stoneBrickToRunestone = upToLegendaty(stoneBrickToObsidian, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
+  let stoneBlockToRunestone = upToLegendaty(stoneBlockToObsidian, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
+  let stonesToRunestone = upToLegendaty(stonesToObsidian, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
 
   const titles = [
     'Stone block', 
