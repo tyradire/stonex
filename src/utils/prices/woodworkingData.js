@@ -14,28 +14,28 @@ import glittering from '../../assets/icons/glitteringebony.png';
 export const woodworkingData = [
   {
     title: 'green wood',
-    cost: 0.15,
+    cost: 0.18,
     id: 'woo1',
     raw: false,
     img: green
   },
   {
     title: 'aged wood',
-    cost: 1.25,
+    cost: 0.18,
     id: 'woo2',
     raw: false,
     img: aged
   },
   {
     title: 'wyrdwood',
-    cost: 0.85,
+    cost: 1.85,
     id: 'woo3',
     raw: false,
     img: wyrdwood
   },
   {
     title: 'ironwood',
-    cost: 0.05,
+    cost: 1.55,
     id: 'woo4',
     raw: false,
     img: ironwood
@@ -49,28 +49,28 @@ export const woodworkingData = [
   },
   {
     title: 'timber',
-    cost: 1.00,
+    cost: 0.80,
     id: 'woo6',
     raw: true,
     img: timber
   },
   {
     title: 'lumber',
-    cost: 3.25,
+    cost: 1.25,
     id: 'woo7',
     raw: true,
     img: lumber
   },
   {
     title: 'wyrdwood planks',
-    cost: 6.00,
+    cost: 12.00,
     id: 'woo8',
     raw: true,
     img: wyrdwoodPl
   },
   {
     title: 'ironwood planks',
-    cost: 6.00,
+    cost: 23.00,
     id: 'woo9',
     raw: true,
     img: ironwoodPl
@@ -91,7 +91,7 @@ export const woodworkingData = [
   },
   {
     title: 'glittering ebony',
-    cost: 156.00,
+    cost: 175.00,
     id: 'woo12',
     raw: true,
     img: glittering
