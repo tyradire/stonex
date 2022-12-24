@@ -3,11 +3,11 @@ ________
 The application helps in calculating the cost of crafting basic resources.
 ### Features
 1. What can a Stonex calculate:
-- any Smelting craft from raw resources to legendary
-- any Leatherworking craft from raw resources to legendary
+- Any Smelting craft from raw resources to legendary
+- Any Leatherworking craft from raw resources to legendary
 - Stonecutting craft from raw resources to legendary (excluding craft corrupted fragment)
-- any Weaving craft from raw resources to legendary
-- any Woodworking craft from raw resources to legendary
+- Any Weaving craft from raw resources to legendary
+- Any Woodworking craft from raw resources to legendary
 2. For convenience, Stonex filters from the most profitable option to the most expensive
 3. The application takes into account clothing that affects the production of additional resources
 ### Download
