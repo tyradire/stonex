@@ -1,19 +1,18 @@
 # Stonex
-________
-The application helps in calculating the cost of crafting basic resources.
+The application helps to calculate the cost of crafting basic resources.
 ### Features
-1. What can a Stonex calculate:
+1. Stonex can calculate:
 - Any Smelting craft from raw resources to legendary
 - Any Leatherworking craft from raw resources to legendary
-- Stonecutting craft from raw resources to legendary (excluding craft corrupted fragment)
+- Stonecutting craft from raw resources to legendary (exclude craft corrupted fragment)
 - Any Weaving craft from raw resources to legendary
 - Any Woodworking craft from raw resources to legendary
-2. For convenience, Stonex filters from the most profitable option to the most expensive
-3. The application takes into account clothing that affects the production of additional resources
+2. Stonex can filter from the most cheapest option to the most expensive.
+3. Stonex can apply yield set bonuses.
 ### Download
-Web version is located at https://tyradire.github.io/stonex
+Web version [here](https://tyradire.github.io/stonex)
 
-Also, you can download desktop version (based on Electron) [here](https://github.com/tyradire/stonex/blob/main/desktop.zip)
+Desktop version [here](https://github.com/tyradire/stonex/blob/main/desktop.zip)
 ### Screenshots
 ![Stonex App](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex-app.jpg "Stonex App")
 
