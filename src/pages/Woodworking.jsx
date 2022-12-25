@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
+import { upToThirdStage, upToSecondStage, upToFourthStage, upToFirstStage, upToLegendaty } from '../utils/prices/formulas';
 import { woodworkingData } from '../utils/prices/woodworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/Tiers/SortedList';
@@ -67,19 +67,19 @@ const Woodworking = () => {
 
   },[])
 
-  let greenToTimber = oreToIngot(4,greenwoodPrice,itemsEquipped);
+  let greenToTimber = upToFirstStage(4,greenwoodPrice,0.01,itemsEquipped);
 
-  let timberToLumber = ingotToNextLvl(2,timberPrice, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
-  let greenToLumber = ingotToNextLvl(2,greenToTimber, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
+  let timberToLumber = upToSecondStage(2,timberPrice, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
+  let greenToLumber = upToSecondStage(2,greenToTimber, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
 
-  let lumberToWyrdwoodPlanks = ingotToHightTier(lumberPrice, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
-  let timberToWyrdwoodPlanks = ingotToHightTier(timberToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
-  let greenToWyrdwoodPlanks = ingotToHightTier(greenToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let lumberToWyrdwoodPlanks = upToThirdStage(lumberPrice, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let timberToWyrdwoodPlanks = upToThirdStage(timberToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let greenToWyrdwoodPlanks = upToThirdStage(greenToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
 
-  let wyrdwoodToIron = ingotToTopTier(wyrdplanksPrice, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
-  let lumberToIron = ingotToTopTier(lumberToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
-  let timberToIron = ingotToTopTier(timberToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
-  let greenToIron = ingotToTopTier(greenToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let wyrdwoodToIron = upToFourthStage(wyrdplanksPrice, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let lumberToIron = upToFourthStage(lumberToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let timberToIron = upToFourthStage(timberToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let greenToIron = upToFourthStage(greenToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
 
   let ironToEbony = upToLegendaty(ironplanksPrice, 0, sandpaperPrice, wildwoodPrice, barbvinePrice, itemsEquipped);
   let wyrdwoodToEbony = upToLegendaty(wyrdwoodToIron, 0, sandpaperPrice, wildwoodPrice, barbvinePrice, itemsEquipped);

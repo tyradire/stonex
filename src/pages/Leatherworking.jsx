@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
+import { upToThirdStage, upToSecondStage, upToFourthStage, upToFirstStage, upToLegendaty } from '../utils/prices/formulas';
 import { leatherworkingData } from '../utils/prices/leatherworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/Tiers/SortedList';
@@ -71,19 +71,19 @@ const Leatherworking = () => {
     setScarhidePrice(Number(scarhidePrice))
   },[])
 
-  let rawhideToCoarseLeather = oreToIngot(4,rawhidePrice,itemsEquipped);
+  let rawhideToCoarseLeather = upToFirstStage(4,rawhidePrice,0.01,itemsEquipped);
 
-  let coarseLeatherToRuggedLeather = ingotToNextLvl(4,coarsePrice, 0, tanninPrice, itemsEquipped);
-  let rawhideToRuggedLeather = ingotToNextLvl(4,rawhideToCoarseLeather, 0, tanninPrice, itemsEquipped);
+  let coarseLeatherToRuggedLeather = upToSecondStage(4,coarsePrice, 0, tanninPrice, itemsEquipped);
+  let rawhideToRuggedLeather = upToSecondStage(4,rawhideToCoarseLeather, 0, tanninPrice, itemsEquipped);
 
-  let ruggedLeatherToLayeredLeather = ingotToHightTier(ruggedPrice, thickhidePrice, 0, tanninPrice, itemsEquipped);
-  let coarseLeatherToLayeredLeather = ingotToHightTier(coarseLeatherToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
-  let rawhideToLayeredLeather = ingotToHightTier(rawhideToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
+  let ruggedLeatherToLayeredLeather = upToThirdStage(ruggedPrice, thickhidePrice, 0, tanninPrice, itemsEquipped);
+  let coarseLeatherToLayeredLeather = upToThirdStage(coarseLeatherToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
+  let rawhideToLayeredLeather = upToThirdStage(rawhideToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
 
-  let layeredLeatherToInfusedLeather = ingotToTopTier(layeredPrice, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
-  let ruggedLeatherToInfusedLeather = ingotToTopTier(ruggedLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
-  let coarseLeatherToInfusedLeather = ingotToTopTier(coarseLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
-  let rawhideToInfusedLeather = ingotToTopTier(rawhideToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let layeredLeatherToInfusedLeather = upToFourthStage(layeredPrice, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let ruggedLeatherToInfusedLeather = upToFourthStage(ruggedLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let coarseLeatherToInfusedLeather = upToFourthStage(coarseLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let rawhideToInfusedLeather = upToFourthStage(rawhideToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
 
   let infusedToRunic = upToLegendaty(infusedPrice, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
   let layeredToRunic = upToLegendaty(layeredLeatherToInfusedLeather, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);

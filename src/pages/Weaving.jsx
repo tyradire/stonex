@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ingotToHightTier, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
+import { upToThirdStage, upToFourthStage, upToFirstStage, upToLegendaty } from '../utils/prices/formulas';
 import { weavingData } from '../utils/prices/weavingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/Tiers/SortedList';
@@ -71,19 +71,19 @@ const Weaving = () => {
     setBlisterweavePrice(Number(blisterweavePrice));
   },[])
 
-  let fibersToLinen = oreToIngot(4,fibersPrice,itemsEquipped);
+  let fibersToLinen = upToFirstStage(4,fibersPrice,0.01,itemsEquipped);
 
-  let linenToSateen = oreToIngot(4,linenPrice,itemsEquipped);
-  let fibersToSateen = oreToIngot(4,fibersToLinen,itemsEquipped);
+  let linenToSateen = upToFirstStage(4,linenPrice,0.01,itemsEquipped);
+  let fibersToSateen = upToFirstStage(4,fibersToLinen,0.01,itemsEquipped);
 
-  let sateenToSilk = ingotToHightTier(sateenPrice, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
-  let linenLeatherToSilk = ingotToHightTier(linenToSateen, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
-  let fibersToSilk = ingotToHightTier(fibersToSateen, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
+  let sateenToSilk = upToThirdStage(sateenPrice, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
+  let linenLeatherToSilk = upToThirdStage(linenToSateen, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
+  let fibersToSilk = upToThirdStage(fibersToSateen, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
 
-  let silkToInfusedSilk = ingotToTopTier(silkPrice, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
-  let sateenToInfusedSilk = ingotToTopTier(sateenToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
-  let linenToInfusedSilk = ingotToTopTier(linenLeatherToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
-  let fibersToInfusedSilk = ingotToTopTier(fibersToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let silkToInfusedSilk = upToFourthStage(silkPrice, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let sateenToInfusedSilk = upToFourthStage(sateenToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let linenToInfusedSilk = upToFourthStage(linenLeatherToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let fibersToInfusedSilk = upToFourthStage(fibersToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
 
   let infusedToPhoenixweave = upToLegendaty(infusedSilkPrice, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
   let silkToPhoenixweave = upToLegendaty(silkToInfusedSilk, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);

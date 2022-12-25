@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { oreToIngot, ingotToNextLvl, ingotToHightTier, ingotToTopTier, upToLegendaty, ingotToGold, ingotToPlat } from '../utils/prices/formulas';
+import { upToFirstStage, upToSecondStage, upToThirdStage, upToFourthStage, upToLegendaty, ingotToGold, ingotToPlat } from '../utils/prices/formulas';
 import { smeltingData } from '../utils/prices/smeltingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/Tiers/SortedList';
@@ -97,33 +97,33 @@ const Smelting = () => {
     setCinnabarPrice(Number(cinnabarCost));
   },[])
 
-  let ironOreToIronIngot = oreToIngot(4,ironOrePrice,itemsEquipped);
+  let ironOreToIronIngot = upToFirstStage(4,ironOrePrice,0.01,itemsEquipped);
 
-  let silverOreToSilverIngot = oreToIngot(4,silverOrePrice,itemsEquipped);
+  let silverOreToSilverIngot = upToFirstStage(4,silverOrePrice,0.01,itemsEquipped);
 
-  let ironIngotToSteelIngot = ingotToNextLvl(3,ironIngotPrice, charcoalPrice, fluxPrice, itemsEquipped);
-  let ironOreToSteelIngot = ingotToNextLvl(3,ironOreToIronIngot, charcoalPrice, fluxPrice, itemsEquipped);
+  let ironIngotToSteelIngot = upToSecondStage(3,ironIngotPrice, charcoalPrice, fluxPrice, itemsEquipped);
+  let ironOreToSteelIngot = upToSecondStage(3,ironOreToIronIngot, charcoalPrice, fluxPrice, itemsEquipped);
 
   let silverIngotToGoldIngot = ingotToGold(silverIngotPrice, goldOrePrice, fluxPrice, itemsEquipped);
   let silverOreToGoldIngot = ingotToGold(silverOreToSilverIngot, goldOrePrice, fluxPrice, itemsEquipped);
 
-  let steelIngotToStarmetalIngot = ingotToHightTier(steelIngotPrice, starmetalOrePrice, charcoalPrice, fluxPrice, itemsEquipped);
-  let ironIngotToStarmetalIngot = ingotToHightTier(ironIngotToSteelIngot, starmetalOrePrice, charcoalPrice, fluxPrice, itemsEquipped);
-  let ironOreToStarmetalIngot = ingotToHightTier(ironOreToSteelIngot, starmetalOrePrice, charcoalPrice, fluxPrice, itemsEquipped);
+  let steelIngotToStarmetalIngot = upToThirdStage(steelIngotPrice, starmetalOrePrice, charcoalPrice, fluxPrice, itemsEquipped);
+  let ironIngotToStarmetalIngot = upToThirdStage(ironIngotToSteelIngot, starmetalOrePrice, charcoalPrice, fluxPrice, itemsEquipped);
+  let ironOreToStarmetalIngot = upToThirdStage(ironOreToSteelIngot, starmetalOrePrice, charcoalPrice, fluxPrice, itemsEquipped);
 
   let goldIngotToPlatIngot = ingotToPlat(goldIngotPrice, platOrePrice, fluxPrice, itemsEquipped);
   let silverIngotToPlatIngot = ingotToPlat(silverIngotPrice, platOrePrice, fluxPrice, itemsEquipped);
   let silverOreToPlatIngot = ingotToPlat(silverOreToGoldIngot, platOrePrice, fluxPrice, itemsEquipped);
 
-  let starmetalIngotToOrichalcumIngot = ingotToTopTier(starmetalIngotPrice, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
-  let steelIngotToOrichalcumIngot = ingotToTopTier(steelIngotToStarmetalIngot, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
-  let ironIngotToOrichalcumIngot = ingotToTopTier(ironIngotToStarmetalIngot, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
-  let ironOreToOrichalcumIngot = ingotToTopTier(ironOreToStarmetalIngot, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let starmetalIngotToOrichalcumIngot = upToFourthStage(starmetalIngotPrice, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let steelIngotToOrichalcumIngot = upToFourthStage(steelIngotToStarmetalIngot, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let ironIngotToOrichalcumIngot = upToFourthStage(ironIngotToStarmetalIngot, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let ironOreToOrichalcumIngot = upToFourthStage(ironOreToStarmetalIngot, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
 
-  let platToOrichalcumIngot = ingotToTopTier(platIngotPrice*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
-  let goldIngotToOrichalcumIngot = ingotToTopTier(goldIngotToPlatIngot*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
-  let silverIngotToOrichalcumIngot = ingotToTopTier(silverIngotToPlatIngot*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
-  let silverOreToOrichalcumIngot = ingotToTopTier(silverOreToPlatIngot*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let platToOrichalcumIngot = upToFourthStage(platIngotPrice*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let goldIngotToOrichalcumIngot = upToFourthStage(goldIngotToPlatIngot*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let silverIngotToOrichalcumIngot = upToFourthStage(silverIngotToPlatIngot*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
+  let silverOreToOrichalcumIngot = upToFourthStage(silverOreToPlatIngot*1.5, orichalcumOrePrice, charcoalPrice, fluxPrice, itemsEquipped, 1.13);
 
   let orichalcumIngotToAsmodeumIngot = upToLegendaty(orichalcumIngotPrice, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
   let starmetalIngotToAsmodeumIngot = upToLegendaty(starmetalIngotToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);

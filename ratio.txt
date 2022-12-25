@@ -1,0 +1,27 @@
+iron ingot - 20%
+silver ingot - 20%
+gold ingot - 65%
+steel ingot - 93%
+platinum ingot - 38%
+starmetal ingot - 40%
+orichalcum ingot - 13%
+
+timber - 20%
+lumber - 93%
+wyrdwood planks - 40%
+ironwood planks - 13%
+
+stone block - 20%
+stone brick - 93%
+lodestone brick - 40%
+obsidian voidstone - 33%
+
+Linen - 20%
+Sateen - 93%
+Silk - 40%
+Infused silk - 13%
+
+Coarse leather - 20%
+Rugged leather - 93%
+Layered leather - 40%
+Infused leather - 13%

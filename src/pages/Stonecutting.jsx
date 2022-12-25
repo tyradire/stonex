@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
+import { blockToBrick, upToFourthStage, upToFirstStage, stoneToLodestone, upToLegendaty } from '../utils/prices/formulas';
 import { stonecuttingData } from '../utils/prices/stonecuttingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/Tiers/SortedList';
@@ -23,7 +23,7 @@ const Stonecutting = () => {
   
   const [stoneBlockPrice, setStoneBlockPrice] = useState(Number(stonecuttingData[4].cost));
   const [stoneBrickPrice, setStoneBrickPrice] = useState(Number(stonecuttingData[5].cost));
-  const [lodestoneBlockPrice, setLodestoneBlockPrice] = useState(Number(stonecuttingData[6].cost));
+  const [lodestoneBrickPrice, setLodestoneBrickPrice] = useState(Number(stonecuttingData[6].cost));
   const [obsidianPrice, setObsidianPrice] = useState(Number(stonecuttingData[7].cost));
   const [runestonePrice, setRunestonePrice] = useState(Number(stonecuttingData[8].cost));
 
@@ -52,7 +52,7 @@ const Stonecutting = () => {
     setStonePrice(Number(stone));
     setStoneBlockPrice(Number(stBlock));
     setStoneBrickPrice(Number(stBrick));
-    setLodestoneBlockPrice(Number(lodestoneBlock));
+    setLodestoneBrickPrice(Number(lodestoneBlock));
     setSandpaperPrice(Number(sandpaper));
     setObsidianPrice(Number(obsidianVoidStone));
     setLodestonePrice(Number(lodestone));
@@ -60,19 +60,19 @@ const Stonecutting = () => {
     setRunestonePrice(Number(runestone));
   }, [])
 
-  let stonesToStoneBlock = oreToIngot(4,stonePrice,itemsEquipped);
+  let stonesToStoneBlock = upToFirstStage(4,stonePrice,0.01,itemsEquipped);
 
-  let stoneBlockToStoneBrick = oreToIngot(4,stoneBlockPrice,itemsEquipped);
-  let stonesToStoneBrick = oreToIngot(4,stonesToStoneBlock,itemsEquipped);
+  let stoneBlockToStoneBrick = blockToBrick(4,stoneBlockPrice, sandpaperPrice, itemsEquipped);
+  let stonesToStoneBrick = blockToBrick(4,stonesToStoneBlock, sandpaperPrice, itemsEquipped);
 
-  let stoneBrickToLodestoneBlock = ingotToNextLvl(2,stoneBrickPrice,0,sandpaperPrice,itemsEquipped);
-  let stoneBlockToLodestoneBlock = ingotToNextLvl(2,stoneBlockToStoneBrick,0,sandpaperPrice,itemsEquipped);
-  let stonesToLodestoneBlock = ingotToNextLvl(2,stonesToStoneBrick,0,sandpaperPrice,itemsEquipped);
+  let stoneBrickToLodestoneBlock = stoneToLodestone(lodestonePrice,stoneBrickPrice,sandpaperPrice,itemsEquipped);
+  let stoneBlockToLodestoneBlock = stoneToLodestone(stoneBlockToStoneBrick,stoneBrickPrice,sandpaperPrice,itemsEquipped);
+  let stonesToLodestoneBlock = stoneToLodestone(stonesToStoneBrick,stoneBrickPrice,sandpaperPrice,itemsEquipped);
 
-  let lodestoneToObsidian = ingotToTopTier(lodestonePrice, lodestoneBlockPrice, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
-  let stoneBrickToObsidian = ingotToTopTier(lodestonePrice, stoneBrickToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
-  let stoneBlockToObsidian = ingotToTopTier(lodestonePrice, stoneBlockToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
-  let stonesToObsidian = ingotToTopTier(lodestonePrice, stonesToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let lodestoneToObsidian = upToFourthStage(lodestonePrice, lodestoneBrickPrice, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let stoneBrickToObsidian = upToFourthStage(lodestonePrice, stoneBrickToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let stoneBlockToObsidian = upToFourthStage(lodestonePrice, stoneBlockToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let stonesToObsidian = upToFourthStage(lodestonePrice, stonesToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
 
   let obsidianToRunestone = upToLegendaty(obsidianPrice, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
   let lodestoneToRunestone = upToLegendaty(lodestoneToObsidian, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
@@ -124,7 +124,7 @@ const Stonecutting = () => {
         type === 'Lodestone brick' && 
         <SortedList
           prices={[
-            lodestoneBlockPrice,
+            lodestoneBrickPrice,
             stoneBrickToLodestoneBlock,
             stoneBlockToLodestoneBlock,
             stonesToLodestoneBlock
