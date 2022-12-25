@@ -15,12 +15,6 @@ const Prices = ({ data }) => {
     setFinishedResources(data.filter(elem => !elem.raw));
   },[])
 
-  const downloadDefaultPrices = () => {
-    data.map((el,i) => {
-      localStorage.setItem(data[i].id, Number(data[i].cost));
-    });
-  }
-
   return (
     <>
     {
@@ -44,7 +38,6 @@ const Prices = ({ data }) => {
           </form>
         </div>
         <PricesBottomPanel />
-        <button className='page__button' onClick={downloadDefaultPrices}>Use default prices</button>
       </>
     }
     </>

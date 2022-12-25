@@ -6,9 +6,14 @@ const Price = ({ title, cost, id, img }) => {
   const [currentCost, setCurrentCost] = useState(localStorage.getItem(id) || cost);
   
   useEffect(() => {
-    let val = localStorage.getItem(id);
-    setCurrentCost(val);
-  }, [])
+    if (null === localStorage.getItem(id)) {
+      setCurrentCost(cost);
+      localStorage.setItem(id, cost);
+    } else {
+      let val = localStorage.getItem(id);
+      setCurrentCost(val);
+    }
+  },[])
 
   const changeCost = (e) => {
     setCurrentCost(Number(e.currentTarget.value))

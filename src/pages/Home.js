@@ -39,6 +39,8 @@ const Home = () => {
     'Woodworking'
   ]
 
+  
+
   useEffect(() => {
     setResourcesType(localStorage.getItem('savedRes') || 'Smelting')
   },[])
