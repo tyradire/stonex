@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
+import { woodworkingData } from '../utils/prices/woodworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
+import SortedList from '../components/Tiers/SortedList';
+
 import timber from '../assets/icons/timber.png';
 import lumber from '../assets/icons/lumber.png';
 import wyrdwood from '../assets/icons/wyrdwoodplanks.png';
 import ironwood from '../assets/icons/ironwoodplanks.png';
 import ebony from '../assets/icons/glitteringebony.png';
+
 import './Page.scss';
-import { woodworkingData } from '../utils/prices/woodworkingData';
-import { useEffect } from 'react';
-import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
-import Tier1 from '../components/Tiers/Tier1';
-import Tier2 from '../components/Tiers/Tier2';
-import Tier3 from '../components/Tiers/Tier3';
-import Tier4 from '../components/Tiers/Tier4';
-import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Woodworking = () => {
 
@@ -112,62 +109,87 @@ const Woodworking = () => {
       <p className='page__subtitle'>{type}</p>
       {
         type === 'Timber' &&
-        <Tier1 
-          tpPrice={timberPrice}
-          price1={greenToTimber}
-          price1text={'- Timber from Green wood'}
+        <SortedList
+          prices={[
+            timberPrice,
+            greenToTimber
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Timber from Green wood'
+          ]}
         />
       }
       {
         type === 'Lumber' && 
-        <Tier2 
-          tpPrice={lumberPrice}
-          price1={timberToLumber}
-          price1text={'- Lumber from Timber'}
-          price2={greenToLumber}
-          price2text={'- Lumber from Green wood'}
+        <SortedList
+          prices={[
+            lumberPrice,
+            timberToLumber,
+            greenToLumber
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Lumber from Timber',
+            '- Lumber from Green wood'
+          ]}
         />
       }
       {
         type === 'Wyrdwood planks' && 
-        <Tier3
-          tpPrice={wyrdplanksPrice}
-          price1={lumberToWyrdwoodPlanks}
-          price1text={'- Wyrdwood planks from Lumber'}
-          price2={timberToWyrdwoodPlanks}
-          price2text={'- Wyrdwood planks from Timber'}
-          price3={greenToWyrdwoodPlanks}
-          price3text={'- Wyrdwood planks from Green wood'}
+        <SortedList
+          prices={[
+            wyrdplanksPrice,
+            lumberToWyrdwoodPlanks,
+            timberToWyrdwoodPlanks,
+            greenToWyrdwoodPlanks
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Wyrdwood planks from Lumber',
+            '- Wyrdwood planks from Timber',
+            '- Wyrdwood planks from Green wood'
+          ]}
         />
       }
       {
         type === 'Ironwood planks' && 
-        <Tier4 
-          tpPrice={ironplanksPrice} 
-          price1={wyrdwoodToIron}
-          price1text={'- Ironwood planks from Wyrdwood planks'}
-          price2={lumberToIron}
-          price2text={'- Ironwood planks from Lumber'}
-          price3={timberToIron}
-          price3text={'- Ironwood planks from Timber'}
-          price4={greenToIron}
-          price4text={'- Ironwood planks from Green wood'}
+        <SortedList
+          prices={[
+            ironplanksPrice,
+            wyrdwoodToIron,
+            lumberToIron,
+            timberToIron,
+            greenToIron
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Ironwood planks from Wyrdwood planks',
+            '- Ironwood planks from Lumber',
+            '- Ironwood planks from Timber',
+            '- Ironwood planks from Green wood'
+          ]}
         />
       }
       {
         type === 'Glittering ebony' && 
-        <TierLegendary 
-          tpPrice={ebonyPrice} 
-          price1={ironToEbony}
-          price1text={'- Glittering ebony from Ironwood'}
-          price2={wyrdwoodToEbony}
-          price2text={'- Glittering ebony from Wyrdwood'}
-          price3={lumberToEbony}
-          price3text={'- Glittering ebony from Lumber'}
-          price4={timberToEbony}
-          price4text={'- Glittering ebony from Timber'}
-          price5={greenToEbony}
-          price5text={'- Glittering ebony from Green wood'}
+        <SortedList
+          prices={[
+            ebonyPrice,
+            ironToEbony,
+            wyrdwoodToEbony,
+            lumberToEbony,
+            timberToEbony,
+            greenToEbony
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Glittering ebony from Ironwood',
+            '- Glittering ebony from Wyrdwood planks',
+            '- Glittering ebony from Lumber',
+            '- Glittering ebony from Timber',
+            '- Glittering ebony from Green wood'
+          ]}
         />
       }
     </div>

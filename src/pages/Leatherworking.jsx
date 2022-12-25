@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
+import { leatherworkingData } from '../utils/prices/leatherworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
+import SortedList from '../components/Tiers/SortedList';
+
 import coarse from '../assets/icons/coarseleather.png';
 import rugged from '../assets/icons/ruggedleather.png';
 import layered from '../assets/icons/layeredleather.png';
 import infused from '../assets/icons/infusedleather.png';
 import runic from '../assets/icons/runicleather.png';
+
 import './Page.scss';
-import { leatherworkingData } from '../utils/prices/leatherworkingData';
-import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
-import Tier1 from '../components/Tiers/Tier1';
-import Tier2 from '../components/Tiers/Tier2';
-import Tier3 from '../components/Tiers/Tier3';
-import Tier4 from '../components/Tiers/Tier4';
-import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Leatherworking = () => {
 
@@ -107,62 +105,87 @@ const Leatherworking = () => {
       <p className='page__subtitle'>{type} Leather</p>
       {
         type === 'Coarse' &&
-        <Tier1 
-          tpPrice={coarsePrice}
-          price1={rawhideToCoarseLeather}
-          price1text={'- Coarse leather from Rawhide'}
+        <SortedList
+          prices={[
+            coarsePrice,
+            rawhideToCoarseLeather
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Coarse leather from Rawhide'
+          ]}
         />
       }
       {
         type === 'Rugged' && 
-        <Tier2 
-          tpPrice={ruggedPrice}
-          price1={coarseLeatherToRuggedLeather}
-          price1text={'- Rugged Leather from Coarse leather'}
-          price2={rawhideToRuggedLeather}
-          price2text={'- Rugged Leather from Rawhide'}
+        <SortedList
+          prices={[
+            ruggedPrice,
+            coarseLeatherToRuggedLeather,
+            rawhideToRuggedLeather
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Rugged Leather from Coarse leather',
+            '- Rugged Leather from Rawhide'
+          ]}
         />
       }
       {
         type === 'Layered' && 
-        <Tier3
-          tpPrice={layeredPrice}
-          price1={ruggedLeatherToLayeredLeather}
-          price1text={'- Layered leather from Rugged leather'}
-          price2={coarseLeatherToLayeredLeather}
-          price2text={'- Layered leather from Coarse leather'}
-          price3={rawhideToLayeredLeather}
-          price3text={'- Layered leather from Rawhide'}
+        <SortedList
+          prices={[
+            layeredPrice,
+            ruggedLeatherToLayeredLeather,
+            coarseLeatherToLayeredLeather,
+            rawhideToLayeredLeather
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Layered leather from Rugged leather',
+            '- Layered leather from Coarse leather',
+            '- Layered leather from Rawhide'
+          ]}
         />
       }
       {
         type === 'Infused' && 
-        <Tier4 
-          tpPrice={infusedPrice} 
-          price1={layeredLeatherToInfusedLeather}
-          price1text={'- Infused leather from Layered leather'}
-          price2={ruggedLeatherToInfusedLeather}
-          price2text={'- Infused leather from Rugged leather'}
-          price3={coarseLeatherToInfusedLeather}
-          price3text={'- Infused leather from Coarse leather'}
-          price4={rawhideToInfusedLeather}
-          price4text={'- Infused leather from Rawhide'}
+        <SortedList
+          prices={[
+            infusedPrice,
+            layeredLeatherToInfusedLeather,
+            ruggedLeatherToInfusedLeather,
+            coarseLeatherToInfusedLeather,
+            rawhideToInfusedLeather
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Infused leather from Layered leather',
+            '- Infused leather from Rugged leather',
+            '- Infused leather from Coarse leather',
+            '- Infused leather from Rawhide'
+          ]}
         />
       }
       {
         type === 'Runic' && 
-        <TierLegendary 
-          tpPrice={runicPrice} 
-          price1={infusedToRunic}
-          price1text={'- Runic leather from Infused leather'}
-          price2={layeredToRunic}
-          price2text={'- Runic leather from Layered leather'}
-          price3={ruggedToRunic}
-          price3text={'- Runic leather from Rugged leather'}
-          price4={coarseToRunic}
-          price4text={'- Runic leather from Coarse leather'}
-          price5={rawhideToRunic}
-          price5text={'- Runic leather from Rawhide'}
+        <SortedList
+          prices={[
+            runicPrice,
+            infusedToRunic,
+            layeredToRunic,
+            ruggedToRunic,
+            coarseToRunic,
+            rawhideToRunic
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Runic leather from Infused leather',
+            '- Runic leather from Layered leather',
+            '- Runic leather from Rugged leather',
+            '- Runic leather from Coarse leather',
+            '- Runic leather from Rawhide'
+          ]}
         />
       }
     </div>

@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
+import { ingotToHightTier, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
 import { weavingData } from '../utils/prices/weavingData';
+import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
+import SortedList from '../components/Tiers/SortedList';
+
 import linen from '../assets/icons/linen.png';
 import sateen from '../assets/icons/sateen.png';
 import silk from '../assets/icons/silk.png';
 import phoenixweave from '../assets/icons/phoenixweave.png';
 import infusedSilk from '../assets/icons/infusedsilk.png';
-import scalecloth from '../assets/icons/scalecloth.png';
-import blisterweave from '../assets/icons/blisterweave.png';
-import { ingotToHightTier, ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
-import Tier1 from '../components/Tiers/Tier1';
-import Tier2 from '../components/Tiers/Tier2';
-import Tier3 from '../components/Tiers/Tier3';
-import Tier4 from '../components/Tiers/Tier4';
+
 import './Page.scss';
-import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Weaving = () => {
 
@@ -109,62 +105,87 @@ const Weaving = () => {
       <p className='page__subtitle'>{type}</p>
       {
         type === 'Linen' &&
-        <Tier1 
-          tpPrice={linenPrice}
-          price1={fibersToLinen}
-          price1text={'- Linen from Fibers'}
+        <SortedList
+          prices={[
+            linenPrice,
+            fibersToLinen
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Linen from Fibers'
+          ]}
         />
       }
       {
         type === 'Sateen' && 
-        <Tier2 
-          tpPrice={sateenPrice}
-          price1={linenToSateen}
-          price1text={'- Sateen from Linen'}
-          price2={fibersToSateen}
-          price2text={'- Sateen from Fibers'}
+        <SortedList 
+          prices={[
+            sateenPrice,
+            linenToSateen,
+            fibersToSateen
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Sateen from Linen',
+            '- Sateen from Fibers'
+          ]}
         />
       }
       {
         type === 'Silk' && 
-        <Tier3
-          tpPrice={silkPrice}
-          price1={sateenToSilk}
-          price1text={'- Silk from Sateen'}
-          price2={linenLeatherToSilk}
-          price2text={'- Silk from Linen'}
-          price3={fibersToSilk}
-          price3text={'- Silk from Fibers'}
+        <SortedList
+          prices={[
+            silkPrice,
+            sateenToSilk,
+            linenLeatherToSilk,
+            fibersToSilk
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Silk from Sateen',
+            '- Silk from Linen',
+            '- Silk from Fibers'
+          ]}
         />
       }
       {
         type === 'Infused Silk' && 
-        <Tier4 
-          tpPrice={infusedSilkPrice} 
-          price1={silkToInfusedSilk}
-          price1text={'- Infused Silk from Silk'}
-          price2={sateenToInfusedSilk}
-          price2text={'- Infused Silk from Sateen'}
-          price3={linenToInfusedSilk}
-          price3text={'- Infused Silk from Linen'}
-          price4={fibersToInfusedSilk}
-          price4text={'- Infused Silk from Fibers'}
+        <SortedList
+          prices={[
+            infusedSilkPrice,
+            silkToInfusedSilk,
+            sateenToInfusedSilk,
+            linenToInfusedSilk,
+            fibersToInfusedSilk
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Infused Silk from Silk',
+            '- Infused Silk from Sateen',
+            '- Infused Silk from Linen',
+            '- Infused Silk from Fibers'
+          ]}
         />
       }
       {
         type === 'Phoenixweave' && 
-        <TierLegendary 
-          tpPrice={phoenixweavePrice} 
-          price1={infusedToPhoenixweave}
-          price1text={'- Phoenixweave from Infused silk'}
-          price2={silkToPhoenixweave}
-          price2text={'- Phoenixweave from Silk'}
-          price3={sateenToPhoenixweave}
-          price3text={'- Phoenixweave from Sateen'}
-          price4={linenToPhoenixweave}
-          price4text={'- Phoenixweave from Linen'}
-          price5={fibersToPhoenixweave}
-          price5text={'- Phoenixweave from Fibers'}
+        <SortedList
+          prices={[
+            phoenixweavePrice,
+            infusedToPhoenixweave,
+            silkToPhoenixweave,
+            sateenToPhoenixweave,
+            linenToPhoenixweave,
+            fibersToPhoenixweave
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Phoenixweave from Infused silk',
+            '- Phoenixweave from Silk',
+            '- Phoenixweave from Sateen',
+            '- Phoenixweave from Linen',
+            '- Phoenixweave from Fibers'
+          ]}
         />
       }
     </div>

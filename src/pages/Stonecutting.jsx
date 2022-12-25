@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
+import { stonecuttingData } from '../utils/prices/stonecuttingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
+import SortedList from '../components/Tiers/SortedList';
+
 import stoneblock from '../assets/icons/stoneblock.png';
 import stonebrick from '../assets/icons/stonebrick.png';
 import lodestonebrick from '../assets/icons/lodestonebrick.png';
 import obsidian from '../assets/icons/obsidianlodestone.png';
 import runestone from '../assets/icons/runestone.png';
+
 import './Page.scss';
-import { stonecuttingData } from '../utils/prices/stonecuttingData';
-import { useEffect } from 'react';
-import Tier1 from '../components/Tiers/Tier1';
-import { ingotToNextLvl, ingotToTopTier, oreToIngot, upToLegendaty } from '../utils/prices/formulas';
-import Tier2 from '../components/Tiers/Tier2';
-import Tier3 from '../components/Tiers/Tier3';
-import Tier4 from '../components/Tiers/Tier4';
-import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Stonecutting = () => {
 
@@ -97,62 +94,87 @@ const Stonecutting = () => {
       <p className='page__subtitle'>{type}</p>
       {
         type === 'Stone block' &&
-        <Tier1 
-          tpPrice={stoneBlockPrice}
-          price1={stonesToStoneBlock}
-          price1text={'- Stone block from Stones'}
+        <SortedList 
+          prices={[
+            stoneBlockPrice,
+            stonesToStoneBlock
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Stone block from Stones'
+          ]}
         />
       }
       {
         type === 'Stone brick' &&
-        <Tier2 
-          tpPrice={stoneBrickPrice}
-          price1={stoneBlockToStoneBrick}
-          price1text={'- Stone brick from Stone block'}
-          price2={stonesToStoneBrick}
-          price2text={'- Stone brick from Stones'}
+        <SortedList
+          prices={[
+            stoneBrickPrice,
+            stoneBlockToStoneBrick,
+            stonesToStoneBrick
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Stone brick from Stone block',
+            '- Stone brick from Stones'
+          ]}
         />
       }
       {
         type === 'Lodestone brick' && 
-        <Tier3
-          tpPrice={lodestoneBlockPrice}
-          price1={stoneBrickToLodestoneBlock}
-          price1text={'- Lodestone brick from Stone brick'}
-          price2={stoneBlockToLodestoneBlock}
-          price2text={'- Lodestone brick from Stone block'}
-          price3={stonesToLodestoneBlock}
-          price3text={'- Lodestone brick from Stones'}
+        <SortedList
+          prices={[
+            lodestoneBlockPrice,
+            stoneBrickToLodestoneBlock,
+            stoneBlockToLodestoneBlock,
+            stonesToLodestoneBlock
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Lodestone brick from Stone brick',
+            '- Lodestone brick from Stone block',
+            '- Lodestone brick from Stones'
+          ]}
         />
       }
       {
         type === 'Obsidian lodestone' && 
-        <Tier4 
-          tpPrice={obsidianPrice} 
-          price1={lodestoneToObsidian}
-          price1text={'- Obsidian lodestone from Lodestone brick'}
-          price2={stoneBrickToObsidian}
-          price2text={'- Obsidian lodestone from Stone brick'}
-          price3={stoneBlockToObsidian}
-          price3text={'- Obsidian lodestone from Stone block'}
-          price4={stonesToObsidian}
-          price4text={'- Obsidian lodestone from Stones'}
+        <SortedList
+          prices={[
+            obsidianPrice,
+            lodestoneToObsidian,
+            stoneBrickToObsidian,
+            stoneBlockToObsidian,
+            stonesToObsidian
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Obsidian lodestone from Lodestone brick',
+            '- Obsidian lodestone from Stone brick',
+            '- Obsidian lodestone from Stone block',
+            '- Obsidian lodestone from Stones'
+          ]}
         />
       }
       {
         type === 'Runestone' && 
-        <TierLegendary 
-          tpPrice={runestonePrice} 
-          price1={obsidianToRunestone}
-          price1text={'- Runestone from Obsidian'}
-          price2={lodestoneToRunestone}
-          price2text={'- Runestone from Lodestone'}
-          price3={stoneBrickToRunestone}
-          price3text={'- Runestone from Stone brick'}
-          price4={stoneBlockToRunestone}
-          price4text={'- Runestone from Stone block'}
-          price5={stonesToRunestone}
-          price5text={'- Runestone from Stones'}
+        <SortedList
+          prices={[
+            runestonePrice,
+            obsidianToRunestone,
+            lodestoneToRunestone,
+            stoneBrickToRunestone,
+            stoneBlockToRunestone,
+            stonesToRunestone
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Runestone from Obsidian',
+            '- Runestone from Lodestone brick',
+            '- Runestone from Stone brick',
+            '- Runestone from Stone block',
+            '- Runestone from Stones'
+          ]}
         />
       }
     </div>

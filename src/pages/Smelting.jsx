@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { oreToIngot, ingotToNextLvl, ingotToHightTier, ingotToTopTier, upToLegendaty, ingotToGold, ingotToPlat } from '../utils/prices/formulas';
 import { smeltingData } from '../utils/prices/smeltingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
+import SortedList from '../components/Tiers/SortedList';
+
 import ironIngot from '../assets/icons/ironingot.png';
 import silverIngot from '../assets/icons/silveringot.png';
 import steelIngot from '../assets/icons/steelingot.png';
@@ -10,13 +12,8 @@ import platinumIngot from '../assets/icons/platinumingot.png';
 import starmetalIngot from '../assets/icons/starmetalingot.png';
 import orichalcumIngot from '../assets/icons/orichalcumingot.png';
 import asmodeumIngot from '../assets/icons/asmodeumingot.png';
-import Tier4 from '../components/Tiers/Tier4';
-import Tier3 from '../components/Tiers/Tier3';
-import Tier2 from '../components/Tiers/Tier2';
-import Tier1 from '../components/Tiers/Tier1';
 
 import './Page.scss';
-import TierLegendary from '../components/Tiers/TierLegendary';
 
 const Smelting = () => {
 
@@ -130,8 +127,12 @@ const Smelting = () => {
 
   let orichalcumIngotToAsmodeumIngot = upToLegendaty(orichalcumIngotPrice, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
   let starmetalIngotToAsmodeumIngot = upToLegendaty(starmetalIngotToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
+  let platIngotToAsmodeumIngot = upToLegendaty(platToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
   let steelIngotToAsmodeumIngot = upToLegendaty(steelIngotToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
+  let goldIngotToAsmodeumIngot = upToLegendaty(goldIngotToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
+  let silverIngotToAsmodeumIngot = upToLegendaty(silverIngotToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
   let ironIngotToAsmodeumIngot = upToLegendaty(ironIngotToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
+  let silverOreToAsmodeumIngot = upToLegendaty(silverOreToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
   let ironOreToAsmodeumIngot = upToLegendaty(ironOreToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
 
   const titles = [
@@ -151,92 +152,146 @@ const Smelting = () => {
       <p className='page__subtitle'>{type} Ingot</p>
       {
         type === 'Iron' &&
-        <Tier1 
-          tpPrice={ironIngotPrice}
-          price1={ironOreToIronIngot}
-          price1text={'- Iron ingot from Iron ore'}
+        <SortedList
+          prices={[
+            ironIngotPrice,
+            ironOreToIronIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Iron ingot from Iron ore'
+          ]}
         />
       }
       {
         type === 'Silver' &&
-        <Tier1 
-          tpPrice={silverIngotPrice}
-          price1={silverOreToSilverIngot}
-          price1text={'- Silver ingot from Silver ore'}
+        <SortedList
+          prices={[
+            silverIngotPrice,
+            silverOreToSilverIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Silver ingot from Silver ore'
+          ]}
         />
       }
       {
         type === 'Steel' && 
-        <Tier2 
-          tpPrice={steelIngotPrice}
-          price1={ironIngotToSteelIngot}
-          price1text={'- Steel ingot from Iron ingot'}
-          price2={ironOreToSteelIngot}
-          price2text={'- Steel ingot from Iron ore'}
+        <SortedList
+          prices={[
+            steelIngotPrice,
+            ironIngotToSteelIngot,
+            ironOreToSteelIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Steel ingot from Iron ingot',
+            '- Steel ingot from Iron ore'
+          ]}
         />
       }
       {
         type === 'Gold' && 
-        <Tier2 
-          tpPrice={goldIngotPrice}
-          price1={silverIngotToGoldIngot}
-          price1text={'- Gold ingot from Silver ingot'}
-          price2={silverOreToGoldIngot}
-          price2text={'- Gold ingot from Silver ore'}
+        <SortedList 
+          prices={[
+            goldIngotPrice,
+            silverIngotToGoldIngot,
+            silverOreToGoldIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Gold ingot from Silver ingot',
+            '- Gold ingot from Silver ore'
+          ]}
         />
       }
       {
         type === 'Platinum' && 
-        <Tier3
-          tpPrice={platIngotPrice}
-          price1={goldIngotToPlatIngot}
-          price1text={'- Platinum ingot from Gold ingot'}
-          price2={silverIngotToPlatIngot}
-          price2text={'- Platinum ingot from Silver ingot'}
-          price3={silverOreToPlatIngot}
-          price3text={'- Platinum ingot from Silver ore'}
+        <SortedList
+          prices={[
+            platIngotPrice,
+            goldIngotToPlatIngot,
+            silverIngotToPlatIngot,
+            silverOreToPlatIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Platinum ingot from Gold ingot',
+            '- Platinum ingot from Silver ingot',
+            '- Platinum ingot from Silver ore'
+          ]}
         />
       }
       {
         type === 'Starmetal' && 
-        <Tier3
-          tpPrice={starmetalIngotPrice}
-          price1={steelIngotToStarmetalIngot}
-          price1text={'- Starmetal ingot from Steel ingot'}
-          price2={ironIngotToStarmetalIngot}
-          price2text={'- Starmetal ingot from Iron ingot'}
-          price3={ironOreToStarmetalIngot}
-          price3text={'- Starmetal ingot from Iron ore'}
+        <SortedList
+          prices={[
+            starmetalIngotPrice,
+            steelIngotToStarmetalIngot,
+            ironIngotToStarmetalIngot,
+            ironOreToStarmetalIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Starmetal ingot from Steel ingot',
+            '- Starmetal ingot from Iron ingot',
+            '- Starmetal ingot from Iron ore'
+          ]}
         />
       }
       {
-        type === 'Orichalcum' && 
-        <Tier4 
-          tpPrice={orichalcumIngotPrice} 
-          price1={starmetalIngotToOrichalcumIngot}
-          price1text={'- Orichalcum ingot from Starmetal ingot'}
-          price2={steelIngotToOrichalcumIngot}
-          price2text={'- Orichalcum ingot from Steel ingot'}
-          price3={ironIngotToOrichalcumIngot}
-          price3text={'- Orichalcum ingot from Iron ingot'}
-          price4={ironOreToOrichalcumIngot}
-          price4text={'- Orichalcum ingot from Iron ore'}
+        type === 'Orichalcum' &&
+        <SortedList
+          prices={[orichalcumIngotPrice, 
+            starmetalIngotToOrichalcumIngot,
+            platToOrichalcumIngot,
+            goldIngotToOrichalcumIngot,
+            steelIngotToOrichalcumIngot,
+            silverIngotToOrichalcumIngot,
+            ironIngotToOrichalcumIngot,
+            silverOreToOrichalcumIngot,
+            ironOreToOrichalcumIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Orichalcum ingot from Starmetal ingot',
+            '- Orichalcum ingot from Platinum ingot',
+            '- Orichalcum ingot from Gold ingot',
+            '- Orichalcum ingot from Steel ingot',
+            '- Orichalcum ingot from Silver ingot',
+            '- Orichalcum ingot from Iron ingot',
+            '- Orichalcum ingot from Silver ore',
+            '- Orichalcum ingot from Iron ore'
+          ]}
         />
       }
       {
         type === 'Asmodeum' && 
-        <TierLegendary 
-          tpPrice={asmodeumIngotPrice} 
-          price1={orichalcumIngotToAsmodeumIngot}
-          price1text={'- Asmodeum ingot from Orichalcum ingot'}
-          price2={starmetalIngotToAsmodeumIngot}
-          price2text={'- Asmodeum ingot from Starmetal ingot'}
-          price3={steelIngotToAsmodeumIngot}
-          price3text={'- Asmodeum ingot from Steel ingot'}
-          price4={ironIngotToAsmodeumIngot}
-          price4text={'- Asmodeum ingot from Iron ingot'}
-          price5={ironOreToAsmodeumIngot}
-          price5text={'- Asmodeum ingot from Iron ore'}
+        <SortedList 
+          prices={[asmodeumIngotPrice, 
+            orichalcumIngotToAsmodeumIngot,
+            starmetalIngotToAsmodeumIngot,
+            platIngotToAsmodeumIngot,
+            steelIngotToAsmodeumIngot,
+            goldIngotToAsmodeumIngot,
+            silverIngotToAsmodeumIngot,
+            ironIngotToAsmodeumIngot,
+            silverOreToAsmodeumIngot,
+            ironOreToAsmodeumIngot
+          ]}
+          texts={[
+            '- Price on trade post',
+            '- Asmodeum ingot from Orichalcum ingot',
+            '- Asmodeum ingot from Starmetal ingot',
+            '- Asmodeum ingot from Platinum ingot',
+            '- Asmodeum ingot from Steel ingot',
+            '- Asmodeum ingot from Gold ingot',
+            '- Asmodeum ingot from Silver ingot',
+            '- Asmodeum ingot from Iron ingot',
+            '- Asmodeum ingot from Silver ore',
+            '- Asmodeum ingot from Iron ore'
+          ]}
         />
       }
     </div>
