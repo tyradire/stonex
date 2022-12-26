@@ -20,8 +20,6 @@ import SettingsMain from '../components/SettingsPanel/SettingsMain';
 const Home = () => {
 
   const [resourcesType, setResourcesType] = useState('Smelting');
-  const [priceNumber, setPriceNumber] = useState(0);
-  const [leatherPrices, setLeatherPrices] = useState([]);
 
   const icons = [
     smelting,
@@ -39,10 +37,15 @@ const Home = () => {
     'Woodworking'
   ]
 
-  
+  const createPricesVariables = () => {
+    titles.map(el => localStorage.setItem(el, JSON.stringify({})))
+  }
 
   useEffect(() => {
-    setResourcesType(localStorage.getItem('savedRes') || 'Smelting')
+    setResourcesType(localStorage.getItem('savedRes') || 'Smelting');
+    if (null === localStorage.getItem('Smelting')) {
+      createPricesVariables();
+    } 
   },[])
 
   return (
@@ -51,11 +54,11 @@ const Home = () => {
       <div className='page__prices-selector'>
         <SettingsMain toggleType={setResourcesType} icons={icons} titles={titles} type={resourcesType} />
       </div>
-      {resourcesType === 'Smelting' && <Prices data={smeltingData} />}
-      {resourcesType === 'Leatherworking' && <Prices data={leatherworkingData} />}
-      {resourcesType === 'Stonecutting' && <Prices data={stonecuttingData} />}
-      {resourcesType === 'Weaving' && <Prices data={weavingData} />}
-      {resourcesType === 'Woodworking' && <Prices data={woodworkingData} />}
+      {resourcesType === 'Smelting' && <Prices data={smeltingData} type={titles[0]} />}
+      {resourcesType === 'Leatherworking' && <Prices data={leatherworkingData} type={titles[1]} />}
+      {resourcesType === 'Stonecutting' && <Prices data={stonecuttingData} type={titles[2]} />}
+      {resourcesType === 'Weaving' && <Prices data={weavingData} type={titles[3]} />}
+      {resourcesType === 'Woodworking' && <Prices data={woodworkingData} type={titles[4]} />}
     </div>
   )
 }

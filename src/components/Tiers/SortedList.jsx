@@ -2,8 +2,8 @@ import React from 'react';
 
 const SortedList = ({ prices, texts }) => {
 
-  let testArr = prices.map(function(elem,i) {
-    return {'price': elem, 'text': texts[i]}
+  let testArr = prices.map(function(el,i) {
+    return {'price': el, 'text': texts[i]}
   })
 
   const sortPrice = [...testArr].sort((a,b) => a.price - b.price)
