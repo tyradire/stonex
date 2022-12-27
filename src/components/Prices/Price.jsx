@@ -1,19 +1,20 @@
+import localforage from 'localforage';
 import React, { useEffect, useState } from 'react';
 import './Prices.scss';
 
-const Price = ({ title, cost, id, img }) => {
+const Price = ({ title, cost, id, img, type }) => {
 
   const [currentCost, setCurrentCost] = useState(localStorage.getItem(id) || cost);
   
-  useEffect(() => {
-    if (null === localStorage.getItem(id)) {
-      setCurrentCost(cost);
-      localStorage.setItem(id, cost);
-    } else {
-      let val = localStorage.getItem(id);
-      setCurrentCost(val);
-    }
-  },[])
+  // useEffect(() => {
+  //   if (null === localStorage.getItem(id)) {
+  //     setCurrentCost(cost);
+  //     localStorage.setItem(id, cost);
+  //   } else {
+  //     let val = localStorage.getItem(id);
+  //     setCurrentCost(val);
+  //   }
+  // },[])
 
   const changeCost = (e) => {
     setCurrentCost(Number(e.currentTarget.value))

@@ -7,7 +7,7 @@ The application helps to calculate the cost of crafting basic resources.
 - Stonecutting craft from raw resources to legendary (exclude craft corrupted fragment)
 - Any Weaving craft from raw resources to legendary
 - Any Woodworking craft from raw resources to legendary
-2. Stonex can filter from the most cheapest option to the most expensive.
+2. Stonex can filter from the cheapest option to the most expensive.
 3. Stonex can apply yield set bonuses.
 ### Download
 Web version [here](https://tyradire.github.io/stonex)

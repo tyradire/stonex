@@ -1,29 +1,41 @@
 import React, { useEffect, useState } from 'react';
 import Price from './Price';
 import PricesBottomPanel from './PricesBottomPanel';
-import './Prices.scss';
 import localforage from 'localforage';
+import './Prices.scss';
 
 const Prices = ({ data, type }) => {
 
   const [rawResources, setRawResources] = useState([]);
   const [finishedResources, setFinishedResources] = useState([]);
   const [showSpinner, setShowSpinner] = useState(false);
+  const [typeAvailable, setTypeAvailable] = useState(localStorage.getItem(`${type}`) !== null);
 
   const createPrices = () => {
-    var users = [ {id: 1, fullName: 'Matt'}, {id: 2, fullName: 'Bob'} ];
-    localforage.setItem('users', users, function(result) {
-    console.log(localforage.getItem('users'));
-});
+    let array = data.map(el => {
+        let result = {};
+        result.id = el.id;
+        result.title = el.title;
+        result.cost = el.cost;
+        result.raw = el.raw;
+        result.img = el.img;
+        return result
+      });
+    localStorage.setItem(`${type}`, true);
+    localforage.setItem(`${type}`, array, function(result) {
+      console.log(result);
+  });
   }
 
   useEffect(() => {
+    if (!typeAvailable) createPrices();
     setTimeout(() => {setShowSpinner(true)}, 250);
-    setRawResources(data.filter(elem => elem.raw));
-    setFinishedResources(data.filter(elem => !elem.raw));
-    if (3 > JSON.parse(localStorage.getItem(type).length)) {
-      createPrices();
-    }
+    localforage.getItem(type).then(function(value) {
+      setRawResources(value.filter(elem => elem.raw));
+      setFinishedResources(value.filter(elem => !elem.raw));
+  }).catch(function(err) {
+      console.log(err);
+  });
   },[])
 
   return (

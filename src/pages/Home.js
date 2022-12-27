@@ -19,7 +19,7 @@ import SettingsMain from '../components/SettingsPanel/SettingsMain';
 
 const Home = () => {
 
-  const [resourcesType, setResourcesType] = useState('Smelting');
+  const [resourcesType, setResourcesType] = useState('');
 
   const icons = [
     smelting,
@@ -37,15 +37,15 @@ const Home = () => {
     'Woodworking'
   ]
 
-  const createPricesVariables = () => {
-    titles.map(el => localStorage.setItem(el, JSON.stringify({})))
-  }
+  // const createPricesVariables = () => {
+  //   titles.map(el => localStorage.setItem(el, JSON.stringify({})))
+  // }
 
   useEffect(() => {
     setResourcesType(localStorage.getItem('savedRes') || 'Smelting');
-    if (null === localStorage.getItem('Smelting')) {
-      createPricesVariables();
-    } 
+    // if (null === localStorage.getItem('Smelting')) {
+    //   createPricesVariables();
+    // } 
   },[])
 
   return (
