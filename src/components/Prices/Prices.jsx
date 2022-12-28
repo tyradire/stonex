@@ -9,7 +9,6 @@ const Prices = ({ data, type }) => {
   const [rawResources, setRawResources] = useState([]);
   const [finishedResources, setFinishedResources] = useState([]);
   const [showSpinner, setShowSpinner] = useState(false);
-  const [typeAvailable, setTypeAvailable] = useState(localStorage.getItem(`${type}`) !== null);
 
   const createPrices = () => {
     let array = data.map(el => {
@@ -21,21 +20,25 @@ const Prices = ({ data, type }) => {
         result.img = el.img;
         return result
       });
-    localStorage.setItem(`${type}`, true);
-    localforage.setItem(`${type}`, array, function(result) {
-      console.log(result);
-  });
+      setRawResources(array.filter(elem => elem.raw));
+      setFinishedResources(array.filter(elem => !elem.raw));
+    localforage.setItem(`${type}`, array);
   }
 
   useEffect(() => {
-    if (!typeAvailable) createPrices();
     setTimeout(() => {setShowSpinner(true)}, 250);
-    localforage.getItem(type).then(function(value) {
-      setRawResources(value.filter(elem => elem.raw));
-      setFinishedResources(value.filter(elem => !elem.raw));
-  }).catch(function(err) {
+    localforage.getItem(type)
+    .then((value) => {
+      if (value === null) {
+        createPrices();
+      } else {
+        setRawResources(value.filter(elem => elem.raw));
+        setFinishedResources(value.filter(elem => !elem.raw));
+      }
+    })
+    .catch((err) => {
       console.log(err);
-  });
+    });
   },[])
 
   return (
@@ -48,14 +51,14 @@ const Prices = ({ data, type }) => {
           <form className='prices__column'>
             {
               rawResources.map(({title, cost, id, img}) => 
-                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} />
+                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} changePrice={changePrice} />
               )
             }
           </form>
           <form className='prices__column'>
             {
               finishedResources.map(({title, cost, id, img}) => 
-                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} />
+                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} changePrice={changePrice} />
               )
             }
           </form>

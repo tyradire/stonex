@@ -37,9 +37,6 @@ const Home = () => {
     'Woodworking'
   ]
 
-  // const createPricesVariables = () => {
-  //   titles.map(el => localStorage.setItem(el, JSON.stringify({})))
-  // }
 
   useEffect(() => {
     setResourcesType(localStorage.getItem('savedRes') || 'Smelting');
