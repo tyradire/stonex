@@ -14,6 +14,7 @@ import orichalcumIngot from '../assets/icons/orichalcumingot.png';
 import asmodeumIngot from '../assets/icons/asmodeumingot.png';
 
 import './Page.scss';
+import localforage from 'localforage';
 
 const Smelting = () => {
 
@@ -54,47 +55,32 @@ const Smelting = () => {
   ]
 
   useEffect(() => {
-    let valIronOre = localStorage.getItem('sml2');
-    let valSilverOre = localStorage.getItem('sml3');
-    let valGoldOre = localStorage.getItem('sml4');
-    let valPlatOre = localStorage.getItem('sml5');
-    let valStarmetalOre = localStorage.getItem('sml6');
-    let valOruchalcumOre = localStorage.getItem('sml7');
+    localforage.getItem('Smelting').then(function(value) {
+    setIronOrePrice(Number(value.filter(el => el.id === 'sml2')[0].cost));
+    setSilverOrePrice(Number(value.filter(el => el.id === 'sml3')[0].cost));
+    setGoldOrePrice(Number(value.filter(el => el.id === 'sml4')[0].cost));
+    setPlatOrePrice(Number(value.filter(el => el.id === 'sml5')[0].cost));
+    setStarmetalOrePrice(Number(value.filter(el => el.id === 'sml6')[0].cost));
+    setOrichalcumOrePrice(Number(value.filter(el => el.id === 'sml7')[0].cost));
 
-    let valIronIngot = localStorage.getItem('sml9');
-    let valSilverIngot = localStorage.getItem('sml10');
-    let valSteelIngot = localStorage.getItem('sml11');
-    let valGoldIngot = localStorage.getItem('sml12');
-    let valPlatIngot = localStorage.getItem('sml13');
-    let valStarmetalIngot = localStorage.getItem('sml14');
-    let valOrichalcumIngot = localStorage.getItem('sml15');
-    let valAsmodeumIngot = localStorage.getItem('sml18');
-
-    let valCharcoal = localStorage.getItem('sml1');
-    let fluxCost = localStorage.getItem('sml8');
-    let tolviumCost = localStorage.getItem('sml16');
-    let cinnabarCost = localStorage.getItem('sml17');
-
-    setIronOrePrice(Number(valIronOre));
-    setSilverOrePrice(Number(valSilverOre));
-    setGoldOrePrice(Number(valGoldOre));
-    setPlatOrePrice(Number(valPlatOre));
-    setStarmetalOrePrice(Number(valStarmetalOre));
-    setOrichalcumOrePrice(Number(valOruchalcumOre));
-
-    setIronIngotPrice(Number(valIronIngot));
-    setSilverIngotPrice(Number(valSilverIngot));
-    setSteelIngotPrice(Number(valSteelIngot));
-    setGoldIngotPrice(Number(valGoldIngot));
-    setPlatIngotPrice(Number(valPlatIngot));
-    setStarmetalIngotPrice(Number(valStarmetalIngot));
-    setOrichalcumIngotPrice(Number(valOrichalcumIngot));
-    setAsmodeumIngotPrice(Number(valAsmodeumIngot));
+    setIronIngotPrice(Number(value.filter(el => el.id === 'sml9')[0].cost));
+    setSilverIngotPrice(Number(value.filter(el => el.id === 'sml10')[0].cost));
+    setSteelIngotPrice(Number(value.filter(el => el.id === 'sml11')[0].cost));
+    setGoldIngotPrice(Number(value.filter(el => el.id === 'sml12')[0].cost));
+    setPlatIngotPrice(Number(value.filter(el => el.id === 'sml13')[0].cost));
+    setStarmetalIngotPrice(Number(value.filter(el => el.id === 'sml14')[0].cost));
+    setOrichalcumIngotPrice(Number(value.filter(el => el.id === 'sml15')[0].cost));
+    setAsmodeumIngotPrice(Number(value.filter(el => el.id === 'sml18')[0].cost));
     
-    setCharcoalPrice(Number(valCharcoal));
-    setFluxPrice(Number(fluxCost));
-    setTolviumPrice(Number(tolviumCost));
-    setCinnabarPrice(Number(cinnabarCost));
+    setCharcoalPrice(Number(value.filter(el => el.id === 'sml1')[0].cost));
+    setFluxPrice(Number(value.filter(el => el.id === 'sml8')[0].cost));
+    setTolviumPrice(Number(value.filter(el => el.id === 'sml16')[0].cost));
+    setCinnabarPrice(Number(value.filter(el => el.id === 'sml7')[0].cost));
+  }).catch(function(err) {
+
+      console.log(err);
+  });
+
   },[])
 
   let ironOreToIronIngot = upToFirstStage(4,ironOrePrice,0.01,itemsEquipped);

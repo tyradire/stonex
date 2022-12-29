@@ -51,14 +51,14 @@ const Prices = ({ data, type }) => {
           <form className='prices__column'>
             {
               rawResources.map(({title, cost, id, img}) => 
-                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} changePrice={changePrice} />
+                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} />
               )
             }
           </form>
           <form className='prices__column'>
             {
               finishedResources.map(({title, cost, id, img}) => 
-                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} changePrice={changePrice} />
+                <Price title={title} cost={cost} id={id} key={id} img={img} type={type} />
               )
             }
           </form>
