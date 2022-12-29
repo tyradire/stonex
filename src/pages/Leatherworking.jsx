@@ -11,6 +11,7 @@ import infused from '../assets/icons/infusedleather.png';
 import runic from '../assets/icons/runicleather.png';
 
 import './Page.scss';
+import localforage from 'localforage';
 
 const Leatherworking = () => {
 
@@ -42,33 +43,21 @@ const Leatherworking = () => {
   ]
 
   useEffect(() => {
-    let rawhidePrice = localStorage.getItem('ltr1');
-    let thickhidePrice = localStorage.getItem('ltr2');
-    let ironPrice = localStorage.getItem('ltr3');
-
-    let coarsePrice = localStorage.getItem('ltr5');
-    let ruggedPrice = localStorage.getItem('ltr6');
-    let layeredPrice = localStorage.getItem('ltr7');
-    let infusedPrice = localStorage.getItem('ltr8');
-    let runicPrice = localStorage.getItem('ltr11');
-
-    let tanninPrice = localStorage.getItem('ltr4');
-    let smolderhidePrice = localStorage.getItem('ltr9');
-    let scarhidePrice = localStorage.getItem('ltr10');
-
-    setRawhidePrice(Number(rawhidePrice));
-    setThickPrice(Number(thickhidePrice));
-    setIronPrice(Number(ironPrice));
-
-    setCoarsePrice(Number(coarsePrice));
-    setRuggedPrice(Number(ruggedPrice));
-    setLayeredPrice(Number(layeredPrice));
-    setInfusedPrice(Number(infusedPrice));
-    setRunicPrice(Number(runicPrice));
-
-    setTanninPrice(Number(tanninPrice));
-    setSmolderhidePrice(Number(smolderhidePrice));
-    setScarhidePrice(Number(scarhidePrice))
+    localforage.getItem('Leatherworking').then(function(value) {
+      setRawhidePrice(Number((value.filter(el => el.id === 'ltr1')[0].cost)));
+      setThickPrice(Number((value.filter(el => el.id === 'ltr2')[0].cost)));
+      setIronPrice(Number((value.filter(el => el.id === 'ltr3')[0].cost)));
+  
+      setCoarsePrice(Number((value.filter(el => el.id === 'ltr5')[0].cost)));
+      setRuggedPrice(Number((value.filter(el => el.id === 'ltr6')[0].cost)));
+      setLayeredPrice(Number((value.filter(el => el.id === 'ltr7')[0].cost)));
+      setInfusedPrice(Number((value.filter(el => el.id === 'ltr8')[0].cost)));
+      setRunicPrice(Number((value.filter(el => el.id === 'ltr11')[0].cost)));
+  
+      setTanninPrice(Number((value.filter(el => el.id === 'ltr4')[0].cost)));
+      setSmolderhidePrice(Number((value.filter(el => el.id === 'ltr9')[0].cost)));
+      setScarhidePrice(Number((value.filter(el => el.id === 'ltr10')[0].cost)))
+    });
   },[])
 
   let rawhideToCoarseLeather = upToFirstStage(4,rawhidePrice,0.01,itemsEquipped);

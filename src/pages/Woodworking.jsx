@@ -11,6 +11,7 @@ import ironwood from '../assets/icons/ironwoodplanks.png';
 import ebony from '../assets/icons/glitteringebony.png';
 
 import './Page.scss';
+import localforage from 'localforage';
 
 const Woodworking = () => {
 
@@ -34,37 +35,20 @@ const Woodworking = () => {
   const [itemsEquipped, setItemsEquipped] = useState((JSON.parse(localStorage.getItem('bonusItems')) || []).length);
 
   useEffect(() => {
-
-    let sandpaperPrice = localStorage.getItem('woo5');
-    let wildwoodPrice = localStorage.getItem('woo10');
-    let barbvinePrice = localStorage.getItem('woo11');
-
-    let greenPrice = localStorage.getItem('woo1');
-    let agedPrice = localStorage.getItem('woo2');
-    let wyrdPrice = localStorage.getItem('woo3');
-    let ironPrice =localStorage.getItem('woo4');
-
-    let timberPrice = localStorage.getItem('woo6');
-    let lumberPrice = localStorage.getItem('woo7');
-    let wyrdPlanksPrice = localStorage.getItem('woo8');
-    let ironPlanksPrice =localStorage.getItem('woo9');
-    let ebonyPrice = localStorage.getItem('woo12');
-
-    setGreenwoodPrice(Number(greenPrice));
-    setAgedwoodPrice(Number(agedPrice));
-    setWyrdwoodPrice(Number(wyrdPrice));
-    setIronwoodPrice(Number(ironPrice));
-
-    setTimberPrice(Number(timberPrice));
-    setLumberPrice(Number(lumberPrice));
-    setWyrdplanksPrice(Number(wyrdPlanksPrice));
-    setIronplanksPrice(Number(ironPlanksPrice));
-    setEbonyPrice(Number(ebonyPrice));
-
-    setSandpaperPrice(Number(sandpaperPrice));
-    setWildwoodPrice(Number(wildwoodPrice));
-    setBarbvinePrice(Number(barbvinePrice));
-
+    localforage.getItem('Woodworking').then(function(value) {
+      setGreenwoodPrice(Number((value.filter(el => el.id === 'woo1')[0].cost)));
+      setAgedwoodPrice(Number((value.filter(el => el.id === 'woo2')[0].cost)));
+      setWyrdwoodPrice(Number((value.filter(el => el.id === 'woo3')[0].cost)));
+      setIronwoodPrice(Number((value.filter(el => el.id === 'woo4')[0].cost)));
+      setTimberPrice(Number((value.filter(el => el.id === 'woo6')[0].cost)));
+      setLumberPrice(Number((value.filter(el => el.id === 'woo7')[0].cost)));
+      setWyrdplanksPrice(Number((value.filter(el => el.id === 'woo8')[0].cost)));
+      setIronplanksPrice(Number((value.filter(el => el.id === 'woo9')[0].cost)));
+      setEbonyPrice(Number((value.filter(el => el.id === 'woo12')[0].cost)));
+      setSandpaperPrice(Number((value.filter(el => el.id === 'woo5')[0].cost)));
+      setWildwoodPrice(Number((value.filter(el => el.id === 'woo10')[0].cost)));
+      setBarbvinePrice(Number((value.filter(el => el.id === 'woo11')[0].cost)));
+    });
   },[])
 
   let greenToTimber = upToFirstStage(4,greenwoodPrice,0.01,itemsEquipped);

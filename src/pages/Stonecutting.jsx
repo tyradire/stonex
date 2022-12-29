@@ -11,6 +11,7 @@ import obsidian from '../assets/icons/obsidianlodestone.png';
 import runestone from '../assets/icons/runestone.png';
 
 import './Page.scss';
+import localforage from 'localforage';
 
 const Stonecutting = () => {
 
@@ -38,26 +39,17 @@ const Stonecutting = () => {
   ]
 
   useEffect(() => {
-    let stone = localStorage.getItem('stn1');
-    let sandpaper = localStorage.getItem('stn4');
-    let lodestone = localStorage.getItem('stn2');
-    let extra = localStorage.getItem('stn3');
-
-    let stBlock = localStorage.getItem('stn5');
-    let stBrick = localStorage.getItem('stn6');
-    let lodestoneBlock = localStorage.getItem('stn7');
-    let obsidianVoidStone = localStorage.getItem('stn8');
-    let runestone = localStorage.getItem('stn9');
-
-    setStonePrice(Number(stone));
-    setStoneBlockPrice(Number(stBlock));
-    setStoneBrickPrice(Number(stBrick));
-    setLodestoneBrickPrice(Number(lodestoneBlock));
-    setSandpaperPrice(Number(sandpaper));
-    setObsidianPrice(Number(obsidianVoidStone));
-    setLodestonePrice(Number(lodestone));
-    setExtraLodestonePrice(Number(extra));
-    setRunestonePrice(Number(runestone));
+    localforage.getItem('Stonecutting').then(function(value) {
+      setStonePrice(Number((value.filter(el => el.id === 'stn1')[0].cost)));
+      setStoneBlockPrice(Number((value.filter(el => el.id === 'stn5')[0].cost)));
+      setStoneBrickPrice(Number((value.filter(el => el.id === 'stn6')[0].cost)));
+      setLodestoneBrickPrice(Number((value.filter(el => el.id === 'stn7')[0].cost)));
+      setSandpaperPrice(Number((value.filter(el => el.id === 'stn4')[0].cost)));
+      setObsidianPrice(Number((value.filter(el => el.id === 'stn8')[0].cost)));
+      setLodestonePrice(Number((value.filter(el => el.id === 'stn2')[0].cost)));
+      setExtraLodestonePrice(Number((value.filter(el => el.id === 'stn3')[0].cost)));
+      setRunestonePrice(Number((value.filter(el => el.id === 'stn9')[0].cost)));
+    });
   }, [])
 
   let stonesToStoneBlock = upToFirstStage(4,stonePrice,0.01,itemsEquipped);

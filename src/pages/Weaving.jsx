@@ -11,6 +11,7 @@ import phoenixweave from '../assets/icons/phoenixweave.png';
 import infusedSilk from '../assets/icons/infusedsilk.png';
 
 import './Page.scss';
+import localforage from 'localforage';
 
 const Weaving = () => {
 
@@ -42,33 +43,19 @@ const Weaving = () => {
   ]
 
   useEffect(() => {
-    let fibersPrice = localStorage.getItem('fib1');
-    let silkThreadsPrice = localStorage.getItem('fib2');
-    let wirefiberPrice = localStorage.getItem('fib3');
-
-    let linenPrice = localStorage.getItem('fib5');
-    let sateenPrice = localStorage.getItem('fib6');
-    let silkPrice = localStorage.getItem('fib7');
-    let infusedSilkPrice = localStorage.getItem('fib8');
-    let phoenixweavePrice = localStorage.getItem('fib11');
-
-    let wireweavePrice = localStorage.getItem('fib4');
-    let scaleclothPrice = localStorage.getItem('fib9');
-    let blisterweavePrice = localStorage.getItem('fib10');
-
-    setFibersPrice(Number(fibersPrice));
-    setSilkThreadsPrice(Number(silkThreadsPrice));
-    setWirefiberPrice(Number(wirefiberPrice));
-
-    setLinenPrice(Number(linenPrice));
-    setSateenPrice(Number(sateenPrice));
-    setSilkPrice(Number(silkPrice));
-    setInfusedSilkPrice(Number(infusedSilkPrice));
-    setPhoenixweavePrice(Number(phoenixweavePrice));
-
-    setWireweavePrice(Number(wireweavePrice));
-    setScaleclothPrice(Number(scaleclothPrice));
-    setBlisterweavePrice(Number(blisterweavePrice));
+    localforage.getItem('Weaving').then(function(value) {
+      setFibersPrice(Number((value.filter(el => el.id === 'fib1')[0].cost)));
+      setSilkThreadsPrice(Number((value.filter(el => el.id === 'fib2')[0].cost)));
+      setWirefiberPrice(Number((value.filter(el => el.id === 'fib3')[0].cost)));
+      setLinenPrice(Number((value.filter(el => el.id === 'fib5')[0].cost)));
+      setSateenPrice(Number((value.filter(el => el.id === 'fib6')[0].cost)));
+      setSilkPrice(Number((value.filter(el => el.id === 'fib7')[0].cost)));
+      setInfusedSilkPrice(Number((value.filter(el => el.id === 'fib8')[0].cost)));
+      setPhoenixweavePrice(Number((value.filter(el => el.id === 'fib11')[0].cost)));
+      setWireweavePrice(Number((value.filter(el => el.id === 'fib4')[0].cost)));
+      setScaleclothPrice(Number((value.filter(el => el.id === 'fib9')[0].cost)));
+      setBlisterweavePrice(Number((value.filter(el => el.id === 'fib10')[0].cost)));
+    });
   },[])
 
   let fibersToLinen = upToFirstStage(4,fibersPrice,0.01,itemsEquipped);
