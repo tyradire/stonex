@@ -25,3 +25,10 @@ Coarse leather - 20%
 Rugged leather - 93%
 Layered leather - 40%
 Infused leather - 13%
+
+// TAX
+0.01 ->
+0.04 ->
+0.06 ->
+0.12 ->
+0.17

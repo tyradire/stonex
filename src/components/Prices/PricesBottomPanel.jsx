@@ -28,7 +28,7 @@ const PricesBottomPanel = () => {
     <div className='bottom-panel'>
       <form className='bottom-panel__form'>
         <label className='bottom-panel__label'>
-          <p className=''>Armor with bonus +2% yield</p>
+          <p className=''>+2% yield items</p>
         </label>
         <label className='bottom-panel__label' htmlFor='equip-head'>
           <p>Head</p>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { upToThirdStage, upToFourthStage, upToFirstStage, upToLegendaty } from '../utils/prices/formulas';
+import { upToThirdStage, upToFourthStage, upToFirstStage, upToLegendaty, upToSecondStage } from '../utils/prices/formulas';
 import { weavingData } from '../utils/prices/weavingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/Tiers/SortedList';
@@ -60,8 +60,8 @@ const Weaving = () => {
 
   let fibersToLinen = upToFirstStage(4,fibersPrice,0.01,itemsEquipped);
 
-  let linenToSateen = upToFirstStage(4,linenPrice,0.01,itemsEquipped);
-  let fibersToSateen = upToFirstStage(4,fibersToLinen,0.01,itemsEquipped);
+  let linenToSateen = upToSecondStage(4,linenPrice,0,wireweavePrice,itemsEquipped);
+  let fibersToSateen = upToSecondStage(4,fibersToLinen,0,wireweavePrice,itemsEquipped);
 
   let sateenToSilk = upToThirdStage(sateenPrice, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
   let linenLeatherToSilk = upToThirdStage(linenToSateen, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
