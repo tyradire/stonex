@@ -1,3 +1,5 @@
+@import '../scss/variables.scss';
+
 .page {
   width: 620px;
   display: flex;
@@ -5,7 +7,7 @@
   align-items: center;
   margin: 0 auto;
   font-size: 28px;
-  color: rgb(106, 136, 165);
+  color: $text-color;
 
   &__title {
     margin: 0 0 20px;
@@ -27,36 +29,10 @@
     line-height: 1.2em;
     font-size: 500;
     &:first-of-type {
-      color: rgb(60, 114, 60);
+      color: $text-green;
     }
     &:last-of-type {
-      color: rgb(114, 60, 60);
-    }
-    &_tp-price {
-      color: rgb(211, 209, 95);
-    }
-  }
-  &__prices-btn {
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid #607d8b;
-    color: #607d8b;
-    padding: 10px;
-    margin-bottom: 10px;
-    &:hover {
-      color: #ffffff;
-    }
-  }
-  &__button {
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 5px;
-    background-color: transparent;
-    border: 1px solid #607d8b;
-    color: #607d8b;
-    &:hover {
-      border: 1px solid #f44336;
-      color: #f44336;
+      color: $text-red;
     }
   }
 }

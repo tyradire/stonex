@@ -56,14 +56,14 @@ const Woodworking = () => {
   let timberToLumber = upToSecondStage(2,timberPrice, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
   let greenToLumber = upToSecondStage(2,greenToTimber, agedwoodPrice*2, sandpaperPrice, itemsEquipped);
 
-  let lumberToWyrdwoodPlanks = upToThirdStage(lumberPrice, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
-  let timberToWyrdwoodPlanks = upToThirdStage(timberToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
-  let greenToWyrdwoodPlanks = upToThirdStage(greenToLumber, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let lumberToWyrdwoodPlanks = upToThirdStage(2, lumberPrice, 6, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let timberToWyrdwoodPlanks = upToThirdStage(2, timberToLumber, 6, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
+  let greenToWyrdwoodPlanks = upToThirdStage(2, greenToLumber, 6, wyrdwoodPrice, 0, sandpaperPrice, itemsEquipped);
 
-  let wyrdwoodToIron = upToFourthStage(wyrdplanksPrice, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
-  let lumberToIron = upToFourthStage(lumberToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
-  let timberToIron = upToFourthStage(timberToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
-  let greenToIron = upToFourthStage(greenToWyrdwoodPlanks, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let wyrdwoodToIron = upToFourthStage(2, wyrdplanksPrice, 8, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let lumberToIron = upToFourthStage(2, lumberToWyrdwoodPlanks, 8, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let timberToIron = upToFourthStage(2, timberToWyrdwoodPlanks, 8, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
+  let greenToIron = upToFourthStage(2, greenToWyrdwoodPlanks, 8, ironwoodPrice, 0, sandpaperPrice, itemsEquipped, 1.13);
 
   let ironToEbony = upToLegendaty(ironplanksPrice, 0, sandpaperPrice, wildwoodPrice, barbvinePrice, itemsEquipped);
   let wyrdwoodToEbony = upToLegendaty(wyrdwoodToIron, 0, sandpaperPrice, wildwoodPrice, barbvinePrice, itemsEquipped);

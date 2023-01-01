@@ -61,10 +61,10 @@ const Stonecutting = () => {
   let stoneBlockToLodestoneBlock = stoneToLodestone(stoneBlockToStoneBrick,stoneBrickPrice,sandpaperPrice,itemsEquipped);
   let stonesToLodestoneBlock = stoneToLodestone(stonesToStoneBrick,stoneBrickPrice,sandpaperPrice,itemsEquipped);
 
-  let lodestoneToObsidian = upToFourthStage(lodestonePrice, lodestoneBrickPrice, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
-  let stoneBrickToObsidian = upToFourthStage(lodestonePrice, stoneBrickToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
-  let stoneBlockToObsidian = upToFourthStage(lodestonePrice, stoneBlockToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
-  let stonesToObsidian = upToFourthStage(lodestonePrice, stonesToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let lodestoneToObsidian = upToFourthStage(2, lodestonePrice, 8, lodestoneBrickPrice, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let stoneBrickToObsidian = upToFourthStage(2, lodestonePrice, 8, stoneBrickToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let stoneBlockToObsidian = upToFourthStage(2, lodestonePrice, 8, stoneBlockToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
+  let stonesToObsidian = upToFourthStage(2, lodestonePrice, 8, stonesToLodestoneBlock, extraLodestonePrice/2, sandpaperPrice, itemsEquipped, 1.33);
 
   let obsidianToRunestone = upToLegendaty(obsidianPrice, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
   let lodestoneToRunestone = upToLegendaty(lodestoneToObsidian, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);

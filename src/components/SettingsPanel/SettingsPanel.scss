@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .settings-panel {
   display: flex;
   justify-content: center;
@@ -7,20 +9,20 @@
 .panel-button {
   width: 46px;
   height: 46px;
-  background-color: #233239;
+  background-color: transparent;
   background-position: center;
   background-size: contain;
-  border: 1px solid #607d8b;
+  border: 1px solid $border-color;
   cursor: pointer;
   margin-left: 8px;
   &:first-of-type {
     margin-left: 0;
   }
   &:hover {
-    background-color: #364a53;
+    background-color: $hover-color;
   }
   &_selected {
-    background-color: #364a53;
+    background-color: $hover-color;
   }
   &_common {
     background-color: transparent;

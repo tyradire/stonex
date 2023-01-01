@@ -1,3 +1,5 @@
+@import '../../scss/variables.scss';
+
 .prices {
   display: flex;
   width: 600px;
@@ -34,7 +36,7 @@
     height: 124px;
     margin: 8px;
     border-radius: 50%;
-    border: 6px solid #fff;
+    border: 6px solid #ffffff;
     border-color: #6a88a5 transparent #6a88a5 transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
@@ -76,9 +78,9 @@
     font-size: 500;
     -moz-appearance: textfield;
     -webkit-appearance: none;
-    background-color: #ffffff;
-    border: 1px solid #7a7a7a;
-    color: #607d8b;
+    background-color: $input-color;
+    border: 1px solid $border-color;
+    color: $text-input-color;
     font-size: 15px;
     line-height: 1;
     font-weight: 600;
@@ -98,7 +100,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 50%;
-    background-color: hsla(192, 11%, 9%, 0.4);
+    background-color: $dark-accent-color;
   }
 }
 
@@ -114,14 +116,14 @@
   width: 600px;
   border-radius: 10px;
   padding: 10px;
-  background-color: #373c47;
+  background-color: $light-accent-color;
   &__label {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 68px;
     height: 32px;
-    background-color: #282c34;
+    background-color: $main-color;
     border-radius: 8px;
     cursor: pointer;
 
@@ -136,7 +138,7 @@
       margin-left: 6px;
       border-radius: 6px;
       text-align: center;
-      border: 2px solid rgb(74, 74, 110);
+      border: 2px solid $border-color;
       outline: none;
     }
     &:first-of-type {
@@ -145,42 +147,6 @@
       height: auto;
       background-color: transparent;
     }
-  }
-  &__input {
-    padding: 2px;
-    width: 28px;
-    height: 14px;
-    border-radius: 6px;
-    text-align: center;
-    outline: none;
-    border: none;
-    font-size: 12px;
-    line-height: 1;
-    font-weight: 600;
-    background-color: #282c34;
-    color: #6a88a5;
-    -moz-appearance: textfield;
-    -webkit-appearance: none;
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-  }
-  &__counter {
-    margin-right: -14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  &__pointer {
-    border-radius: 4px;
-    color: #6a7d7d;
-    cursor: pointer;
-    width: 30px;
-    height: 14px;
-    font-size: 10px;
-    border: 1px solid #373c47;
-    background-color: #282c34;
   }
 }
 

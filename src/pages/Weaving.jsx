@@ -63,14 +63,14 @@ const Weaving = () => {
   let linenToSateen = upToSecondStage(4,linenPrice,0,wireweavePrice,itemsEquipped);
   let fibersToSateen = upToSecondStage(4,fibersToLinen,0,wireweavePrice,itemsEquipped);
 
-  let sateenToSilk = upToThirdStage(sateenPrice, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
-  let linenLeatherToSilk = upToThirdStage(linenToSateen, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
-  let fibersToSilk = upToThirdStage(fibersToSateen, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
+  let sateenToSilk = upToThirdStage(2, sateenPrice, 6, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
+  let linenLeatherToSilk = upToThirdStage(2, linenToSateen, 6, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
+  let fibersToSilk = upToThirdStage(2, fibersToSateen, 6, silkThreadsPrice, 0, wireweavePrice, itemsEquipped);
 
-  let silkToInfusedSilk = upToFourthStage(silkPrice, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
-  let sateenToInfusedSilk = upToFourthStage(sateenToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
-  let linenToInfusedSilk = upToFourthStage(linenLeatherToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
-  let fibersToInfusedSilk = upToFourthStage(fibersToSilk, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let silkToInfusedSilk = upToFourthStage(2, silkPrice, 8, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let sateenToInfusedSilk = upToFourthStage(2, sateenToSilk, 8, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let linenToInfusedSilk = upToFourthStage(2, linenLeatherToSilk, 8, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
+  let fibersToInfusedSilk = upToFourthStage(2, fibersToSilk, 8, wirefiberPrice, 0, wireweavePrice, itemsEquipped, 1.13);
 
   let infusedToPhoenixweave = upToLegendaty(infusedSilkPrice, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
   let silkToPhoenixweave = upToLegendaty(silkToInfusedSilk, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);

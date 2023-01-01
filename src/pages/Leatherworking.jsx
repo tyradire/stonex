@@ -65,14 +65,14 @@ const Leatherworking = () => {
   let coarseLeatherToRuggedLeather = upToSecondStage(4,coarsePrice, 0, tanninPrice, itemsEquipped);
   let rawhideToRuggedLeather = upToSecondStage(4,rawhideToCoarseLeather, 0, tanninPrice, itemsEquipped);
 
-  let ruggedLeatherToLayeredLeather = upToThirdStage(ruggedPrice, thickhidePrice, 0, tanninPrice, itemsEquipped);
-  let coarseLeatherToLayeredLeather = upToThirdStage(coarseLeatherToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
-  let rawhideToLayeredLeather = upToThirdStage(rawhideToRuggedLeather, thickhidePrice, 0, tanninPrice, itemsEquipped);
+  let ruggedLeatherToLayeredLeather = upToThirdStage(2, ruggedPrice, 6, thickhidePrice, 0, tanninPrice, itemsEquipped);
+  let coarseLeatherToLayeredLeather = upToThirdStage(2, coarseLeatherToRuggedLeather, 6, thickhidePrice, 0, tanninPrice, itemsEquipped);
+  let rawhideToLayeredLeather = upToThirdStage(2, rawhideToRuggedLeather, 6, thickhidePrice, 0, tanninPrice, itemsEquipped);
 
-  let layeredLeatherToInfusedLeather = upToFourthStage(layeredPrice, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
-  let ruggedLeatherToInfusedLeather = upToFourthStage(ruggedLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
-  let coarseLeatherToInfusedLeather = upToFourthStage(coarseLeatherToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
-  let rawhideToInfusedLeather = upToFourthStage(rawhideToLayeredLeather, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let layeredLeatherToInfusedLeather = upToFourthStage(2, layeredPrice, 8, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let ruggedLeatherToInfusedLeather = upToFourthStage(2, ruggedLeatherToLayeredLeather, 8, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let coarseLeatherToInfusedLeather = upToFourthStage(2, coarseLeatherToLayeredLeather, 8, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
+  let rawhideToInfusedLeather = upToFourthStage(2, rawhideToLayeredLeather, 8, ironPrice, 0, tanninPrice, itemsEquipped, 1.13);
 
   let infusedToRunic = upToLegendaty(infusedPrice, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
   let layeredToRunic = upToLegendaty(layeredLeatherToInfusedLeather, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);

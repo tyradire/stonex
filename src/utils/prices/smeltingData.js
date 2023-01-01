@@ -34,21 +34,21 @@ export const smeltingData = [
   },
   {
     title: 'silver ore',
-    cost: 1.00,
+    cost: 0.27,
     id: 'sml3',
     raw: false,
     img: silverOre
   },
   {
     title: 'gold ore',
-    cost: 1.00,
+    cost: 0.55,
     id: 'sml4',
     raw: false,
     img: goldOre
   },
   {
     title: 'platinum ore',
-    cost: 1.00,
+    cost: 0.75,
     id: 'sml5',
     raw: false,
     img: platinumOre
@@ -76,21 +76,21 @@ export const smeltingData = [
   },
   {
     title: 'iron ingot',
-    cost: 2.00,
+    cost: 1.65,
     id: 'sml9',
     raw: true,
     img: ironIngot
   },
   {
     title: 'silver ingot',
-    cost: 1.00,
+    cost: 0.55,
     id: 'sml10',
     raw: true,
     img: silverIngot
   },
   {
     title: 'steel ingot',
-    cost: 3.80,
+    cost: 3.20,
     id: 'sml11',
     raw: true,
     img: steelIngot
@@ -104,14 +104,14 @@ export const smeltingData = [
   },
   {
     title: 'platinum ingot',
-    cost: 6.88,
+    cost: 5.90,
     id: 'sml13',
     raw: true,
     img: platinumIngot
   },
   {
     title: 'starmetal ingot',
-    cost: 12.20,
+    cost: 10.64,
     id: 'sml14',
     raw: true,
     img: starmetalIngot
@@ -139,7 +139,7 @@ export const smeltingData = [
   },
   {
     title: 'asmodeum',
-    cost: 250.50,
+    cost: 225.50,
     id: 'sml18',
     raw: true,
     img: asmodeum

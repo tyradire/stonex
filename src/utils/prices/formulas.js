@@ -8,12 +8,12 @@ export const upToSecondStage = (amount,cost,reagent, refining, bonus) => {
   return Number(((amount*cost + reagent*2 + refining + 0.03)/(1.93 + 0.02*bonus)).toFixed(2));
 }
 
-export const upToThirdStage = (mainCost, secCost, reagent, refining, bonus) => {
-  return Number(((2*mainCost + 6*secCost + reagent*2 + refining + 0.05 )/(1.40 + 0.02*bonus)).toFixed(2));
+export const upToThirdStage = (mainAmount, mainCost, secAmount, secCost, reagent, refining, bonus) => {
+  return Number(((mainAmount*mainCost + secAmount*secCost + reagent*2 + refining + 0.05 )/(1.40 + 0.02*bonus)).toFixed(2));
 }
 
-export const upToFourthStage = (mainCost, secCost, reagent, refining, bonus, ratio) => {
-  return Number(((2*mainCost + 8*secCost + reagent*2 + refining + 0.08 )/(ratio + 0.02*bonus)).toFixed(2));
+export const upToFourthStage = (mainAmount, mainCost, secAmount, secCost, reagent, refining, bonus, ratio) => {
+  return Number(((mainAmount*mainCost + secAmount*secCost + reagent*2 + refining + 0.08 )/(ratio + 0.02*bonus)).toFixed(2));
 }
 
 export const upToLegendaty = (mainCost, reagent, refining, firstEpic, secondEpic, bonus) => {
