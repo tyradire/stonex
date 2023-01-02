@@ -59,6 +59,9 @@
   position: relative;
   margin: 4px 20px 4px 0;
   display: flex;
+  &:hover {
+    cursor: pointer;
+  }
 
   &__subtitle {
     margin: 0 0 0 30px;
@@ -87,6 +90,11 @@
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
       -webkit-appearance: none;
+    }
+    border: 2px solid transparent;
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $border-color;
     }
   }
 
