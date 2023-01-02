@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { upToFirstStage, upToSecondStage, upToThirdStage, upToFourthStage, upToLegendaty, ingotToGold, ingotToPlat } from '../utils/prices/formulas';
 import { smeltingData } from '../utils/prices/smeltingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
-import SortedList from '../components/Tiers/SortedList';
+import SortedList from '../components/SortedList/SortedList';
 
 import ironIngot from '../assets/icons/ironingot.png';
 import silverIngot from '../assets/icons/silveringot.png';
@@ -15,10 +15,12 @@ import asmodeumIngot from '../assets/icons/asmodeumingot.png';
 
 import './Page.scss';
 import localforage from 'localforage';
+import PopupInfo from '../UI/PopupInfo';
 
 const Smelting = () => {
 
   const [type, setType] = useState('Iron');
+  const [popupOpened, setPopupOpened] = useState(false);
 
   const [ironOrePrice, setIronOrePrice] = useState(Number(smeltingData[1].cost));
   const [silverOrePrice, setSilverOrePrice] = useState(Number(smeltingData[2].cost));
@@ -134,8 +136,12 @@ const Smelting = () => {
 
   return (
     <div className='page'>
+      <PopupInfo popupOpened={popupOpened} title={type} />
       <SettingsPanel toggleType={setType} icons={icons} titles={titles} type={type} />
-      <p className='page__subtitle'>{type} Ingot</p>
+      <div className='page__title-wrapper'>
+        <p className='page__subtitle'>{type} Ingot</p>
+        <button className='page__subtitle-btn' onClick={() => setPopupOpened(!popupOpened)}>i</button>
+      </div>
       {
         type === 'Iron' &&
         <SortedList

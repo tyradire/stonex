@@ -1,0 +1,21 @@
+@import '../scss/variables.scss';
+
+.popup-info {
+  display: none;
+  position: absolute;
+  top: 170px;
+  left: calc(50% - 160px);
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  background-color: $light-accent-color;
+
+  &_opened {
+    display: flex;
+  }
+  &__title {
+    margin: 0;
+  }
+}

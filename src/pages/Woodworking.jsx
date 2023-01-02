@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { upToThirdStage, upToSecondStage, upToFourthStage, upToFirstStage, upToLegendaty } from '../utils/prices/formulas';
 import { woodworkingData } from '../utils/prices/woodworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
-import SortedList from '../components/Tiers/SortedList';
+import SortedList from '../components/SortedList/SortedList';
 
 import timber from '../assets/icons/timber.png';
 import lumber from '../assets/icons/lumber.png';
@@ -12,10 +12,12 @@ import ebony from '../assets/icons/glitteringebony.png';
 
 import './Page.scss';
 import localforage from 'localforage';
+import PopupInfo from '../UI/PopupInfo';
 
 const Woodworking = () => {
 
   const [type, setType] = useState('Timber');
+  const [popupOpened, setPopupOpened] = useState(false);
 
   const [sandpaperPrice, setSandpaperPrice] = useState(Number(woodworkingData[4].cost));
   const [wildwoodPrice, setWildwoodPrice] = useState(Number(woodworkingData[9].cost));
@@ -89,8 +91,12 @@ const Woodworking = () => {
 
   return (
     <div className='page'>
+      <PopupInfo popupOpened={popupOpened} title={type} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
-      <p className='page__subtitle'>{type}</p>
+      <div className='page__title-wrapper'>
+        <p className='page__subtitle'>{type}</p>
+        <button className='page__subtitle-btn' onClick={() => setPopupOpened(!popupOpened)}>i</button>
+      </div>
       {
         type === 'Timber' &&
         <SortedList

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { upToThirdStage, upToSecondStage, upToFourthStage, upToFirstStage, upToLegendaty } from '../utils/prices/formulas';
 import { leatherworkingData } from '../utils/prices/leatherworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
-import SortedList from '../components/Tiers/SortedList';
+import SortedList from '../components/SortedList/SortedList';
 
 import coarse from '../assets/icons/coarseleather.png';
 import rugged from '../assets/icons/ruggedleather.png';
@@ -12,10 +12,12 @@ import runic from '../assets/icons/runicleather.png';
 
 import './Page.scss';
 import localforage from 'localforage';
+import PopupInfo from '../UI/PopupInfo';
 
 const Leatherworking = () => {
 
   const [type, setType] = useState('Coarse');
+  const [popupOpened, setPopupOpened] = useState(false);
 
   const [tanninPrice, setTanninPrice] = useState(Number(leatherworkingData[3].cost));
 
@@ -90,8 +92,12 @@ const Leatherworking = () => {
 
   return (
     <div className='page'>
+      <PopupInfo popupOpened={popupOpened} title={type} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
-      <p className='page__subtitle'>{type} Leather</p>
+      <div className='page__title-wrapper'>
+        <p className='page__subtitle'>{type} Leather</p>
+        <button className='page__subtitle-btn' onClick={() => setPopupOpened(!popupOpened)}>i</button>
+      </div>
       {
         type === 'Coarse' &&
         <SortedList

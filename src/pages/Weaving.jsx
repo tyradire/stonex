@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { upToThirdStage, upToFourthStage, upToFirstStage, upToLegendaty, upToSecondStage } from '../utils/prices/formulas';
 import { weavingData } from '../utils/prices/weavingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
-import SortedList from '../components/Tiers/SortedList';
+import SortedList from '../components/SortedList/SortedList';
 
 import linen from '../assets/icons/linen.png';
 import sateen from '../assets/icons/sateen.png';
@@ -12,10 +12,12 @@ import infusedSilk from '../assets/icons/infusedsilk.png';
 
 import './Page.scss';
 import localforage from 'localforage';
+import PopupInfo from '../UI/PopupInfo';
 
 const Weaving = () => {
 
   const [type, setType] = useState('Linen');
+  const [popupOpened, setPopupOpened] = useState(false);
 
   const [wireweavePrice, setWireweavePrice] = useState(Number(weavingData[3].cost));
 
@@ -88,8 +90,12 @@ const Weaving = () => {
 
   return (
     <div className='page'>
+      <PopupInfo popupOpened={popupOpened} title={type} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
-      <p className='page__subtitle'>{type}</p>
+      <div className='page__title-wrapper'>
+        <p className='page__subtitle'>{type}</p>
+        <button className='page__subtitle-btn' onClick={() => setPopupOpened(!popupOpened)}>i</button>
+      </div>
       {
         type === 'Linen' &&
         <SortedList

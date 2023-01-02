@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { blockToBrick, upToFourthStage, upToFirstStage, stoneToLodestone, upToLegendaty } from '../utils/prices/formulas';
 import { stonecuttingData } from '../utils/prices/stonecuttingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
-import SortedList from '../components/Tiers/SortedList';
+import SortedList from '../components/SortedList/SortedList';
 
 import stoneblock from '../assets/icons/stoneblock.png';
 import stonebrick from '../assets/icons/stonebrick.png';
@@ -12,10 +12,12 @@ import runestone from '../assets/icons/runestone.png';
 
 import './Page.scss';
 import localforage from 'localforage';
+import PopupInfo from '../UI/PopupInfo';
 
 const Stonecutting = () => {
 
   const [type, setType] = useState('Stone block');
+  const [popupOpened, setPopupOpened] = useState(false);
 
   const [stonePrice, setStonePrice] = useState(Number(stonecuttingData[0].cost));
   const [lodestonePrice, setLodestonePrice] = useState(Number(stonecuttingData[1].cost));
@@ -82,8 +84,12 @@ const Stonecutting = () => {
 
   return (
     <div className='page'>
+      <PopupInfo popupOpened={popupOpened} title={type} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
-      <p className='page__subtitle'>{type}</p>
+      <div className='page__title-wrapper'>
+        <p className='page__subtitle'>{type}</p>
+        <button className='page__subtitle-btn' onClick={() => setPopupOpened(!popupOpened)}>i</button>
+      </div>
       {
         type === 'Stone block' &&
         <SortedList 
