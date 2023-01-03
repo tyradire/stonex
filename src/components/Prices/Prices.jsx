@@ -18,6 +18,7 @@ const Prices = ({ data, type }) => {
         result.cost = el.cost;
         result.raw = el.raw;
         result.img = el.img;
+        result.ingridients = el.ingridients;
         return result
       });
       setRawResources(array.filter(elem => elem.raw));
