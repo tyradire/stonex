@@ -18,6 +18,7 @@ const Stonecutting = () => {
 
   const [type, setType] = useState('Stone block');
   const [popupOpened, setPopupOpened] = useState(false);
+  const [ingridients, setIngridients] = useState([]);
 
   const [stonePrice, setStonePrice] = useState(Number(stonecuttingData[0].cost));
   const [lodestonePrice, setLodestonePrice] = useState(Number(stonecuttingData[1].cost));
@@ -78,24 +79,13 @@ const Stonecutting = () => {
     'Stone block', 
     'Stone brick', 
     'Lodestone brick', 
-    'Obsidian lodestone',
+    'Obsidian voidstone',
     'Runestone'
   ]
 
-  const ingridients = [
-    {
-      unit: 'Orichalcum Ore',
-      amount: '8'
-    },
-    {
-      unit: 'Starmetal Ingot',
-      amount: '2',
-    },
-    {
-      unit: 'Charcoal',
-      amount: '2'
-    }
-  ]
+  useEffect(() => {
+    setIngridients(stonecuttingData.filter(el => el.title === type)[0].ingridients);
+  }, [type])
 
   return (
     <div className='page'>
@@ -158,7 +148,7 @@ const Stonecutting = () => {
         />
       }
       {
-        type === 'Obsidian lodestone' && 
+        type === 'Obsidian voidstone' && 
         <SortedList
           prices={[
             obsidianPrice,

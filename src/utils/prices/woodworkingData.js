@@ -17,83 +17,191 @@ export const woodworkingData = [
     cost: 0.18,
     id: 'woo1',
     raw: false,
-    img: green
+    img: green,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'aged wood',
     cost: 0.18,
     id: 'woo2',
     raw: false,
-    img: aged
+    img: aged,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'wyrdwood',
     cost: 1.85,
     id: 'woo3',
     raw: false,
-    img: wyrdwood
+    img: wyrdwood,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'ironwood',
     cost: 1.55,
     id: 'woo4',
     raw: false,
-    img: ironwood
+    img: ironwood,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'sandpaper',
     cost: 0.25,
     id: 'woo5',
     raw: false,
-    img: sandpaper
+    img: sandpaper,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
-    title: 'timber',
+    title: 'Timber',
     cost: 0.80,
     id: 'woo6',
     raw: true,
-    img: timber
+    img: timber,
+    ingridients: [
+      {
+        unit: 'green wood',
+        amount: '4'
+      }
+    ]
   },
   {
-    title: 'lumber',
+    title: 'Lumber',
     cost: 1.25,
     id: 'woo7',
     raw: true,
-    img: lumber
+    img: lumber,
+    ingridients: [
+      {
+        unit: 'aged wood',
+        amount: '4'
+      },
+      {
+        unit: 'timber',
+        amount: '2'
+      },
+      {
+        unit: 'sandpaper',
+        amount: '1'
+      }
+    ]
   },
   {
-    title: 'wyrdwood planks',
+    title: 'Wyrdwood planks',
     cost: 12.00,
     id: 'woo8',
     raw: true,
-    img: wyrdwoodPl
+    img: wyrdwoodPl,
+    ingridients: [
+      {
+        unit: 'wyrdwood',
+        amount: '6'
+      },
+      {
+        unit: 'lumber',
+        amount: '2'
+      },
+      {
+        unit: 'sandpaper',
+        amount: '1'
+      }
+    ]
   },
   {
-    title: 'ironwood planks',
+    title: 'Ironwood planks',
     cost: 23.00,
     id: 'woo9',
     raw: true,
-    img: ironwoodPl
+    img: ironwoodPl,
+    ingridients: [
+      {
+        unit: 'ironwood',
+        amount: '8'
+      },
+      {
+        unit: 'wyrdwood planks',
+        amount: '2'
+      },
+      {
+        unit: 'sandpaper',
+        amount: '1'
+      }
+    ]
   },
   {
     title: 'wildwood',
     cost: 8.50,
     id: 'woo10',
     raw: false,
-    img: wildwood
+    img: wildwood,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'barbvine',
     cost: 9.00,
     id: 'woo11',
     raw: false,
-    img: barbvine
+    img: barbvine,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
-    title: 'glittering ebony',
+    title: 'Glittering ebony',
     cost: 175.00,
     id: 'woo12',
     raw: true,
-    img: glittering
+    img: glittering,
+    ingridients: [
+      {
+        unit: 'ironwood planks',
+        amount: '5'
+      },
+      {
+        unit: 'wildwood',
+        amount: '1'
+      },
+      {
+        unit: 'barbvine',
+        amount: '1'
+      },
+      {
+        unit: 'sandpaper',
+        amount: '1'
+      }
+    ]
   }
 ]

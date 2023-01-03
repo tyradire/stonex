@@ -185,5 +185,5 @@ export const leatherworkingData = [
         amount: '1'
       }
     ]
-  },
+  }
 ]

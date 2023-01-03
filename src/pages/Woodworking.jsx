@@ -18,6 +18,7 @@ const Woodworking = () => {
 
   const [type, setType] = useState('Timber');
   const [popupOpened, setPopupOpened] = useState(false);
+  const [ingridients, setIngridients] = useState([]);
 
   const [sandpaperPrice, setSandpaperPrice] = useState(Number(woodworkingData[4].cost));
   const [wildwoodPrice, setWildwoodPrice] = useState(Number(woodworkingData[9].cost));
@@ -89,20 +90,9 @@ const Woodworking = () => {
     'Glittering ebony'
   ]
 
-  const ingridients = [
-    {
-      unit: 'Orichalcum Ore',
-      amount: '8'
-    },
-    {
-      unit: 'Starmetal Ingot',
-      amount: '2',
-    },
-    {
-      unit: 'Charcoal',
-      amount: '2'
-    }
-  ]
+  useEffect(() => {
+    setIngridients(woodworkingData.filter(el => el.title === type)[0].ingridients);
+  }, [type])
 
   return (
     <div className='page'>

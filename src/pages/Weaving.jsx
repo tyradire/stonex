@@ -18,6 +18,7 @@ const Weaving = () => {
 
   const [type, setType] = useState('Linen');
   const [popupOpened, setPopupOpened] = useState(false);
+  const [ingridients, setIngridients] = useState([]);
 
   const [wireweavePrice, setWireweavePrice] = useState(Number(weavingData[3].cost));
 
@@ -84,24 +85,13 @@ const Weaving = () => {
     'Linen', 
     'Sateen', 
     'Silk', 
-    'Infused Silk',
+    'Infused silk',
     'Phoenixweave'
   ]
 
-  const ingridients = [
-    {
-      unit: 'Orichalcum Ore',
-      amount: '8'
-    },
-    {
-      unit: 'Starmetal Ingot',
-      amount: '2',
-    },
-    {
-      unit: 'Charcoal',
-      amount: '2'
-    }
-  ]
+  useEffect(() => {
+    setIngridients(weavingData.filter(el => el.title === type)[0].ingridients);
+  }, [type])
 
   return (
     <div className='page'>

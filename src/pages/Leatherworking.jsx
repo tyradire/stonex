@@ -92,7 +92,6 @@ const Leatherworking = () => {
   ]
 
   useEffect(() => {
-    console.log(leatherworkingData)
     setIngridients(leatherworkingData.filter(el => el.title === type)[0].ingridients);
   }, [type])
 
