@@ -28,17 +28,19 @@
     font-weight: 600;
   }
   &__subtitle-btn {
+    display: flex;
+    box-sizing: border-box;
     cursor: pointer;
-    margin: 0 0 0 10px;
     margin-left: 10px;
-    font-size: 12px;
-    line-height: .5;
-    font-weight: 700;
-    padding: 7px;
-    border-radius: 50%;
-    background-color: $hover-color;
-    color: $text-link-color;
-    border: 1px solid $border-color;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    &:hover path:last-of-type {
+      fill: $hover-color;
+    }
+    &_opened path:last-of-type {
+      fill: $hover-color;
+    }
   }
   &__unit {
     margin: 0;

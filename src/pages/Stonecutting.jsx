@@ -82,13 +82,35 @@ const Stonecutting = () => {
     'Runestone'
   ]
 
+  const ingridients = [
+    {
+      unit: 'Orichalcum Ore',
+      amount: '8'
+    },
+    {
+      unit: 'Starmetal Ingot',
+      amount: '2',
+    },
+    {
+      unit: 'Charcoal',
+      amount: '2'
+    }
+  ]
+
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} />
+      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
         <p className='page__subtitle'>{type}</p>
-        <button className='page__subtitle-btn' onClick={() => setPopupOpened(!popupOpened)}>i</button>
+        <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
+          <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path fill="none" d="M0 0h24v24H0z"/>
+              <path fill="#6988a5" d="M20 22H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1zm-1-2V4H5v16h14zM8 7h8v2H8V7zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"/>
+            </g>
+          </svg>
+        </button>
       </div>
       {
         type === 'Stone block' &&
