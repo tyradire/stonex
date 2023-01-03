@@ -16,76 +16,174 @@ export const leatherworkingData = [
     cost: 0.30,
     id: 'ltr1',
     raw: false,
-    img: rawhide
+    img: rawhide,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'thick hide',
     cost: 0.62,
     id: 'ltr2',
     raw: false,
-    img: thickhide
+    img: thickhide,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'iron hide',
     cost: 0.38,
     id: 'ltr3',
     raw: false,
-    img: ironhide
+    img: ironhide,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
     title: 'tannin',
     cost: 0.20,
     id: 'ltr4',
     raw: false,
-    img: tannin
+    img: tannin,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
-    title: 'coarse leather',
+    title: 'Coarse leather',
     cost: 1.35,
     id: 'ltr5',
     raw: true,
-    img: coarse
+    img: coarse,
+    ingridients: [
+      {
+        unit: 'rawhide',
+        amount: '4'
+      }
+    ]
   },
   {
-    title: 'rugged leather',
+    title: 'Rugged leather',
     cost: 2.75,
     id: 'ltr6',
     raw: true,
-    img: rugged
+    img: rugged,
+    ingridients: [
+      {
+        unit: 'coarse leather',
+        amount: '4'
+      },
+      {
+        unit: 'tannin',
+        amount: '1'
+      }
+    ]
   },
   {
-    title: 'layered leather',
+    title: 'Layered leather',
     cost: 6.00,
     id: 'ltr7',
     raw: true,
-    img: layered
+    img: layered,
+    ingridients: [
+      {
+        unit: 'thick hide',
+        amount: '6'
+      },
+      {
+        unit: 'rugged leather',
+        amount: '2'
+      },
+      {
+        unit: 'tannin',
+        amount: '1'
+      }
+    ]
   },
   {
-    title: 'infused leather',
+    title: 'Infused leather',
     cost: 14.00,
     id: 'ltr8',
     raw: true,
-    img: infused
+    img: infused,
+    ingridients: [
+      {
+        unit: 'iron hide',
+        amount: '8'
+      },
+      {
+        unit: 'layered leather',
+        amount: '2'
+      },
+      {
+        unit: 'tannin',
+        amount: '1'
+      }
+    ]
   },
   {
-    title: 'smolderhide',
+    title: 'Smolderhide',
     cost: 15.00,
     id: 'ltr9',
     raw: false,
-    img: smolderhide
+    img: smolderhide,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
-    title: 'scarhide',
+    title: 'Scarhide',
     cost: 14.50,
     id: 'ltr10',
     raw: false,
-    img: scarhide
+    img: scarhide,
+    ingridients: [
+      {
+        unit: '',
+        amount: ''
+      }
+    ]
   },
   {
-    title: 'runic leather',
+    title: 'Runic leather',
     cost: 170.50,
     id: 'ltr11',
     raw: true,
-    img: runic
+    img: runic,
+    ingridients: [
+      {
+        unit: 'infused leather',
+        amount: '5'
+      },
+      {
+        unit: 'smolderhide',
+        amount: '1'
+      },
+      {
+        unit: 'scarhide',
+        amount: '1'
+      },
+      {
+        unit: 'tannin',
+        amount: '1'
+      }
+    ]
   },
 ]

@@ -16,8 +16,9 @@ import PopupInfo from '../UI/PopupInfo';
 
 const Leatherworking = () => {
 
-  const [type, setType] = useState('Coarse');
+  const [type, setType] = useState('Coarse leather');
   const [popupOpened, setPopupOpened] = useState(false);
+  const [ingridients, setIngridients] = useState([]);
 
   const [tanninPrice, setTanninPrice] = useState(Number(leatherworkingData[3].cost));
 
@@ -83,34 +84,24 @@ const Leatherworking = () => {
   let rawhideToRunic = upToLegendaty(rawhideToInfusedLeather, 0, tanninPrice, smolderhidePrice, scarhidePrice, itemsEquipped);
 
   const titles = [
-    'Coarse', 
-    'Rugged', 
-    'Layered', 
-    'Infused',
-    'Runic'
+    'Coarse leather', 
+    'Rugged leather', 
+    'Layered leather', 
+    'Infused leather',
+    'Runic leather'
   ]
 
-  const ingridients = [
-    {
-      unit: 'Orichalcum Ore',
-      amount: '8'
-    },
-    {
-      unit: 'Starmetal Ingot',
-      amount: '2',
-    },
-    {
-      unit: 'Charcoal',
-      amount: '2'
-    }
-  ]
+  useEffect(() => {
+    console.log(leatherworkingData)
+    setIngridients(leatherworkingData.filter(el => el.title === type)[0].ingridients);
+  }, [type])
 
   return (
     <div className='page'>
       <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
-        <p className='page__subtitle'>{type} Leather</p>
+        <p className='page__subtitle'>{type}</p>
         <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -121,7 +112,7 @@ const Leatherworking = () => {
         </button>
       </div>
       {
-        type === 'Coarse' &&
+        type === 'Coarse leather' &&
         <SortedList
           prices={[
             coarsePrice,
@@ -134,7 +125,7 @@ const Leatherworking = () => {
         />
       }
       {
-        type === 'Rugged' && 
+        type === 'Rugged leather' && 
         <SortedList
           prices={[
             ruggedPrice,
@@ -149,7 +140,7 @@ const Leatherworking = () => {
         />
       }
       {
-        type === 'Layered' && 
+        type === 'Layered leather' && 
         <SortedList
           prices={[
             layeredPrice,
@@ -166,7 +157,7 @@ const Leatherworking = () => {
         />
       }
       {
-        type === 'Infused' && 
+        type === 'Infused leather' && 
         <SortedList
           prices={[
             infusedPrice,
@@ -185,7 +176,7 @@ const Leatherworking = () => {
         />
       }
       {
-        type === 'Runic' && 
+        type === 'Runic leather' && 
         <SortedList
           prices={[
             runicPrice,

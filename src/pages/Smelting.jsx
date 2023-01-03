@@ -21,7 +21,7 @@ const Smelting = () => {
 
   const [type, setType] = useState('Iron ingot');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([])
+  const [ingridients, setIngridients] = useState([]);
 
   const [ironOrePrice, setIronOrePrice] = useState(Number(smeltingData[1].cost));
   const [silverOrePrice, setSilverOrePrice] = useState(Number(smeltingData[2].cost));
@@ -139,10 +139,9 @@ const Smelting = () => {
     setIngridients(smeltingData.filter(el => el.title === type)[0].ingridients);
   }, [type])
 
-  const openInfoPopup = () => {
-    setPopupOpened(!popupOpened);
-    
-  }
+  // const openInfoPopup = () => {
+  //   setPopupOpened(!popupOpened);
+  // }
 
   return (
     <div className='page'>
@@ -152,7 +151,7 @@ const Smelting = () => {
         <p className='page__subtitle'>{type}</p>
         <button 
           className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} 
-          onClick={openInfoPopup}
+          onClick={() => setPopupOpened(!popupOpened)}
         >
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
