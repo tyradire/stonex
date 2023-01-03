@@ -8,8 +8,8 @@ const PopupInfo = ({ popupOpened, title, ingridients }) => {
       <p className='popup-info__title'>Ingridients for {title}</p>
       <ul className='popup-info__list'>
         {
-          ingridients.map(elem => {
-            return <li className='popup-info__list-item'>{elem.unit} &ndash; {elem.amount}</li>
+          ingridients.map((elem, i) => {
+            return <li className='popup-info__list-item' key={i}>{elem.unit} &ndash; {elem.amount}</li>
           })
         }
       </ul>

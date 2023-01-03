@@ -19,8 +19,9 @@ import PopupInfo from '../UI/PopupInfo';
 
 const Smelting = () => {
 
-  const [type, setType] = useState('Iron');
+  const [type, setType] = useState('Iron ingot');
   const [popupOpened, setPopupOpened] = useState(false);
+  const [ingridients, setIngridients] = useState([])
 
   const [ironOrePrice, setIronOrePrice] = useState(Number(smeltingData[1].cost));
   const [silverOrePrice, setSilverOrePrice] = useState(Number(smeltingData[2].cost));
@@ -124,38 +125,35 @@ const Smelting = () => {
   let ironOreToAsmodeumIngot = upToLegendaty(ironOreToOrichalcumIngot, charcoalPrice, fluxPrice, tolviumPrice, cinnabarPrice, itemsEquipped);
 
   const titles = [
-    'Iron',
-    'Silver',
-    'Steel',
-    'Gold',
-    'Platinum',
-    'Starmetal', 
-    'Orichalcum',
-    'Asmodeum'
+    'Iron ingot',
+    'Silver ingot',
+    'Steel ingot',
+    'Gold ingot',
+    'Platinum ingot',
+    'Starmetal ingot', 
+    'Orichalcum ingot',
+    'Asmodeum ingot'
   ]
 
-  const ingridients = [
-    {
-      unit: 'Orichalcum Ore',
-      amount: '8'
-    },
-    {
-      unit: 'Starmetal Ingot',
-      amount: '2',
-    },
-    {
-      unit: 'Charcoal',
-      amount: '2'
-    }
-  ]
+  useEffect(() => {
+    setIngridients(smeltingData.filter(el => el.title === type)[0].ingridients);
+  }, [type])
+
+  const openInfoPopup = () => {
+    setPopupOpened(!popupOpened);
+    
+  }
 
   return (
     <div className='page'>
       <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} />
       <SettingsPanel toggleType={setType} icons={icons} titles={titles} type={type} />
       <div className='page__title-wrapper'>
-        <p className='page__subtitle'>{type} Ingot</p>
-        <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
+        <p className='page__subtitle'>{type}</p>
+        <button 
+          className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} 
+          onClick={openInfoPopup}
+        >
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path fill="none" d="M0 0h24v24H0z"/>
@@ -165,7 +163,7 @@ const Smelting = () => {
         </button>
       </div>
       {
-        type === 'Iron' &&
+        type === 'Iron ingot' &&
         <SortedList
           prices={[
             ironIngotPrice,
@@ -178,7 +176,7 @@ const Smelting = () => {
         />
       }
       {
-        type === 'Silver' &&
+        type === 'Silver ingot' &&
         <SortedList
           prices={[
             silverIngotPrice,
@@ -191,7 +189,7 @@ const Smelting = () => {
         />
       }
       {
-        type === 'Steel' && 
+        type === 'Steel ingot' && 
         <SortedList
           prices={[
             steelIngotPrice,
@@ -206,7 +204,7 @@ const Smelting = () => {
         />
       }
       {
-        type === 'Gold' && 
+        type === 'Gold ingot' && 
         <SortedList 
           prices={[
             goldIngotPrice,
@@ -221,7 +219,7 @@ const Smelting = () => {
         />
       }
       {
-        type === 'Platinum' && 
+        type === 'Platinum ingot' && 
         <SortedList
           prices={[
             platIngotPrice,
@@ -238,7 +236,7 @@ const Smelting = () => {
         />
       }
       {
-        type === 'Starmetal' && 
+        type === 'Starmetal ingot' && 
         <SortedList
           prices={[
             starmetalIngotPrice,
@@ -255,7 +253,7 @@ const Smelting = () => {
         />
       }
       {
-        type === 'Orichalcum' &&
+        type === 'Orichalcum ingot' &&
         <SortedList
           prices={[orichalcumIngotPrice, 
             starmetalIngotToOrichalcumIngot,
@@ -281,7 +279,7 @@ const Smelting = () => {
         />
       }
       {
-        type === 'Asmodeum' && 
+        type === 'Asmodeum ingot' && 
         <SortedList 
           prices={[asmodeumIngotPrice, 
             orichalcumIngotToAsmodeumIngot,

@@ -19,7 +19,7 @@ import asmodeum from '../../assets/icons/asmodeumingot.png';
 
 export const smeltingData = [
   {
-    title: 'charcoal',
+    title: 'Charcoal',
     cost: 0.38,
     id: 'sml1',
     raw: true,
@@ -32,7 +32,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'iron ore',
+    title: 'Iron ore',
     cost: 0.50,
     id: 'sml2',
     raw: false,
@@ -45,7 +45,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'silver ore',
+    title: 'Silver ore',
     cost: 0.27,
     id: 'sml3',
     raw: false,
@@ -58,7 +58,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'gold ore',
+    title: 'Gold ore',
     cost: 0.55,
     id: 'sml4',
     raw: false,
@@ -71,7 +71,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'platinum ore',
+    title: 'Platinum ore',
     cost: 0.75,
     id: 'sml5',
     raw: false,
@@ -84,7 +84,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'starmetal ore',
+    title: 'Starmetal ore',
     cost: 0.95,
     id: 'sml6',
     raw: false,
@@ -97,7 +97,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'orichalcum ore',
+    title: 'Orichalcum ore',
     cost: 1.39,
     id: 'sml7',
     raw: false,
@@ -110,7 +110,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'flux',
+    title: 'Flux',
     cost: 0.28,
     id: 'sml8',
     raw: false,
@@ -123,7 +123,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'iron ingot',
+    title: 'Iron ingot',
     cost: 1.65,
     id: 'sml9',
     raw: true,
@@ -136,7 +136,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'silver ingot',
+    title: 'Silver ingot',
     cost: 0.55,
     id: 'sml10',
     raw: true,
@@ -149,7 +149,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'steel ingot',
+    title: 'Steel ingot',
     cost: 3.20,
     id: 'sml11',
     raw: true,
@@ -170,7 +170,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'gold ingot',
+    title: 'Gold ingot',
     cost: 2.40,
     id: 'sml12',
     raw: true,
@@ -191,7 +191,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'platinum ingot',
+    title: 'Platinum ingot',
     cost: 5.90,
     id: 'sml13',
     raw: true,
@@ -212,7 +212,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'starmetal ingot',
+    title: 'Starmetal ingot',
     cost: 10.64,
     id: 'sml14',
     raw: true,
@@ -237,7 +237,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'orichalcum ingot',
+    title: 'Orichalcum ingot',
     cost: 22.50,
     id: 'sml15',
     raw: true,
@@ -262,7 +262,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'tolvium',
+    title: 'Tolvium',
     cost: 18.50,
     id: 'sml16',
     raw: false,
@@ -275,7 +275,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'cinnabar',
+    title: 'Cinnabar',
     cost: 18.50,
     id: 'sml17',
     raw: false,
@@ -288,7 +288,7 @@ export const smeltingData = [
     ]
   },
   {
-    title: 'asmodeum',
+    title: 'Asmodeum ingot',
     cost: 225.50,
     id: 'sml18',
     raw: true,
