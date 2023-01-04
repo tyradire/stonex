@@ -21,7 +21,7 @@ const Smelting = () => {
 
   const [type, setType] = useState('iron ingot');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([]);
+  const [ingridients, setIngridients] = useState([{}]);
 
   const [ironOrePrice, setIronOrePrice] = useState(Number(smeltingData[1].cost));
   const [silverOrePrice, setSilverOrePrice] = useState(Number(smeltingData[2].cost));
