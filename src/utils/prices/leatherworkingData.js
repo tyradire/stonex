@@ -64,7 +64,7 @@ export const leatherworkingData = [
     ]
   },
   {
-    title: 'Coarse leather',
+    title: 'coarse leather',
     cost: 1.35,
     id: 'ltr5',
     raw: true,
@@ -77,7 +77,7 @@ export const leatherworkingData = [
     ]
   },
   {
-    title: 'Rugged leather',
+    title: 'rugged leather',
     cost: 2.75,
     id: 'ltr6',
     raw: true,
@@ -94,7 +94,7 @@ export const leatherworkingData = [
     ]
   },
   {
-    title: 'Layered leather',
+    title: 'layered leather',
     cost: 6.00,
     id: 'ltr7',
     raw: true,
@@ -115,7 +115,7 @@ export const leatherworkingData = [
     ]
   },
   {
-    title: 'Infused leather',
+    title: 'infused leather',
     cost: 14.00,
     id: 'ltr8',
     raw: true,
@@ -136,7 +136,7 @@ export const leatherworkingData = [
     ]
   },
   {
-    title: 'Smolderhide',
+    title: 'smolderhide',
     cost: 15.00,
     id: 'ltr9',
     raw: false,
@@ -149,7 +149,7 @@ export const leatherworkingData = [
     ]
   },
   {
-    title: 'Scarhide',
+    title: 'scarhide',
     cost: 14.50,
     id: 'ltr10',
     raw: false,
@@ -162,7 +162,7 @@ export const leatherworkingData = [
     ]
   },
   {
-    title: 'Runic leather',
+    title: 'runic leather',
     cost: 170.50,
     id: 'ltr11',
     raw: true,

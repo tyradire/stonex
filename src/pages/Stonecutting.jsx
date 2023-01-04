@@ -16,9 +16,9 @@ import PopupInfo from '../UI/PopupInfo';
 
 const Stonecutting = () => {
 
-  const [type, setType] = useState('Stone block');
+  const [type, setType] = useState('stone block');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([]);
+  const [ingridients, setIngridients] = useState([{}]);
 
   const [stonePrice, setStonePrice] = useState(Number(stonecuttingData[0].cost));
   const [lodestonePrice, setLodestonePrice] = useState(Number(stonecuttingData[1].cost));
@@ -76,11 +76,11 @@ const Stonecutting = () => {
   let stonesToRunestone = upToLegendaty(stonesToObsidian, 0, sandpaperPrice, extraLodestonePrice, 0, itemsEquipped);
 
   const titles = [
-    'Stone block', 
-    'Stone brick', 
-    'Lodestone brick', 
-    'Obsidian voidstone',
-    'Runestone'
+    'stone block', 
+    'stone brick', 
+    'lodestone brick', 
+    'obsidian voidstone',
+    'runestone'
   ]
 
   useEffect(() => {
@@ -89,10 +89,10 @@ const Stonecutting = () => {
 
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} />
+      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} data={stonecuttingData} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
-        <p className='page__subtitle'>{type}</p>
+        <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
         <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -103,7 +103,7 @@ const Stonecutting = () => {
         </button>
       </div>
       {
-        type === 'Stone block' &&
+        type === 'stone block' &&
         <SortedList 
           prices={[
             stoneBlockPrice,
@@ -116,7 +116,7 @@ const Stonecutting = () => {
         />
       }
       {
-        type === 'Stone brick' &&
+        type === 'stone brick' &&
         <SortedList
           prices={[
             stoneBrickPrice,
@@ -131,7 +131,7 @@ const Stonecutting = () => {
         />
       }
       {
-        type === 'Lodestone brick' && 
+        type === 'lodestone brick' && 
         <SortedList
           prices={[
             lodestoneBrickPrice,
@@ -148,7 +148,7 @@ const Stonecutting = () => {
         />
       }
       {
-        type === 'Obsidian voidstone' && 
+        type === 'obsidian voidstone' && 
         <SortedList
           prices={[
             obsidianPrice,
@@ -167,7 +167,7 @@ const Stonecutting = () => {
         />
       }
       {
-        type === 'Runestone' && 
+        type === 'runestone' && 
         <SortedList
           prices={[
             runestonePrice,

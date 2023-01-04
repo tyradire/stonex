@@ -16,9 +16,9 @@ import PopupInfo from '../UI/PopupInfo';
 
 const Woodworking = () => {
 
-  const [type, setType] = useState('Timber');
+  const [type, setType] = useState('timber');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([]);
+  const [ingridients, setIngridients] = useState([{}]);
 
   const [sandpaperPrice, setSandpaperPrice] = useState(Number(woodworkingData[4].cost));
   const [wildwoodPrice, setWildwoodPrice] = useState(Number(woodworkingData[9].cost));
@@ -83,11 +83,11 @@ const Woodworking = () => {
   ]
 
   const titles = [
-    'Timber', 
-    'Lumber', 
-    'Wyrdwood planks', 
-    'Ironwood planks',
-    'Glittering ebony'
+    'timber', 
+    'lumber', 
+    'wyrdwood planks', 
+    'ironwood planks',
+    'glittering ebony'
   ]
 
   useEffect(() => {
@@ -96,10 +96,10 @@ const Woodworking = () => {
 
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} />
+      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} data={woodworkingData} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
-        <p className='page__subtitle'>{type}</p>
+        <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
         <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -110,7 +110,7 @@ const Woodworking = () => {
         </button>
       </div>
       {
-        type === 'Timber' &&
+        type === 'timber' &&
         <SortedList
           prices={[
             timberPrice,
@@ -123,7 +123,7 @@ const Woodworking = () => {
         />
       }
       {
-        type === 'Lumber' && 
+        type === 'lumber' && 
         <SortedList
           prices={[
             lumberPrice,
@@ -138,7 +138,7 @@ const Woodworking = () => {
         />
       }
       {
-        type === 'Wyrdwood planks' && 
+        type === 'wyrdwood planks' && 
         <SortedList
           prices={[
             wyrdplanksPrice,
@@ -155,7 +155,7 @@ const Woodworking = () => {
         />
       }
       {
-        type === 'Ironwood planks' && 
+        type === 'ironwood planks' && 
         <SortedList
           prices={[
             ironplanksPrice,
@@ -174,7 +174,7 @@ const Woodworking = () => {
         />
       }
       {
-        type === 'Glittering ebony' && 
+        type === 'glittering ebony' && 
         <SortedList
           prices={[
             ebonyPrice,

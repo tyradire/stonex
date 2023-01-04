@@ -78,7 +78,7 @@ export const woodworkingData = [
     ]
   },
   {
-    title: 'Timber',
+    title: 'timber',
     cost: 0.80,
     id: 'woo6',
     raw: true,
@@ -91,7 +91,7 @@ export const woodworkingData = [
     ]
   },
   {
-    title: 'Lumber',
+    title: 'lumber',
     cost: 1.25,
     id: 'woo7',
     raw: true,
@@ -112,7 +112,7 @@ export const woodworkingData = [
     ]
   },
   {
-    title: 'Wyrdwood planks',
+    title: 'wyrdwood planks',
     cost: 12.00,
     id: 'woo8',
     raw: true,
@@ -133,7 +133,7 @@ export const woodworkingData = [
     ]
   },
   {
-    title: 'Ironwood planks',
+    title: 'ironwood planks',
     cost: 23.00,
     id: 'woo9',
     raw: true,
@@ -180,7 +180,7 @@ export const woodworkingData = [
     ]
   },
   {
-    title: 'Glittering ebony',
+    title: 'glittering ebony',
     cost: 175.00,
     id: 'woo12',
     raw: true,

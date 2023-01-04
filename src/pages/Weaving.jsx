@@ -16,9 +16,9 @@ import PopupInfo from '../UI/PopupInfo';
 
 const Weaving = () => {
 
-  const [type, setType] = useState('Linen');
+  const [type, setType] = useState('linen');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([]);
+  const [ingridients, setIngridients] = useState([{}]);
 
   const [wireweavePrice, setWireweavePrice] = useState(Number(weavingData[3].cost));
 
@@ -82,11 +82,11 @@ const Weaving = () => {
   let fibersToPhoenixweave = upToLegendaty(fibersToInfusedSilk, 0, wireweavePrice, scaleclothPrice, blisterweavePrice, itemsEquipped);
 
   const titles = [
-    'Linen', 
-    'Sateen', 
-    'Silk', 
-    'Infused silk',
-    'Phoenixweave'
+    'linen', 
+    'sateen', 
+    'silk', 
+    'infused silk',
+    'phoenixweave'
   ]
 
   useEffect(() => {
@@ -95,10 +95,10 @@ const Weaving = () => {
 
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} />
+      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} data={weavingData} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
-        <p className='page__subtitle'>{type}</p>
+        <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
         <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -109,7 +109,7 @@ const Weaving = () => {
         </button>
       </div>
       {
-        type === 'Linen' &&
+        type === 'linen' &&
         <SortedList
           prices={[
             linenPrice,
@@ -122,7 +122,7 @@ const Weaving = () => {
         />
       }
       {
-        type === 'Sateen' && 
+        type === 'sateen' && 
         <SortedList 
           prices={[
             sateenPrice,
@@ -137,7 +137,7 @@ const Weaving = () => {
         />
       }
       {
-        type === 'Silk' && 
+        type === 'silk' && 
         <SortedList
           prices={[
             silkPrice,
@@ -154,7 +154,7 @@ const Weaving = () => {
         />
       }
       {
-        type === 'Infused Silk' && 
+        type === 'infused silk' && 
         <SortedList
           prices={[
             infusedSilkPrice,
@@ -173,7 +173,7 @@ const Weaving = () => {
         />
       }
       {
-        type === 'Phoenixweave' && 
+        type === 'phoenixweave' && 
         <SortedList
           prices={[
             phoenixweavePrice,

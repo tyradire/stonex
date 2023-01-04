@@ -64,7 +64,7 @@ export const weavingData = [
     ]
   },
   {
-    title: 'Linen',
+    title: 'linen',
     cost: 1.65,
     id: 'fib5',
     raw: true,
@@ -77,7 +77,7 @@ export const weavingData = [
     ]
   },
   {
-    title: 'Sateen',
+    title: 'sateen',
     cost: 2.15,
     id: 'fib6',
     raw: true,
@@ -94,7 +94,7 @@ export const weavingData = [
     ]
   },
   {
-    title: 'Silk',
+    title: 'silk',
     cost: 7.15,
     id: 'fib7',
     raw: true,
@@ -115,7 +115,7 @@ export const weavingData = [
     ]
   },
   {
-    title: 'Infused silk',
+    title: 'infused silk',
     cost: 17.75,
     id: 'fib8',
     raw: true,
@@ -162,7 +162,7 @@ export const weavingData = [
     ]
   },
   {
-    title: 'Phoenixweave',
+    title: 'phoenixweave',
     cost: 155.25,
     id: 'fib11',
     raw: true,

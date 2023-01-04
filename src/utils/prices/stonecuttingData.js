@@ -10,7 +10,7 @@ import rune from '../../assets/icons/runestone.png';
 
 export const stonecuttingData = [
   {
-    title: 'Stone',
+    title: 'stone',
     cost: 0.20,
     id: 'stn1',
     raw: false,
@@ -23,7 +23,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Lodestone',
+    title: 'lodestone',
     cost: 1.20,
     id: 'stn2',
     raw: false,
@@ -36,7 +36,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Extra lodestone',
+    title: 'extra lodestone',
     cost: 1.70,
     id: 'stn3',
     raw: false,
@@ -49,7 +49,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Sandpaper',
+    title: 'sandpaper',
     cost: 0.05,
     id: 'stn4',
     raw: false,
@@ -62,7 +62,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Stone block',
+    title: 'stone block',
     cost: 0.60,
     id: 'stn5',
     raw: true,
@@ -75,7 +75,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Stone brick',
+    title: 'stone brick',
     cost: 1.20,
     id: 'stn6',
     raw: true,
@@ -92,7 +92,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Lodestone brick',
+    title: 'lodestone brick',
     cost: 6.50,
     id: 'stn7',
     raw: true,
@@ -113,7 +113,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Obsidian voidstone',
+    title: 'obsidian voidstone',
     cost: 36.35,
     id: 'stn8',
     raw: true,
@@ -138,7 +138,7 @@ export const stonecuttingData = [
     ]
   },
   {
-    title: 'Runestone',
+    title: 'runestone',
     cost: 122.00,
     id: 'stn9',
     raw: true,
