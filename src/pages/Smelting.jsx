@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { upToFirstStage, upToSecondStage, upToThirdStage, upToFourthStage, upToLegendaty, ingotToGold, ingotToPlat } from '../utils/prices/formulas';
 import { smeltingData } from '../utils/prices/smeltingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
@@ -139,15 +139,18 @@ const Smelting = () => {
     setIngridients(smeltingData.filter(el => el.title === type)[0].ingridients);
   }, [type])
 
+  const modalButtonRef = useRef(null);
+
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} data={smeltingData} />
+      <PopupInfo popupOpened={popupOpened} setPopupOpened={setPopupOpened} modalButtonRef={modalButtonRef} title={type} ingridients={ingridients} data={smeltingData} />
       <SettingsPanel toggleType={setType} icons={icons} titles={titles} type={type} />
       <div className='page__title-wrapper'>
         <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
         <button 
           className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} 
-          onClick={() => setPopupOpened(!popupOpened)}
+          onClick={() => setPopupOpened(true)}
+          ref={modalButtonRef}
         >
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>

@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ReactComponent as CopyIcon } from '../assets/svg/copy-icon.svg';
 import './PopupInfo.scss';
 
-const PopupInfo = ({ popupOpened, title, ingridients, data }) => {
+const PopupInfo = ({ popupOpened, setPopupOpened, modalButtonRef, title, ingridients, data }) => {
 
   const copyIngridient = (e) => {
     navigator.clipboard.writeText(e.currentTarget.querySelector('.popup-info__unit').textContent.split('-')[0]);
   }
 
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const onClick = (e) =>  {
+      if (!modalRef.current.contains(e.target) && !modalButtonRef.current.contains(e.target)) {setPopupOpened(false); console.log(123)}
+      else return;
+    }
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
+
   return (
-    <div className={popupOpened ? 'popup-info popup-info_opened' : 'popup-info'}>
+    <div className={popupOpened ? 'popup-info popup-info_opened' : 'popup-info'} ref={modalRef}>
       <p className='popup-info__title'>Ingridients for {title}</p>
       <ul className='popup-info__list'>
         {
