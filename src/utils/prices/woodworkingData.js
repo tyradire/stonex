@@ -18,7 +18,7 @@ export const woodworkingData = [
     id: 'woo1',
     raw: false,
     img: green,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -31,7 +31,7 @@ export const woodworkingData = [
     id: 'woo2',
     raw: false,
     img: aged,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -44,7 +44,7 @@ export const woodworkingData = [
     id: 'woo3',
     raw: false,
     img: wyrdwood,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -57,7 +57,7 @@ export const woodworkingData = [
     id: 'woo4',
     raw: false,
     img: ironwood,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -70,7 +70,7 @@ export const woodworkingData = [
     id: 'woo5',
     raw: false,
     img: sandpaper,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -83,7 +83,7 @@ export const woodworkingData = [
     id: 'woo6',
     raw: true,
     img: timber,
-    ingridients: [
+    ingredients: [
       {
         unit: 'green wood',
         amount: '4'
@@ -96,7 +96,7 @@ export const woodworkingData = [
     id: 'woo7',
     raw: true,
     img: lumber,
-    ingridients: [
+    ingredients: [
       {
         unit: 'aged wood',
         amount: '4'
@@ -117,7 +117,7 @@ export const woodworkingData = [
     id: 'woo8',
     raw: true,
     img: wyrdwoodPl,
-    ingridients: [
+    ingredients: [
       {
         unit: 'wyrdwood',
         amount: '6'
@@ -138,7 +138,7 @@ export const woodworkingData = [
     id: 'woo9',
     raw: true,
     img: ironwoodPl,
-    ingridients: [
+    ingredients: [
       {
         unit: 'ironwood',
         amount: '8'
@@ -159,7 +159,7 @@ export const woodworkingData = [
     id: 'woo10',
     raw: false,
     img: wildwood,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -172,7 +172,7 @@ export const woodworkingData = [
     id: 'woo11',
     raw: false,
     img: barbvine,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -185,7 +185,7 @@ export const woodworkingData = [
     id: 'woo12',
     raw: true,
     img: glittering,
-    ingridients: [
+    ingredients: [
       {
         unit: 'ironwood planks',
         amount: '5'

@@ -15,7 +15,7 @@ export const stonecuttingData = [
     id: 'stn1',
     raw: false,
     img: stone,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -28,7 +28,7 @@ export const stonecuttingData = [
     id: 'stn2',
     raw: false,
     img: lodestone,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -41,7 +41,7 @@ export const stonecuttingData = [
     id: 'stn3',
     raw: false,
     img: extra,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -54,7 +54,7 @@ export const stonecuttingData = [
     id: 'stn4',
     raw: false,
     img: sandpaper,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -67,7 +67,7 @@ export const stonecuttingData = [
     id: 'stn5',
     raw: true,
     img: stoneblock,
-    ingridients: [
+    ingredients: [
       {
         unit: 'stone',
         amount: '4'
@@ -80,7 +80,7 @@ export const stonecuttingData = [
     id: 'stn6',
     raw: true,
     img: stonebrick,
-    ingridients: [
+    ingredients: [
       {
         unit: 'stone block',
         amount: '4'
@@ -97,7 +97,7 @@ export const stonecuttingData = [
     id: 'stn7',
     raw: true,
     img: lodestonebrick,
-    ingridients: [
+    ingredients: [
       {
         unit: 'lodestone',
         amount: '6'
@@ -118,7 +118,7 @@ export const stonecuttingData = [
     id: 'stn8',
     raw: true,
     img: obsidian,
-    ingridients: [
+    ingredients: [
       {
         unit: 'lodestone brick',
         amount: '8'
@@ -143,7 +143,7 @@ export const stonecuttingData = [
     id: 'stn9',
     raw: true,
     img: rune,
-    ingridients: [
+    ingredients: [
       {
         unit: 'obsidian voidstone',
         amount: '5'

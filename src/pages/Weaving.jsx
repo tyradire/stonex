@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { upToThirdStage, upToFourthStage, upToFirstStage, upToLegendaty, upToSecondStage } from '../utils/prices/formulas';
 import { weavingData } from '../utils/prices/weavingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
@@ -18,7 +18,7 @@ const Weaving = () => {
 
   const [type, setType] = useState('linen');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([{}]);
+  const [ingredients, setIngridients] = useState([{}]);
 
   const [wireweavePrice, setWireweavePrice] = useState(Number(weavingData[3].cost));
 
@@ -90,16 +90,22 @@ const Weaving = () => {
   ]
 
   useEffect(() => {
-    setIngridients(weavingData.filter(el => el.title === type)[0].ingridients);
+    setIngridients(weavingData.filter(el => el.title === type)[0].ingredients);
   }, [type])
+
+  const modalWvButtonRef = useRef(null);
 
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} data={weavingData} />
+      <PopupInfo popupOpened={popupOpened} setPopupOpened={setPopupOpened} modalButtonRef={modalWvButtonRef} title={type} ingredients={ingredients} data={weavingData} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
         <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
-        <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
+        <button 
+          className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} 
+          onClick={() => setPopupOpened(!popupOpened)}
+          ref={modalWvButtonRef}
+        >
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path fill="none" d="M0 0h24v24H0z"/>

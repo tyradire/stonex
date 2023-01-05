@@ -17,7 +17,7 @@ export const weavingData = [
     id: 'fib1',
     raw: false,
     img: fibers,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -30,7 +30,7 @@ export const weavingData = [
     id: 'fib2',
     raw: false,
     img: silkthreads,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -43,7 +43,7 @@ export const weavingData = [
     id: 'fib3',
     raw: false,
     img: wirefiber,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -56,7 +56,7 @@ export const weavingData = [
     id: 'fib4',
     raw: false,
     img: wireweave,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -69,7 +69,7 @@ export const weavingData = [
     id: 'fib5',
     raw: true,
     img: linen,
-    ingridients: [
+    ingredients: [
       {
         unit: 'fibers',
         amount: '4'
@@ -82,7 +82,7 @@ export const weavingData = [
     id: 'fib6',
     raw: true,
     img: sateen,
-    ingridients: [
+    ingredients: [
       {
         unit: 'linen',
         amount: '4'
@@ -99,7 +99,7 @@ export const weavingData = [
     id: 'fib7',
     raw: true,
     img: silk,
-    ingridients: [
+    ingredients: [
       {
         unit: 'silk threads',
         amount: '6'
@@ -120,7 +120,7 @@ export const weavingData = [
     id: 'fib8',
     raw: true,
     img: infused,
-    ingridients: [
+    ingredients: [
       {
         unit: 'wirefiber',
         amount: '8'
@@ -141,7 +141,7 @@ export const weavingData = [
     id: 'fib9',
     raw: false,
     img: scalecloth,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -154,7 +154,7 @@ export const weavingData = [
     id: 'fib10',
     raw: false,
     img: blisterweave,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -167,7 +167,7 @@ export const weavingData = [
     id: 'fib11',
     raw: true,
     img: phoenixweave,
-    ingridients: [
+    ingredients: [
       {
         unit: 'infused silk',
         amount: '5'

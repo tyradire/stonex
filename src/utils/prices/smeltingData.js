@@ -24,7 +24,7 @@ export const smeltingData = [
     id: 'sml1',
     raw: true,
     img: charcoal,
-    ingridients: [
+    ingredients: [
       {
         unit: 'any wood',
         amount: '2'
@@ -37,7 +37,7 @@ export const smeltingData = [
     id: 'sml2',
     raw: false,
     img: ironOre,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -50,7 +50,7 @@ export const smeltingData = [
     id: 'sml3',
     raw: false,
     img: silverOre,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -63,7 +63,7 @@ export const smeltingData = [
     id: 'sml4',
     raw: false,
     img: goldOre,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -76,7 +76,7 @@ export const smeltingData = [
     id: 'sml5',
     raw: false,
     img: platinumOre,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -89,7 +89,7 @@ export const smeltingData = [
     id: 'sml6',
     raw: false,
     img: starmetalOre,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -102,7 +102,7 @@ export const smeltingData = [
     id: 'sml7',
     raw: false,
     img: orichalcumOre,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -115,7 +115,7 @@ export const smeltingData = [
     id: 'sml8',
     raw: false,
     img: flux,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -128,7 +128,7 @@ export const smeltingData = [
     id: 'sml9',
     raw: true,
     img: ironIngot,
-    ingridients: [
+    ingredients: [
       {
         unit: 'iron ore',
         amount: '4'
@@ -141,7 +141,7 @@ export const smeltingData = [
     id: 'sml10',
     raw: true,
     img: silverIngot,
-    ingridients: [
+    ingredients: [
       {
         unit: 'silver ore',
         amount: '4'
@@ -154,7 +154,7 @@ export const smeltingData = [
     id: 'sml11',
     raw: true,
     img: steelIngot,
-    ingridients: [
+    ingredients: [
       {
         unit: 'iron ingot',
         amount: '3'
@@ -175,7 +175,7 @@ export const smeltingData = [
     id: 'sml12',
     raw: true,
     img: goldIngot,
-    ingridients: [
+    ingredients: [
       {
         unit: 'gold ore',
         amount: '5'
@@ -196,7 +196,7 @@ export const smeltingData = [
     id: 'sml13',
     raw: true,
     img: platinumIngot,
-    ingridients: [
+    ingredients: [
       {
         unit: 'platinum ore',
         amount: '6'
@@ -217,7 +217,7 @@ export const smeltingData = [
     id: 'sml14',
     raw: true,
     img: starmetalIngot,
-    ingridients: [
+    ingredients: [
       {
         unit: 'starmetal ore',
         amount: '6'
@@ -242,7 +242,7 @@ export const smeltingData = [
     id: 'sml15',
     raw: true,
     img: orichalcumIngot,
-    ingridients: [
+    ingredients: [
       {
         unit: 'orichalcum ore',
         amount: '8'
@@ -267,7 +267,7 @@ export const smeltingData = [
     id: 'sml16',
     raw: false,
     img: tolvium,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -280,7 +280,7 @@ export const smeltingData = [
     id: 'sml17',
     raw: false,
     img: cinnabar,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -293,7 +293,7 @@ export const smeltingData = [
     id: 'sml18',
     raw: true,
     img: asmodeum,
-    ingridients: [
+    ingredients: [
       {
         unit: 'orichalcum ingot',
         amount: '5'

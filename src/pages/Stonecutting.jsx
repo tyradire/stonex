@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { blockToBrick, upToFourthStage, upToFirstStage, stoneToLodestone, upToLegendaty } from '../utils/prices/formulas';
 import { stonecuttingData } from '../utils/prices/stonecuttingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
@@ -18,7 +18,7 @@ const Stonecutting = () => {
 
   const [type, setType] = useState('stone block');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([{}]);
+  const [ingredients, setIngridients] = useState([{}]);
 
   const [stonePrice, setStonePrice] = useState(Number(stonecuttingData[0].cost));
   const [lodestonePrice, setLodestonePrice] = useState(Number(stonecuttingData[1].cost));
@@ -84,16 +84,22 @@ const Stonecutting = () => {
   ]
 
   useEffect(() => {
-    setIngridients(stonecuttingData.filter(el => el.title === type)[0].ingridients);
+    setIngridients(stonecuttingData.filter(el => el.title === type)[0].ingredients);
   }, [type])
+
+  const modalStnButtonRef = useRef(null);
 
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} data={stonecuttingData} />
+      <PopupInfo popupOpened={popupOpened} setPopupOpened={setPopupOpened} modalButtonRef={modalStnButtonRef} title={type} ingredients={ingredients} data={stonecuttingData} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
         <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
-        <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
+        <button 
+          className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} 
+          onClick={() => setPopupOpened(!popupOpened)}
+          ref={modalStnButtonRef}
+        >
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path fill="none" d="M0 0h24v24H0z"/>

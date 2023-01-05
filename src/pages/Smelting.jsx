@@ -21,7 +21,7 @@ const Smelting = () => {
 
   const [type, setType] = useState('iron ingot');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([{}]);
+  const [ingredients, setIngridients] = useState([{}]);
 
   const [ironOrePrice, setIronOrePrice] = useState(Number(smeltingData[1].cost));
   const [silverOrePrice, setSilverOrePrice] = useState(Number(smeltingData[2].cost));
@@ -136,20 +136,20 @@ const Smelting = () => {
   ]
 
   useEffect(() => {
-    setIngridients(smeltingData.filter(el => el.title === type)[0].ingridients);
+    setIngridients(smeltingData.filter(el => el.title === type)[0].ingredients);
   }, [type])
 
   const modalButtonRef = useRef(null);
 
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} setPopupOpened={setPopupOpened} modalButtonRef={modalButtonRef} title={type} ingridients={ingridients} data={smeltingData} />
+      <PopupInfo popupOpened={popupOpened} setPopupOpened={setPopupOpened} modalButtonRef={modalButtonRef} title={type} ingredients={ingredients} data={smeltingData} />
       <SettingsPanel toggleType={setType} icons={icons} titles={titles} type={type} />
       <div className='page__title-wrapper'>
         <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
         <button 
           className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} 
-          onClick={() => setPopupOpened(true)}
+          onClick={() => setPopupOpened(!popupOpened)}
           ref={modalButtonRef}
         >
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

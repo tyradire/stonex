@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { upToThirdStage, upToSecondStage, upToFourthStage, upToFirstStage, upToLegendaty } from '../utils/prices/formulas';
 import { woodworkingData } from '../utils/prices/woodworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
@@ -18,7 +18,7 @@ const Woodworking = () => {
 
   const [type, setType] = useState('timber');
   const [popupOpened, setPopupOpened] = useState(false);
-  const [ingridients, setIngridients] = useState([{}]);
+  const [ingredients, setIngridients] = useState([{}]);
 
   const [sandpaperPrice, setSandpaperPrice] = useState(Number(woodworkingData[4].cost));
   const [wildwoodPrice, setWildwoodPrice] = useState(Number(woodworkingData[9].cost));
@@ -91,16 +91,22 @@ const Woodworking = () => {
   ]
 
   useEffect(() => {
-    setIngridients(woodworkingData.filter(el => el.title === type)[0].ingridients);
+    setIngridients(woodworkingData.filter(el => el.title === type)[0].ingredients);
   }, [type])
+
+  const modalWooButtonRef = useRef(null);
 
   return (
     <div className='page'>
-      <PopupInfo popupOpened={popupOpened} title={type} ingridients={ingridients} data={woodworkingData} />
+      <PopupInfo popupOpened={popupOpened} setPopupOpened={setPopupOpened} modalButtonRef={modalWooButtonRef} title={type} ingredients={ingredients} data={woodworkingData} />
       <SettingsPanel icons={icons} toggleType={setType} titles={titles} type={type} />
       <div className='page__title-wrapper'>
         <p className='page__subtitle'>{type[0].toUpperCase() + type.slice(1)}</p>
-        <button className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} onClick={() => setPopupOpened(!popupOpened)}>
+        <button 
+          className={!popupOpened ? 'page__subtitle-btn' : 'page__subtitle-btn page__subtitle-btn_opened'} 
+          onClick={() => setPopupOpened(!popupOpened)}
+          ref={modalWooButtonRef}        
+        >
           <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g>
               <path fill="none" d="M0 0h24v24H0z"/>

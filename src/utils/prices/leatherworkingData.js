@@ -17,7 +17,7 @@ export const leatherworkingData = [
     id: 'ltr1',
     raw: false,
     img: rawhide,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -30,7 +30,7 @@ export const leatherworkingData = [
     id: 'ltr2',
     raw: false,
     img: thickhide,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -43,7 +43,7 @@ export const leatherworkingData = [
     id: 'ltr3',
     raw: false,
     img: ironhide,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -56,7 +56,7 @@ export const leatherworkingData = [
     id: 'ltr4',
     raw: false,
     img: tannin,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -69,7 +69,7 @@ export const leatherworkingData = [
     id: 'ltr5',
     raw: true,
     img: coarse,
-    ingridients: [
+    ingredients: [
       {
         unit: 'rawhide',
         amount: '4'
@@ -82,7 +82,7 @@ export const leatherworkingData = [
     id: 'ltr6',
     raw: true,
     img: rugged,
-    ingridients: [
+    ingredients: [
       {
         unit: 'coarse leather',
         amount: '4'
@@ -99,7 +99,7 @@ export const leatherworkingData = [
     id: 'ltr7',
     raw: true,
     img: layered,
-    ingridients: [
+    ingredients: [
       {
         unit: 'thick hide',
         amount: '6'
@@ -120,7 +120,7 @@ export const leatherworkingData = [
     id: 'ltr8',
     raw: true,
     img: infused,
-    ingridients: [
+    ingredients: [
       {
         unit: 'iron hide',
         amount: '8'
@@ -141,7 +141,7 @@ export const leatherworkingData = [
     id: 'ltr9',
     raw: false,
     img: smolderhide,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -154,7 +154,7 @@ export const leatherworkingData = [
     id: 'ltr10',
     raw: false,
     img: scarhide,
-    ingridients: [
+    ingredients: [
       {
         unit: '',
         amount: ''
@@ -167,7 +167,7 @@ export const leatherworkingData = [
     id: 'ltr11',
     raw: true,
     img: runic,
-    ingridients: [
+    ingredients: [
       {
         unit: 'infused leather',
         amount: '5'
