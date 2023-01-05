@@ -43,10 +43,11 @@
     font-weight: 400;
     border-radius: 8px;
     &:hover {
+      color: $text-link-color;
       background-color: $light-accent-color;
     }
     &:hover svg {
-      stroke: $main-color;
+      stroke: $text-link-color;
     }
   }
   &__unit {
