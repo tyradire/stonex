@@ -8,8 +8,7 @@ const NavbarItem = ({path, title, id, image}) => {
 
   return (
     <Link className={path !== location.pathname ? 'navbar__link' : 'navbar__link navbar__link_active'} to={path} key={id}>
-      {/* <p className='navbar__title'>{title}</p> */}
-      <img className='navbar__icon' alt={title + 'icon'} src={image} />
+      <img className={path !== location.pathname ? 'navbar__icon' : 'navbar__icon navbar__icon_active'} alt={title + 'icon'} src={image} />
       <p className='navbar__title'>{title}</p>
     </Link>
   )

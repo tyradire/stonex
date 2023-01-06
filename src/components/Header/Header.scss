@@ -1,0 +1,23 @@
+@import '../../scss/variables.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 620px;
+  margin: 10px auto;
+  @media screen and (max-width: 768px) {
+    margin: 10px auto 5px;
+  }
+  
+  &__settings-btn {
+    width: 30px;
+    height: 30px;
+    &:hover path {
+      fill: $text-color;
+    }
+    &_active path {
+      fill: $text-color;
+    }
+  }
+}

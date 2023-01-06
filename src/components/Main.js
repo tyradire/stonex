@@ -1,11 +1,11 @@
-import React from 'react'
-import AppRouter from './AppRouter/AppRouter'
-import Navbar from './Navbar/Navbar'
+import React from 'react';
+import AppRouter from './AppRouter/AppRouter';
+import Header from './Header/Header';
 
 const Main = () => {
   return (
     <div>
-      <Navbar />
+      <Header />
       <AppRouter />
     </div>
   )

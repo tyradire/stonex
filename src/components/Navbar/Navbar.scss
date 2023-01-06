@@ -2,24 +2,8 @@
 
 .navbar {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 620px;
-  margin: 10px auto 20px;
-  @media screen and (max-width: 768px) {
-    margin: 10px auto 5px;
-  }
 
-  &__settings-btn {
-    width: 20px;
-    height: 20px;
-    margin-top: 5px;
-    &:hover path {
-      fill: $text-color;
-    }
-  }
   &__link {
-    width: 84px;
     color: $text-link-color;
     margin-left: 20px;
     text-decoration: none;
@@ -27,10 +11,13 @@
     flex-direction: column;
     align-items: center;
     &:hover {
-      color: $text-color;
+      color: $text-input-color;
+    }
+    &:hover .navbar__icon {
+      background-color: $text-input-color;
     }
     &_active {
-      color: $text-color;
+      color: $active-color;
     }
     @media screen and (max-width: 768px) {
       width: 40px;
@@ -48,5 +35,9 @@
   &__icon {
     width: 40px;
     height: 40px;
+    border-radius: 10px;
+    &_active {
+      background-color: $active-color;
+    }
   }
 }

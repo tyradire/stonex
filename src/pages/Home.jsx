@@ -47,7 +47,6 @@ const Home = () => {
 
   return (
     <div className='page'>
-      <h2 className='page__title'>Settings</h2>
       <div className='page__prices-selector'>
         <SettingsMain toggleType={setResourcesType} icons={icons} titles={titles} type={resourcesType} />
       </div>
