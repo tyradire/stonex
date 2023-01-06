@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import BottomPanelItem from './BottomPanelItem';
 import './Prices.scss';
 
 const PricesBottomPanel = () => {
@@ -24,32 +25,33 @@ const PricesBottomPanel = () => {
     localStorage.setItem('bonusItems', JSON.stringify(array));
   }
 
+  let arr = [
+    'equip-head',
+    'equip-chest',
+    'equip-hand',
+    'equip-legs',
+    'equip-feet',
+  ]
+
+  let titles = [
+    'Head',
+    'Chest',
+    'Hand',
+    'Legs',
+    'Feet'
+  ]
+
   return (
     <div className='bottom-panel'>
       <form className='bottom-panel__form'>
-        <label className='bottom-panel__label'>
-          <p className=''>+2% yield items</p>
-        </label>
-        <label className='bottom-panel__label' htmlFor='equip-head'>
-          <p>Head</p>
-          <input id='equip-head' checked={equippedItems.includes('equip-head')} type="checkbox" className='bottom-panel__checkbox' onChange={toggleEquippedItem} />
-        </label>
-        <label className='bottom-panel__label' htmlFor='equip-chest'>
-          <p>Chest</p>
-          <input id='equip-chest' checked={equippedItems.includes('equip-chest')} type="checkbox" className='bottom-panel__checkbox' onChange={toggleEquippedItem} />
-        </label>
-        <label className='bottom-panel__label' htmlFor='equip-hand'>
-          <p>Hand</p>
-          <input id='equip-hand' checked={equippedItems.includes('equip-hand')} type="checkbox" className='bottom-panel__checkbox' onChange={toggleEquippedItem} />
-        </label>
-        <label className='bottom-panel__label' htmlFor='equip-legs'>
-          <p>Legs</p>
-          <input id='equip-legs' checked={equippedItems.includes('equip-legs')} type="checkbox" className='bottom-panel__checkbox' onChange={toggleEquippedItem} />
-        </label>
-        <label className='bottom-panel__label' htmlFor='equip-feet'>
-          <p>Feet</p>
-          <input id='equip-feet' checked={equippedItems.includes('equip-feet')} type="checkbox" className='bottom-panel__checkbox' onChange={toggleEquippedItem} />
-        </label>
+        <p className='bottom-panel__description'>+2% yield items</p>
+        <div className='bottom-panel__content'>
+          {
+            titles.map((el, i) => {
+              return <BottomPanelItem title={el} items={equippedItems} toggleEquippedItem={toggleEquippedItem} id={arr[i]} key={i} />
+            })
+          }
+        </div>
       </form>
     </div>
   )

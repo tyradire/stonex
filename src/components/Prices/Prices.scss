@@ -121,17 +121,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    margin: 0 10px;
+    flex-direction: column;
+  }
 }
 
 .bottom-panel {
+  width: 100%;
   margin-top: 20px;
-  width: 600px;
   border-radius: 10px;
   padding: 10px;
   background-color: $light-accent-color;
   @media screen and (max-width: 768px) {
-    padding: 10px 0;
-    width: 420px;
+    width: 340px;
   }
 
   &__label {
@@ -146,8 +149,8 @@
     @media screen and (max-width: 768px) {
       width: 50px;
       height: 26px;
+      margin-left: 5px;
     }
-
     p {
       margin: 0;
       font-size: 12px;
@@ -165,16 +168,35 @@
       border: 2px solid $border-color;
       outline: none;
     }
-    &:first-of-type {
-      cursor: default;
-      width: 62px;
-      height: auto;
-      background-color: transparent;
+    &_active {
+      outline: 2px solid $text-green;
     }
   }
   &__checkbox {
+    display: none;
     width: 10px;
     height: 10px;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__description {
+    margin: 0;
+    padding-right: 10px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
+    @media screen and (max-width: 768px) {
+      margin: 0 auto 5px;
+    }
+  }
+  &__content {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      width: 300px;
+    }
   }
 }
 
