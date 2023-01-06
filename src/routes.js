@@ -14,6 +14,12 @@ import Woodworking from "./pages/Woodworking";
 import Leatherworking from "./pages/Leatherworking";
 import Stonecutting from "./pages/Stonecutting";
 
+import smeltingIcon from './assets/smelting.png';
+import leatherworkingIcon from './assets/leatherworking.png';
+import stonecuttingIcon from './assets/stonecutting.png';
+import weavingIcon from './assets/weaving.png';
+import woodworkingIcon from './assets/woodworking.png';
+
 export const publicRoutes = [
   {
     path: HOME_ROUTE,
@@ -23,26 +29,31 @@ export const publicRoutes = [
   {
     path: SMELTING_ROUTE,
     Component: Smelting,
-    title: 'Smelting'
+    title: 'Smelting',
+    image: smeltingIcon
   },
   {
     path: LEATHER_ROUTE,
     Component: Leatherworking,
-    title: 'Leatherworking'
+    title: 'Leatherworking',
+    image: leatherworkingIcon
   },
   {
     path: STONE_ROUTE,
     Component: Stonecutting,
-    title: 'Stonecutting'
+    title: 'Stonecutting',
+    image: stonecuttingIcon
   },
   {
     path: WEAVE_ROUTE,
     Component: Weaving,
-    title: 'Weaving'
+    title: 'Weaving',
+    image: weavingIcon
   },
   {
     path: WOOD_ROUTE,
     Component: Woodworking,
-    title: 'Woodworking'
+    title: 'Woodworking',
+    image: woodworkingIcon
   },
 ]
