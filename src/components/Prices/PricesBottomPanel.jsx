@@ -5,6 +5,7 @@ import './Prices.scss';
 const PricesBottomPanel = () => {
 
   const [equippedItems, setEquippedItems] = useState(JSON.parse(localStorage.getItem('bonusItems')) || []);
+  const [panelOpened, setPanelOpened] = useState(false);
 
   useEffect(() => {
     let storage = JSON.parse(localStorage.getItem('bonusItems'));
@@ -41,8 +42,12 @@ const PricesBottomPanel = () => {
     'Feet'
   ]
 
+  const openPanel = () => {
+    setPanelOpened(!panelOpened);
+  }
+
   return (
-    <div className='bottom-panel'>
+    <div className={panelOpened ? 'bottom-panel' : 'bottom-panel bottom-panel_opened' }>
       <form className='bottom-panel__form'>
         <p className='bottom-panel__description'>+2% yield items</p>
         <div className='bottom-panel__content'>
@@ -52,6 +57,7 @@ const PricesBottomPanel = () => {
             })
           }
         </div>
+        <button className='bottom-panel__open-btn' onClick={openPanel}></button>
       </form>
     </div>
   )
