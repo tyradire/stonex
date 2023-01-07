@@ -57,7 +57,7 @@ const PricesBottomPanel = () => {
             })
           }
         </div>
-        <button className='bottom-panel__open-btn' onClick={openPanel}></button>
+        <button className='bottom-panel__open-btn' onClick={openPanel}>+2% yield items</button>
       </form>
     </div>
   )
