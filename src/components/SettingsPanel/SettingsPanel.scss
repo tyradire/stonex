@@ -2,16 +2,54 @@
 
 .settings-panel {
   display: flex;
-  justify-content: center;
-  margin: 10px 0 20px;
+  align-items: center;
+  margin: 10px auto 20px;
+
+  &__scroll-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 18px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
+    color: $border-color;
+    font-size: 18px;
+    line-height: 1;
+    opacity: .5;
+    margin-right: 5px;
+    &_blocked {
+      opacity: .1;
+    }
+    &:last-of-type {
+      margin-right: 0;
+      margin-left: 5px;
+    }
+  }
 }
 
-.panel-button {
-  width: 46px;
+.settings-panel__container {
+  width: 262px;
+  height: 46px;
+  overflow-x: hidden;
+}
+
+.settings-panel__wrapper {
+  width: 262px;
+  height: 46px;
+  display: flex;
+  transition: .5s;
+  transform: translate(0);
+}
+
+.settings-panel__button {
+  min-width: 46px;
   height: 46px;
   background-color: transparent;
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
   border: 1px solid $border-color;
   cursor: pointer;
   margin-left: 8px;

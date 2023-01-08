@@ -145,6 +145,7 @@
     transition: .5s;
     &_opened {
       left: 0;
+      background-color: hsla(219, 13%, 25%, 0.5);
     }
   }
 
@@ -179,7 +180,7 @@
       outline: none;
     }
     &_active {
-      outline: 2px solid #3c723c;
+      outline: 2px solid $light-accent-color;
       background: $deep-accent-color;
     }
   }
@@ -215,7 +216,6 @@
     display: flex;
     justify-content: space-between;
     @media screen and (max-width: 768px) {
-      // display: none;
       align-items: center;
       flex-direction: column;
       width: 100%;
@@ -223,6 +223,9 @@
     }
   }
   &__open-btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     border: none;
     border-radius: 6px;
@@ -231,15 +234,21 @@
     left: -24px;
     width: 180px;
     height: 30px;
-    background-color: $light-accent-color;
     color: $text-color;
     font-size: 16px;
     line-height: 1;
     font-weight: 500;
     transform: rotate(270deg);
-    background: linear-gradient(-45deg, $main-color, $light-accent-color);
+    background: linear-gradient(-45deg, $main-color, $light-accent-color, transparent);
     background-size: 400% 400%;
-    animation: gradient 4s ease infinite;
+    animation: gradient 2s ease infinite;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, $light-accent-color, $light-accent-color) 1;
+    border-radius: 10px;
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
   }
 }
 

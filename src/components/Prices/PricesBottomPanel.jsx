@@ -42,12 +42,13 @@ const PricesBottomPanel = () => {
     'Feet'
   ]
 
-  const openPanel = () => {
+  const openPanel = (e) => {
+    e.preventDefault();
     setPanelOpened(!panelOpened);
   }
 
   return (
-    <div className={panelOpened ? 'bottom-panel' : 'bottom-panel bottom-panel_opened' }>
+    <div className={!panelOpened ? 'bottom-panel' : 'bottom-panel bottom-panel_opened' }>
       <form className='bottom-panel__form'>
         <p className='bottom-panel__description'>+2% yield items</p>
         <div className='bottom-panel__content'>
