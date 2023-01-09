@@ -8,13 +8,10 @@ const SettingsPanel = ({ toggleType, icons, titles, type }) => {
   const [cord, setCord] = useState(0);
   const buttonsLength = titles.length > 5;
 
-  console.log(buttonsLength)
-
   const scrollLeft = () => {
     if (cord > -1) return
     else {
       setCord(prev => prev + 162);
-      console.log(cord + 162)
     }
   }
 
@@ -22,8 +19,31 @@ const SettingsPanel = ({ toggleType, icons, titles, type }) => {
     if (cord < -161) return
     else {
       setCord(prev => prev - 162);
-      console.log(cord - 162)
     }
+  }
+
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
+
+  const minSwipeDistance = 50 
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+    if (isLeftSwipe && cord > -1) {
+      setCord(prev => prev - 162);
+    } else if (isRightSwipe && cord < 0) {
+      setCord(prev => prev + 162);
+    } return
   }
 
   return (
@@ -32,7 +52,7 @@ const SettingsPanel = ({ toggleType, icons, titles, type }) => {
         buttonsLength && <button className={cord < -1 ? 'settings-panel__scroll-btn' : 'settings-panel__scroll-btn settings-panel__scroll-btn_blocked'} onClick={scrollLeft}>&#9668;</button>
       }
       <div className='settings-panel__container'>
-        <div className='settings-panel__wrapper' style={{transform: `translateX(${cord}px)`}}>
+        <div className='settings-panel__wrapper' style={{transform: `translateX(${cord}px)`}} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
           {
             titles.map((elem, i) => {
               return <SettingsPanelButton icon={icons[i]} toggleType={toggleType} title={titles[i]} type={type} key={i} />
