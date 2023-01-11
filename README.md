@@ -14,8 +14,8 @@ Web version [here](https://tyradire.github.io/stonex)
 
 Desktop version [here](https://github.com/tyradire/stonex/blob/main/desktop.zip)
 ### Screenshots
-![Stonex App](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex_1.jpg "Stonex App")
+![Stonex App](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex-1.jpg "Stonex App")
 
-![Stonex prices](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex_2.jpg "Stonex prices")
+![Stonex prices](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex-2.jpg "Stonex prices")
 
-![Stonex App](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex_3.jpg "Stonex ingredients")
+![Stonex App](https://github.com/tyradire/stonex/blob/main/src/assets/screenshots/stonex-3.jpg "Stonex ingredients")
