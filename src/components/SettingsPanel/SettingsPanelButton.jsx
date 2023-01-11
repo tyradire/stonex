@@ -11,6 +11,7 @@ const SettingsPanelButton = ({ icon, toggleType, title, type }) => {
       className={title !== type ? 'settings-panel__button' : 'settings-panel__button settings-panel__button_selected'}
       style={{backgroundImage: `url(${icon})`}}
       onClick={swapType}
+      name={title}
     >
     </button>
   )
