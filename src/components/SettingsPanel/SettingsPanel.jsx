@@ -5,8 +5,11 @@ import SettingsPanelButton from './SettingsPanelButton';
 
 const SettingsPanel = ({ toggleType, icons, titles, type }) => {
 
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
   const [cord, setCord] = useState(0);
   const buttonsLength = titles.length > 5;
+  const minSwipeDistance = 50
 
   const scrollLeft = () => {
     if (cord > -1) return
@@ -22,17 +25,12 @@ const SettingsPanel = ({ toggleType, icons, titles, type }) => {
     }
   }
 
-  const [touchStart, setTouchStart] = useState(null)
-  const [touchEnd, setTouchEnd] = useState(null)
-
-  const minSwipeDistance = 50 
-
   const onTouchStart = (e) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
   }
 
-  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return
@@ -52,7 +50,7 @@ const SettingsPanel = ({ toggleType, icons, titles, type }) => {
         buttonsLength && <button className={cord < -1 ? 'settings-panel__scroll-btn' : 'settings-panel__scroll-btn settings-panel__scroll-btn_blocked'} onClick={scrollLeft}>&#9668;</button>
       }
       <div className='settings-panel__container'>
-        <div className='settings-panel__wrapper' style={{transform: `translateX(${cord}px)`}} onTouchStart={buttonsLength && onTouchStart} onTouchMove={buttonsLength && onTouchMove} onTouchEnd={buttonsLength && onTouchEnd}>
+        <div className='settings-panel__wrapper' style={{transform: `translateX(${cord}px)`}} onTouchStart={buttonsLength ? onTouchStart : null} onTouchMove={buttonsLength ? onTouchMove : null} onTouchEnd={buttonsLength ? onTouchEnd : null}>
           {
             titles.map((elem, i) => {
               return <SettingsPanelButton icon={icons[i]} toggleType={toggleType} title={titles[i]} type={type} key={i} />
