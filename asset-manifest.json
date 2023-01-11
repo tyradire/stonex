@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/stonex/static/css/main.4d8ef5d2.css",
-    "main.js": "/stonex/static/js/main.d410ba40.js",
+    "main.js": "/stonex/static/js/main.0c7d505e.js",
     "static/media/infusedleather.webp": "/stonex/static/media/infusedleather.c7e44f118cf406c607d4.webp",
     "static/media/wirefiber.webp": "/stonex/static/media/wirefiber.dfc38ba3be7c56c02f4b.webp",
     "static/media/silkthreads.webp": "/stonex/static/media/silkthreads.d93c55f8845746e11da0.webp",
@@ -71,10 +71,10 @@
     "index.html": "/stonex/index.html",
     "static/media/copy-icon.svg": "/stonex/static/media/copy-icon.c2f038289ab6d2db540bab9e91964179.svg",
     "main.4d8ef5d2.css.map": "/stonex/static/css/main.4d8ef5d2.css.map",
-    "main.d410ba40.js.map": "/stonex/static/js/main.d410ba40.js.map"
+    "main.0c7d505e.js.map": "/stonex/static/js/main.0c7d505e.js.map"
   },
   "entrypoints": [
     "static/css/main.4d8ef5d2.css",
-    "static/js/main.d410ba40.js"
+    "static/js/main.0c7d505e.js"
   ]
 }
