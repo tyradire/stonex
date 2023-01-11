@@ -13,6 +13,7 @@ const SettingsMainButton = ({ icon, toggleType, title, type }) => {
       style={{backgroundImage: `url(${icon})`}}
       onClick={swapType}
     >
+      {title}
     </button>
   )
 }
