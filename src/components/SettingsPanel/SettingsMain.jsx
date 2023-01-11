@@ -4,8 +4,6 @@ import './SettingsPanel.scss';
 
 const SettingsMain = ({ toggleType, icons, titles, type }) => {
 
-  console.log(titles)
-
   return (
     <div className='settings-panel'>
       {
