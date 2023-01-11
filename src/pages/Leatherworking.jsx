@@ -4,11 +4,11 @@ import { leatherworkingData } from '../utils/prices/leatherworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/SortedList/SortedList';
 
-import coarse from '../assets/icons/coarseleather.png';
-import rugged from '../assets/icons/ruggedleather.png';
-import layered from '../assets/icons/layeredleather.png';
-import infused from '../assets/icons/infusedleather.png';
-import runic from '../assets/icons/runicleather.png';
+import coarse from '../assets/icons/coarseleather.webp';
+import rugged from '../assets/icons/ruggedleather.webp';
+import layered from '../assets/icons/layeredleather.webp';
+import infused from '../assets/icons/infusedleather.webp';
+import runic from '../assets/icons/runicleather.webp';
 
 import './Page.scss';
 import localforage from 'localforage';

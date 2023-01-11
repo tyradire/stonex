@@ -4,11 +4,11 @@ import { weavingData } from '../utils/prices/weavingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/SortedList/SortedList';
 
-import linen from '../assets/icons/linen.png';
-import sateen from '../assets/icons/sateen.png';
-import silk from '../assets/icons/silk.png';
-import phoenixweave from '../assets/icons/phoenixweave.png';
-import infusedSilk from '../assets/icons/infusedsilk.png';
+import linen from '../assets/icons/linen.webp';
+import sateen from '../assets/icons/sateen.webp';
+import silk from '../assets/icons/silk.webp';
+import phoenixweave from '../assets/icons/phoenixweave.webp';
+import infusedSilk from '../assets/icons/infusedsilk.webp';
 
 import './Page.scss';
 import localforage from 'localforage';

@@ -4,11 +4,11 @@ import { woodworkingData } from '../utils/prices/woodworkingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/SortedList/SortedList';
 
-import timber from '../assets/icons/timber.png';
-import lumber from '../assets/icons/lumber.png';
-import wyrdwood from '../assets/icons/wyrdwoodplanks.png';
-import ironwood from '../assets/icons/ironwoodplanks.png';
-import ebony from '../assets/icons/glitteringebony.png';
+import timber from '../assets/icons/timber.webp';
+import lumber from '../assets/icons/lumber.webp';
+import wyrdwood from '../assets/icons/wyrdwoodplanks.webp';
+import ironwood from '../assets/icons/ironwoodplanks.webp';
+import ebony from '../assets/icons/glitteringebony.webp';
 
 import './Page.scss';
 import localforage from 'localforage';

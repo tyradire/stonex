@@ -1,14 +1,14 @@
-import fibers from '../../assets/icons/fibers.png';
-import silkthreads from '../../assets/icons/silkthreads.png';
-import wirefiber from '../../assets/icons/wirefiber.png';
-import wireweave from '../../assets/icons/wireweave.png';
-import linen from '../../assets/icons/linen.png';
-import sateen from '../../assets/icons/sateen.png';
-import silk from '../../assets/icons/silk.png';
-import infused from '../../assets/icons/infusedsilk.png';
-import scalecloth from '../../assets/icons/scalecloth.png';
-import blisterweave from '../../assets/icons/blisterweave.png';
-import phoenixweave from '../../assets/icons/phoenixweave.png';
+import fibers from '../../assets/icons/fibers.webp';
+import silkthreads from '../../assets/icons/silkthreads.webp';
+import wirefiber from '../../assets/icons/wirefiber.webp';
+import wireweave from '../../assets/icons/wireweave.webp';
+import linen from '../../assets/icons/linen.webp';
+import sateen from '../../assets/icons/sateen.webp';
+import silk from '../../assets/icons/silk.webp';
+import infused from '../../assets/icons/infusedsilk.webp';
+import scalecloth from '../../assets/icons/scalecloth.webp';
+import blisterweave from '../../assets/icons/blisterweave.webp';
+import phoenixweave from '../../assets/icons/phoenixweave.webp';
 
 export const weavingData = [
   {

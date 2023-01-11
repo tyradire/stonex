@@ -1,15 +1,15 @@
-import green from '../../assets/icons/greenwood.png';
-import aged from '../../assets/icons/agedwood.png';
-import wyrdwood from '../../assets/icons/wyrdwood.png';
-import ironwood from '../../assets/icons/ironwood.png';
-import sandpaper from '../../assets/icons/sandpaper.png';
-import timber from '../../assets/icons/timber.png';
-import lumber from '../../assets/icons/lumber.png';
-import wyrdwoodPl from '../../assets/icons/wyrdwoodplanks.png';
-import ironwoodPl from '../../assets/icons/ironwoodplanks.png';
-import wildwood from '../../assets/icons/wildwood.png';
-import barbvine from '../../assets/icons/barbvine.png';
-import glittering from '../../assets/icons/glitteringebony.png';
+import green from '../../assets/icons/greenwood.webp';
+import aged from '../../assets/icons/agedwood.webp';
+import wyrdwood from '../../assets/icons/wyrdwood.webp';
+import ironwood from '../../assets/icons/ironwood.webp';
+import sandpaper from '../../assets/icons/sandpaper.webp';
+import timber from '../../assets/icons/timber.webp';
+import lumber from '../../assets/icons/lumber.webp';
+import wyrdwoodPl from '../../assets/icons/wyrdwoodplanks.webp';
+import ironwoodPl from '../../assets/icons/ironwoodplanks.webp';
+import wildwood from '../../assets/icons/wildwood.webp';
+import barbvine from '../../assets/icons/barbvine.webp';
+import glittering from '../../assets/icons/glitteringebony.webp';
 
 export const woodworkingData = [
   {

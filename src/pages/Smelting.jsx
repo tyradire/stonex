@@ -4,14 +4,14 @@ import { smeltingData } from '../utils/prices/smeltingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/SortedList/SortedList';
 
-import ironIngot from '../assets/icons/ironingot.png';
-import silverIngot from '../assets/icons/silveringot.png';
-import steelIngot from '../assets/icons/steelingot.png';
-import goldIngot from '../assets/icons/goldingot.png';
-import platinumIngot from '../assets/icons/platinumingot.png';
-import starmetalIngot from '../assets/icons/starmetalingot.png';
-import orichalcumIngot from '../assets/icons/orichalcumingot.png';
-import asmodeumIngot from '../assets/icons/asmodeumingot.png';
+import ironIngot from '../assets/icons/ironingot.webp';
+import silverIngot from '../assets/icons/silveringot.webp';
+import steelIngot from '../assets/icons/steelingot.webp';
+import goldIngot from '../assets/icons/goldingot.webp';
+import platinumIngot from '../assets/icons/platinumingot.webp';
+import starmetalIngot from '../assets/icons/starmetalingot.webp';
+import orichalcumIngot from '../assets/icons/orichalcumingot.webp';
+import asmodeumIngot from '../assets/icons/asmodeumingot.webp';
 
 import './Page.scss';
 import localforage from 'localforage';

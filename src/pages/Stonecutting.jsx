@@ -4,11 +4,11 @@ import { stonecuttingData } from '../utils/prices/stonecuttingData';
 import SettingsPanel from '../components/SettingsPanel/SettingsPanel';
 import SortedList from '../components/SortedList/SortedList';
 
-import stoneblock from '../assets/icons/stoneblock.png';
-import stonebrick from '../assets/icons/stonebrick.png';
-import lodestonebrick from '../assets/icons/lodestonebrick.png';
-import obsidian from '../assets/icons/obsidianlodestone.png';
-import runestone from '../assets/icons/runestone.png';
+import stoneblock from '../assets/icons/stoneblock.webp';
+import stonebrick from '../assets/icons/stonebrick.webp';
+import lodestonebrick from '../assets/icons/lodestonebrick.webp';
+import obsidian from '../assets/icons/obsidianlodestone.webp';
+import runestone from '../assets/icons/runestone.webp';
 
 import './Page.scss';
 import localforage from 'localforage';

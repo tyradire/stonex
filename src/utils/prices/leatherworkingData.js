@@ -1,14 +1,14 @@
-import coarse from '../../assets/icons/coarseleather.png';
-import rugged from '../../assets/icons/ruggedleather.png';
-import layered from '../../assets/icons/layeredleather.png';
-import infused from '../../assets/icons/infusedleather.png';
-import runic from '../../assets/icons/runicleather.png';
-import rawhide from '../../assets/icons/rawhide.png';
-import thickhide from '../../assets/icons/thickhide.png';
-import ironhide from '../../assets/icons/ironhide.png';
-import tannin from '../../assets/icons/tannin.png';
-import smolderhide from '../../assets/icons/smolderhide.png';
-import scarhide from '../../assets/icons/scarhide.png';
+import coarse from '../../assets/icons/coarseleather.webp';
+import rugged from '../../assets/icons/ruggedleather.webp';
+import layered from '../../assets/icons/layeredleather.webp';
+import infused from '../../assets/icons/infusedleather.webp';
+import runic from '../../assets/icons/runicleather.webp';
+import rawhide from '../../assets/icons/rawhide.webp';
+import thickhide from '../../assets/icons/thickhide.webp';
+import ironhide from '../../assets/icons/ironhide.webp';
+import tannin from '../../assets/icons/tannin.webp';
+import smolderhide from '../../assets/icons/smolderhide.webp';
+import scarhide from '../../assets/icons/scarhide.webp';
 
 export const leatherworkingData = [
   {

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import smelting from '../assets/smelting.png';
-import leatherworking from '../assets/leatherworking.png';
-import stonecutting from '../assets/stonecutting.png';
-import weaving from '../assets/weaving.png';
-import woodworking from '../assets/woodworking.png';
+import smelting from '../assets/smelting.webp';
+import leatherworking from '../assets/leatherworking.webp';
+import stonecutting from '../assets/stonecutting.webp';
+import weaving from '../assets/weaving.webp';
+import woodworking from '../assets/woodworking.webp';
 
 import { leatherworkingData } from '../utils/prices/leatherworkingData';
 import { stonecuttingData } from '../utils/prices/stonecuttingData';

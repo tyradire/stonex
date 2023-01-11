@@ -1,12 +1,12 @@
-import stone from '../../assets/icons/stone.png';
-import lodestone from '../../assets/icons/lodestone.png';
-import extra from '../../assets/icons/extralodestone.png';
-import sandpaper from '../../assets/icons/sandpaper.png';
-import stoneblock from '../../assets/icons/stoneblock.png';
-import stonebrick from '../../assets/icons/stonebrick.png';
-import lodestonebrick from '../../assets/icons/lodestonebrick.png';
-import obsidian from '../../assets/icons/obsidianlodestone.png';
-import rune from '../../assets/icons/runestone.png';
+import stone from '../../assets/icons/stone.webp';
+import lodestone from '../../assets/icons/lodestone.webp';
+import extra from '../../assets/icons/extralodestone.webp';
+import sandpaper from '../../assets/icons/sandpaper.webp';
+import stoneblock from '../../assets/icons/stoneblock.webp';
+import stonebrick from '../../assets/icons/stonebrick.webp';
+import lodestonebrick from '../../assets/icons/lodestonebrick.webp';
+import obsidian from '../../assets/icons/obsidianlodestone.webp';
+import rune from '../../assets/icons/runestone.webp';
 
 export const stonecuttingData = [
   {
