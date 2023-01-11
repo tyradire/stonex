@@ -14,11 +14,11 @@ import Woodworking from "./pages/Woodworking";
 import Leatherworking from "./pages/Leatherworking";
 import Stonecutting from "./pages/Stonecutting";
 
-import smeltingIcon from './assets/smelting.png';
-import leatherworkingIcon from './assets/leatherworking.png';
-import stonecuttingIcon from './assets/stonecutting.png';
-import weavingIcon from './assets/weaving.png';
-import woodworkingIcon from './assets/woodworking.png';
+import smeltingIcon from './assets/smelting.webp';
+import leatherworkingIcon from './assets/leatherworking.webp';
+import stonecuttingIcon from './assets/stonecutting.webp';
+import weavingIcon from './assets/weaving.webp';
+import woodworkingIcon from './assets/woodworking.webp';
 
 export const publicRoutes = [
   {
