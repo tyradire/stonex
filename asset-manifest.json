@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/stonex/static/css/main.0d306d4e.css",
-    "main.js": "/stonex/static/js/main.2d8e3ece.js",
+    "main.css": "/stonex/static/css/main.b7982c6e.css",
+    "main.js": "/stonex/static/js/main.1fc45ac9.js",
     "static/media/infusedleather.webp": "/stonex/static/media/infusedleather.c7e44f118cf406c607d4.webp",
     "static/media/wirefiber.webp": "/stonex/static/media/wirefiber.dfc38ba3be7c56c02f4b.webp",
     "static/media/silkthreads.webp": "/stonex/static/media/silkthreads.d93c55f8845746e11da0.webp",
@@ -70,11 +70,11 @@
     "static/media/settings.svg": "/stonex/static/media/settings.81f9d8d97090e7c85c7b4a3d4d94d064.svg",
     "index.html": "/stonex/index.html",
     "static/media/copy-icon.svg": "/stonex/static/media/copy-icon.c2f038289ab6d2db540bab9e91964179.svg",
-    "main.0d306d4e.css.map": "/stonex/static/css/main.0d306d4e.css.map",
-    "main.2d8e3ece.js.map": "/stonex/static/js/main.2d8e3ece.js.map"
+    "main.b7982c6e.css.map": "/stonex/static/css/main.b7982c6e.css.map",
+    "main.1fc45ac9.js.map": "/stonex/static/js/main.1fc45ac9.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d306d4e.css",
-    "static/js/main.2d8e3ece.js"
+    "static/css/main.b7982c6e.css",
+    "static/js/main.1fc45ac9.js"
   ]
 }
