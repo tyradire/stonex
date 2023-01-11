@@ -1,17 +1,12 @@
 {
   "files": {
     "main.css": "/stonex/static/css/main.0d306d4e.css",
-    "main.js": "/stonex/static/js/main.c5feb08d.js",
-    "static/media/weaving.png": "/stonex/static/media/weaving.636d8b1b60d4aafcfbf6.png",
-    "static/media/woodworking.png": "/stonex/static/media/woodworking.fb59e719fff61899b987.png",
-    "static/media/leatherworking.png": "/stonex/static/media/leatherworking.a6033110c99402977514.png",
+    "main.js": "/stonex/static/js/main.fe059529.js",
     "static/media/wirefiber.png": "/stonex/static/media/wirefiber.18d81d668890ac32de94.png",
     "static/media/infusedleather.png": "/stonex/static/media/infusedleather.cce76d5674417d1169ca.png",
     "static/media/linen.png": "/stonex/static/media/linen.5d90f76d3ed791f7dc56.png",
-    "static/media/smelting.png": "/stonex/static/media/smelting.9eec682bb86af2f821c7.png",
     "static/media/charcoal.png": "/stonex/static/media/charcoal.3660d7a3cbaad90bfec9.png",
     "static/media/sateen.png": "/stonex/static/media/sateen.69cc59c148133e443fcc.png",
-    "static/media/stonecutting.png": "/stonex/static/media/stonecutting.7d0f99eb5bbf2642cfc1.png",
     "static/media/obsidianlodestone.png": "/stonex/static/media/obsidianlodestone.4226a7a2a4caac59bea0.png",
     "static/media/wyrdwoodplanks.png": "/stonex/static/media/wyrdwoodplanks.6fcea2f4fcbea5a28c1a.png",
     "static/media/ironore.png": "/stonex/static/media/ironore.ff200b41001a9b56bd67.png",
@@ -41,14 +36,19 @@
     "static/media/silk.png": "/stonex/static/media/silk.898d6e98e10dec3bacdb.png",
     "static/media/glitteringebony.png": "/stonex/static/media/glitteringebony.ee44897363249a9857cc.png",
     "static/media/blisterweave.png": "/stonex/static/media/blisterweave.c632ffbdcec06c0f32c2.png",
+    "static/media/weaving.webp": "/stonex/static/media/weaving.e9d8bb60977fa76ad536.webp",
+    "static/media/woodworking.webp": "/stonex/static/media/woodworking.81580b0342eca21ab367.webp",
+    "static/media/leatherworking.webp": "/stonex/static/media/leatherworking.2cd1bbe84d7e9b72b6fc.webp",
+    "static/media/smelting.webp": "/stonex/static/media/smelting.5cadbbb39329ca0b0f0d.webp",
+    "static/media/stonecutting.webp": "/stonex/static/media/stonecutting.89c9a4d0c7b7c42d3fbf.webp",
     "static/media/settings.svg": "/stonex/static/media/settings.81f9d8d97090e7c85c7b4a3d4d94d064.svg",
     "index.html": "/stonex/index.html",
     "static/media/copy-icon.svg": "/stonex/static/media/copy-icon.c2f038289ab6d2db540bab9e91964179.svg",
     "main.0d306d4e.css.map": "/stonex/static/css/main.0d306d4e.css.map",
-    "main.c5feb08d.js.map": "/stonex/static/js/main.c5feb08d.js.map"
+    "main.fe059529.js.map": "/stonex/static/js/main.fe059529.js.map"
   },
   "entrypoints": [
     "static/css/main.0d306d4e.css",
-    "static/js/main.c5feb08d.js"
+    "static/js/main.fe059529.js"
   ]
 }
