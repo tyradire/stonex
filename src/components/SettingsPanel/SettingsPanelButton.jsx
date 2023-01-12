@@ -6,8 +6,6 @@ const SettingsPanelButton = ({ icon, toggleType, title, type }) => {
     toggleType(title);
   }
 
-  console.log(title)
-
   return (
     <button 
       className={title !== type ? 'settings-panel__button' : 'settings-panel__button settings-panel__button_selected'}

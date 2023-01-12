@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Price from './Price';
-import PricesBottomPanel from './PricesBottomPanel';
+import BonusPanel from '../BonusPanel/BonusPanel';
 import localforage from 'localforage';
 import './Prices.scss';
 
@@ -10,27 +10,23 @@ const Prices = ({ data, type }) => {
   const [finishedResources, setFinishedResources] = useState([]);
   const [showSpinner, setShowSpinner] = useState(false);
 
-  const createPrices = () => {
-    let array = data.map(el => {
-        let result = {};
-        result.id = el.id;
-        result.title = el.title;
-        result.cost = el.cost;
-        result.raw = el.raw;
-        result.img = el.img;
-        return result
-      });
-      setRawResources(array.filter(elem => elem.raw));
-      setFinishedResources(array.filter(elem => !elem.raw));
-    localforage.setItem(`${type}`, array);
-  }
-
   useEffect(() => {
     setTimeout(() => {setShowSpinner(true)}, 250);
     localforage.getItem(type)
     .then((value) => {
       if (value === null) {
-        createPrices();
+        let array = data.map(el => {
+          let result = {};
+          result.id = el.id;
+          result.title = el.title;
+          result.cost = el.cost;
+          result.raw = el.raw;
+          result.img = el.img;
+          return result
+        });
+        setRawResources(array.filter(elem => elem.raw));
+        setFinishedResources(array.filter(elem => !elem.raw));
+      localforage.setItem(`${type}`, array);
       } else {
         setRawResources(value.filter(elem => elem.raw));
         setFinishedResources(value.filter(elem => !elem.raw));
@@ -63,7 +59,7 @@ const Prices = ({ data, type }) => {
             }
           </form>
         </div>
-        <PricesBottomPanel />
+        <BonusPanel />
       </>
     }
     </>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import BottomPanelItem from './BottomPanelItem';
-import './Prices.scss';
+import BonusPanelItem from './BonusPanelItem';
+import './BonusPanel.scss';
 
-const PricesBottomPanel = () => {
+const BonusPanel = () => {
 
   const [equippedItems, setEquippedItems] = useState(JSON.parse(localStorage.getItem('bonusItems')) || []);
   const [panelOpened, setPanelOpened] = useState(false);
@@ -15,13 +15,10 @@ const PricesBottomPanel = () => {
   const toggleEquippedItem = (e) => {
     let array = JSON.parse(localStorage.getItem('bonusItems'));
     if (e.target.checked) {
-      //equippedItems.push(e.target.id)
       array.push(e.target.id)
     } else {
-      //setEquippedItems(equippedItems.filter(elem => elem !== e.target.id))
       array = array.filter(elem => elem !== e.target.id)
     }
-    //let array = JSON.stringify(equippedItems);
     setEquippedItems(array)
     localStorage.setItem('bonusItems', JSON.stringify(array));
   }
@@ -48,20 +45,20 @@ const PricesBottomPanel = () => {
   }
 
   return (
-    <div className={!panelOpened ? 'bottom-panel' : 'bottom-panel bottom-panel_opened' }>
-      <form className='bottom-panel__form'>
-        <p className='bottom-panel__description'>+2% yield items</p>
-        <div className='bottom-panel__content'>
+    <div className={!panelOpened ? 'bonus-panel' : 'bonus-panel bonus-panel_opened' }>
+      <form className='bonus-panel__form'>
+        <p className='bonus-panel__description'>+2% yield bonus</p>
+        <div className='bonus-panel__content'>
           {
             titles.map((el, i) => {
-              return <BottomPanelItem title={el} items={equippedItems} toggleEquippedItem={toggleEquippedItem} id={arr[i]} key={i} />
+              return <BonusPanelItem title={el} items={equippedItems} toggleEquippedItem={toggleEquippedItem} id={arr[i]} key={i} />
             })
           }
         </div>
-        <button className='bottom-panel__open-btn' onClick={openPanel}>+2% yield items</button>
+        <button className='bonus-panel__open-btn' onClick={openPanel}>+2% yield bonus</button>
       </form>
     </div>
   )
 }
 
-export default PricesBottomPanel
+export default BonusPanel

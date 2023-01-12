@@ -14,10 +14,10 @@
     width: 30px;
     height: 30px;
     &:hover path {
-      fill: $text-color;
+      fill: $text-input-color;
     }
     &_active path {
-      fill: $text-color;
+      fill: $text-input-color;
     }
   }
 }
