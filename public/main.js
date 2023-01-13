@@ -8,8 +8,8 @@ const isDev = require('electron-is-dev')
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 680,
-    height: 680,
+    width: 480,
+    height: 650,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
@@ -25,7 +25,7 @@ function createWindow() {
       : `file://${path.join(__dirname, '../build/index.html')}`
   )
 
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 
 }
 
