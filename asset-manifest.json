@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/stonex/static/css/main.5105921f.css",
+    "main.css": "/stonex/static/css/main.22a5ceeb.css",
     "main.js": "/stonex/static/js/main.91d3ddd5.js",
     "static/media/infusedleather.webp": "/stonex/static/media/infusedleather.c7e44f118cf406c607d4.webp",
     "static/media/wirefiber.webp": "/stonex/static/media/wirefiber.dfc38ba3be7c56c02f4b.webp",
@@ -70,11 +70,11 @@
     "static/media/settings.svg": "/stonex/static/media/settings.81f9d8d97090e7c85c7b4a3d4d94d064.svg",
     "index.html": "/stonex/index.html",
     "static/media/copy-icon.svg": "/stonex/static/media/copy-icon.c2f038289ab6d2db540bab9e91964179.svg",
-    "main.5105921f.css.map": "/stonex/static/css/main.5105921f.css.map",
+    "main.22a5ceeb.css.map": "/stonex/static/css/main.22a5ceeb.css.map",
     "main.91d3ddd5.js.map": "/stonex/static/js/main.91d3ddd5.js.map"
   },
   "entrypoints": [
-    "static/css/main.5105921f.css",
+    "static/css/main.22a5ceeb.css",
     "static/js/main.91d3ddd5.js"
   ]
 }
